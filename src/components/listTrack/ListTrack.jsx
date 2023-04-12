@@ -169,9 +169,8 @@ const ListTrack = () => {
 
   return (
     <div className={styles.songList}>
-      {console.log(songs)}
-      {songs.map((data) => (
-        <TrackItem key={data.id} song={data} />
+      {songs.map((data, i) => (
+        <TrackItem key={i} song={data} />
       ))}
     </div>
   );
