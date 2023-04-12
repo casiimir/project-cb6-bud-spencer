@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import Item from "../songitem/Item";
+import SongItem from "../songitem/SongItem";
 
 const ItemList = () => {
   const song = {
@@ -163,7 +163,7 @@ const ItemList = () => {
   return (
     <div className={styles.songList}>
       {songArray.map((data) => (
-        <Item key={data.id} song={data} />
+        <SongItem key={data.id} song={data} />
       ))}
     </div>
   );
