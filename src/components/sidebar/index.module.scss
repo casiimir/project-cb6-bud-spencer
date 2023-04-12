@@ -1,0 +1,24 @@
+.Sidebar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  .icons_sidebar {
+    background-color: rgba(128, 128, 128, 0.208);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 60px;
+    border-radius: 18px;
+    .icon {
+      font-size: 20px;
+      color: grey;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
