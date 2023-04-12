@@ -11,13 +11,72 @@
     justify-content: space-around;
     height: 60px;
     border-radius: 18px;
-    .icon {
+    .logo {
+      display: none;
+    }
+    .icon_search {
       font-size: 20px;
       color: grey;
       cursor: pointer;
       transition: all 0.3s;
       &:hover {
         color: $white;
+      }
+    }
+    .icon {
+      font-size: 20px;
+      color: rgba(251, 251, 251, 0.479);
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        color: $white;
+      }
+    }
+    .hr {
+      display: none;
+    }
+    .icon_desktop {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Sidebar {
+    position: relative;
+    padding: 0;
+    width: 120px;
+    background-color: #336a88;
+    .icons_sidebar {
+      width: 75px;
+      border-radius: 0px;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      background-color: transparent;
+      .logo {
+        margin-top: 30px;
+        display: block;
+      }
+      .icon_search {
+        display: none;
+      }
+      .hr {
+        display: block;
+        width: 20px;
+        border: 1px solid rgba(251, 251, 251, 0.479);
+      }
+      .icon_desktop {
+        display: block;
+        font-size: 20px;
+        color: rgba(251, 251, 251, 0.479);
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          color: $white;
+        }
       }
     }
   }
