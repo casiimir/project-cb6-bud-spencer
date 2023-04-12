@@ -17,12 +17,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>Budz</h1>
-
-        <ListTrack />
-
         <MainLayout>
           <Navbar />
+          <h1>Budz</h1>
+          <ListTrack />
         </MainLayout>
       </main>
     </>
