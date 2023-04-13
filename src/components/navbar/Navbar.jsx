@@ -2,10 +2,10 @@ import { HiMenuAlt1, HiOutlineBell } from "react-icons/hi";
 import { BiSearchAlt } from "react-icons/bi";
 import styles from "./index.module.scss";
 
-const Navbar = () => {
+const Navbar = ({ title }) => {
   return (
     <div className={styles.Navbar}>
-      <h1 className={styles.title_home}>Home</h1>
+      <h1 className={styles.title_home}>{title}</h1>
       <div className={styles.content_icon_navbar}>
         <HiMenuAlt1 className={styles.icon_menu} />
       </div>

@@ -1,18 +1,19 @@
-.ArtistPage{
+.ArtistPage {
+  height: 100vh;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
-    height: 100vh;
-    z-index: -1;
-
-.img{
-    img{
-    height: 100vh;
-    z-index: -1;
-    position: fixed;
-    top:0;
-    left:0;
+  .container {
     width: 100%;
-    z-index: -1;
-    filter: blur(5px) saturate(20%);
-    }
- }
+    height: 100vh;
+    backdrop-filter: blur(5px) saturate(20%);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .ArtistPage {
+    z-index: -3;
+  }
 }

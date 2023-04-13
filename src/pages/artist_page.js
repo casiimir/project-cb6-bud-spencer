@@ -4,39 +4,34 @@ import Navbar from "@/components/navbar";
 import ArtistItem from "@/components/artistItem";
 import Image from "next/image";
 
-export default function ArtistPage({artist}){
-
-
-return(
-<div className={styles.ArtistPage} >
-    <div className={styles.overlay}></div>
-    <div className={styles.img}>
-<Image
-            src={artist.picture_xl}
-            width={700}
-            height={250}
-            alt={artist.name}
-          />
-</div>
-<MainLayout>
-<Navbar/>
-
-        <ArtistItem  artist={artist} />
-      
-
-</MainLayout>   
-</div>
-)
-
+export default function ArtistPage({ artist, topArtistAlbum }) {
+  return (
+    <MainLayout>
+      <div
+        className={styles.ArtistPage}
+        style={{ backgroundImage: `url(${artist.picture_xl})` }}
+      >
+        <div className={styles.container}>
+          <Navbar title={"Artist"} />
+          <ArtistItem topArtistAlbum={topArtistAlbum} artist={artist} />
+        </div>
+      </div>
+    </MainLayout>
+  );
 }
 
 export async function getStaticProps() {
-    const res = await fetch("https://api.deezer.com/artist/10583405")
-    const artist = await res.json() 
-  
-    return {
-  props: {
-    artist,
-  }
-    }
-  }
+  const res = await fetch("https://api.deezer.com/artist/10583405");
+  const artist = await res.json();
+
+  const response = await fetch(
+    "https://api.deezer.com/artist/10583405/top?limit=10"
+  );
+  const topArtistAlbum = await response.json();
+  return {
+    props: {
+      artist,
+      topArtistAlbum,
+    },
+  };
+}

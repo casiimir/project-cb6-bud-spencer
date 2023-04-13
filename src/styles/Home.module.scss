@@ -1,25 +1,41 @@
-.listTrack {
+.mainContainer {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  .titleTrending {
+    margin-left: 20px;
+    color: $white;
+  }
+  .listTrack {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 700px;
-    margin-left: 18px;
-    max-height: 285px;
-    overflow-y: scroll;
-
-    .titleTrending{
-      color:$white;
-    }
+    width: 100%;
+    margin-left: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 80px;
   }
-  
+}
 
+@media screen and (min-width: 1000px) {
+  .mainContainer {
+    padding: 0 20px;
 
-
-  @media screen and (min-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    .titleTrending {
+      margin-left: 20px;
+      color: $grey;
+    }
     .listTrack {
-      overflow:auto;
-      .titleTrending{
-        color:$grey;
-      }
+      width: 700px;
+      margin-left: 18px;
+      margin-top: 20px;
+      height: 50vh;
+      overflow: auto;
+      padding-bottom: 0;
     }
   }
+}
