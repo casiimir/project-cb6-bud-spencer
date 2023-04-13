@@ -1,11 +1,11 @@
 .Hero {
   .hero_content {
     margin-bottom: 20px;
-    width: 700px;
+    width: 355px;
     height: 250px;
     position: relative;
     .content_img {
-      width: 700px;
+      width: 355px;
       height: 250px;
       border-radius: 15px;
       overflow: hidden;
@@ -41,4 +41,16 @@
       }
     }
   }
+}
+
+@media screen and (min-width: 1000px) {
+  .Hero{
+    .hero_content {
+      width: 700px;
+      .content_img{
+        width: 700px;
+      }
+    }
+  }
+  
 }

@@ -1,20 +1,31 @@
 import styles from "./index.module.scss";
-import FaHeartbeat from "react-icons/fa";
+import {BiUser,BiHeart, BiDotsHorizontalRounded} from "react-icons/bi";
+import Image from "next/image";
+import {minuteToSeconds} from "@/utils/func"
 
-// const Item = ({ song }) => {
 const TrackItem = ({ song }) => {
+
   return (
-    //qui si andrà a prendere dalla chiamata all'Api :  https://api.deezer.com/chart/0/tracks
-    <div className={styles.songItem}>
-      {/* <img src={song.album.picture_small} alt={song.album.title_short} /> */}
-      {/* <img src={data.album.cover_small} alt={data.album.title_short} /> */}
-      <h3>{song.title}</h3>
-      {/* <p>{data.artist.name}</p> */}
-      {/* <div className={styles.info}>
-        <p>{data.duration} seconds</p>
-        <p>{data.rank} streams</p>
-        <button><FaHeartbeat /></button>
-      </div> */}
+    
+    <div className={styles.TrackItem}>
+      <div className={styles.indexIcon}>
+      <p className={styles.indice}>{song?.position}</p>
+      <Image src={song?.artist.picture_small} width={40} height={40} alt={song.title} />
+      </div>
+      <div className={styles.contentTitle}>
+        <p className={styles.title}>{song?.title_short}</p>
+      <div className={styles.contentArtist}>
+        <BiUser className={styles.icon} />
+        <p className={styles.artist}>{song?.artist.name}</p>
+      </div>
+      </div>
+      <div className={styles.info}>
+      <p>{parseInt(minuteToSeconds(song.duration))}</p>
+      <p>{song.rank}</p>
+      
+      <BiHeart className={styles.heart} />
+      <BiDotsHorizontalRounded />
+      </div>
     </div>
   );
 };

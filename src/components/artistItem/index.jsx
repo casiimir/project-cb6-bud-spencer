@@ -1,2 +1,2 @@
-import ArtistItem from "./ArtistItem";
+import ArtistItem from "./ArtistItem"
 export default ArtistItem;
