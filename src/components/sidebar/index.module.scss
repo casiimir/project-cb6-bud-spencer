@@ -3,7 +3,7 @@
   bottom: 0;
   width: 100%;
   padding: 20px;
-  z-index: 2;
+  z-index: 10;
   .icons_sidebar {
     background-color: rgba(128, 128, 128, 0.208);
     backdrop-filter: blur(10px);
@@ -48,6 +48,7 @@
     padding: 0;
     width: 120px;
     background-color: #336a88;
+    z-index: 0;
     .icons_sidebar {
       width: 75px;
       border-radius: 0px;

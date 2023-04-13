@@ -1,3 +1,44 @@
-.ArtistItem{
-    border:2px solid red;
+.ArtistItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  img {
+    border-radius: 50%;
+  }
+}
+.content_album {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 60vh;
+  overflow: auto;
+  margin-top: 20px;
+  padding-bottom: 80px;
+  img {
+    border-radius: 50%;
+  }
+  .album {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    color: $white;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .ArtistItem {
+      gap: 20px;
+      flex-direction: column;
+    }
+    .content_album {
+      height: 80vh;
+    }
+  }
 }

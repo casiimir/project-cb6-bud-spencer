@@ -15,13 +15,15 @@
   .MainLayout {
     display: flex;
     .content {
-      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
       background-color: $off_white;
       border-top-left-radius: 25px;
       border-bottom-left-radius: 25px;
       margin-left: -40px;
       z-index: 2;
-      padding: 0 20px;
+      overflow: hidden;
     }
   }
 }
