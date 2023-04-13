@@ -22,3 +22,4 @@ const ArtistItem = ({ singer }) => {
   };
   
   export default ArtistItem;
+
