@@ -1,2 +1,25 @@
+.listTrack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 700px;
+    margin-left: 18px;
+    max-height: 285px;
+    overflow-y: scroll;
+
+    .titleTrending{
+      color:$white;
+    }
+  }
+  
 
 
+
+  @media screen and (min-width: 1000px) {
+    .listTrack {
+      overflow:auto;
+      .titleTrending{
+        color:$grey;
+      }
+    }
+  }

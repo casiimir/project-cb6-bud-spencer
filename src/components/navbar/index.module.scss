@@ -9,17 +9,22 @@
     display: none;
   }
   .content_icon_navbar {
+    
     padding: 10px;
     border-radius: 10px;
     background-color: rgba(128, 128, 128, 0.208);
 
     .icon_menu {
+      
       font-size: 20px;
     }
   }
   .content_icon_input {
+    
+    height: 60px;
     flex-grow: 1;
     position: relative;
+    
     .icon_bell {
       display: none;
     }

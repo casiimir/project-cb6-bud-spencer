@@ -1,5 +1,7 @@
-export const minute = (second) => {
-    const sec = second / 60;
+const minuteToSeconds = (minute) => {
+    const sec = minute / 60;
     return sec;
   };
+
+  export {minuteToSeconds}
 

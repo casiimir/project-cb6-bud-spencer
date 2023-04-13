@@ -1,29 +1,31 @@
 import styles from "./index.module.scss";
-import {BiUser,BiHeart,} from "react-icons/bi";
+import {BiUser,BiHeart, BiDotsHorizontalRounded} from "react-icons/bi";
 import Image from "next/image";
+import {minuteToSeconds} from "@/utils/func"
 
 const TrackItem = ({ song }) => {
 
-  const minute = (second) => {
-    const sec = second / 60;
-    return sec;
-  };
   return (
     
     <div className={styles.TrackItem}>
-      <p className={styles.indice}>{1}</p>
-      <Image src={song?.contributors[0].picture_small} width={40} height={40} alt={song.album.title} />
+      <div className={styles.indexIcon}>
+      <p className={styles.indice}>{song?.position}</p>
+      <Image src={song?.artist.picture_small} width={40} height={40} alt={song.title} />
+      </div>
       <div className={styles.contentTitle}>
-        <p className={styles.title}>{song.title_short}</p>
+        <p className={styles.title}>{song?.title_short}</p>
       <div className={styles.contentArtist}>
         <BiUser className={styles.icon} />
-        <p className={styles.artist}>{song.artist.name}</p>
+        <p className={styles.artist}>{song?.artist.name}</p>
       </div>
       </div>
-      <p>{parseInt(minute(song.duration))}</p>
+      <div className={styles.info}>
+      <p>{parseInt(minuteToSeconds(song.duration))}</p>
       <p>{song.rank}</p>
+      
       <BiHeart className={styles.heart} />
-      <p>...</p>
+      <BiDotsHorizontalRounded />
+      </div>
     </div>
   );
 };
