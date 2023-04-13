@@ -4,6 +4,7 @@ const nextConfig = {
     domains: ["cdn.pexels.photos"],
     unoptimized: true,
   },
+  trailingSlash: true,
   env: {
     PUBLIC_URL: "/",
   },
