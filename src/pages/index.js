@@ -2,6 +2,7 @@ import ListTrack from "@/components/listTrack";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Navbar from "@/components/navbar";
 import Head from "next/head";
+import Hero from "@/components/hero";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 
@@ -19,7 +20,7 @@ export default function Home() {
       <main className={styles.main}>
         <MainLayout>
           <Navbar />
-          <h1>Budz</h1>
+          <Hero />
           <ListTrack />
         </MainLayout>
       </main>
