@@ -21,7 +21,7 @@ const Sidebar = () => {
         <BiFolder className={styles.icon_desktop} />
         <BiSearch className={styles.icon_search} />
         <BiMusic className={styles.icon} />
-        <BiUser className={styles.icon} />
+        <BiUser className={styles.icon} /> 
         <hr className={styles.hr} />
         <BiHeart className={styles.icon_desktop} />
         <BiShuffle className={styles.icon_desktop} />

@@ -3,13 +3,13 @@ import Navbar from "@/components/navbar";
 import Head from "next/head";
 import Hero from "@/components/hero";
 import TrackItem from "../components/trackItem";
-import ArtistItem from "../components/trackItem";
+
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ artistData, trackData }) {
+export default function Home({ artist, track }) {
   return (
     <>
       <Head>
@@ -26,15 +26,15 @@ export default function Home({ artistData, trackData }) {
               <Hero />
               {/* <div className={styles.list}>
             <h3 className={styles.titletopArtist}>Top Artist</h3>
-              {artistData?.data.map((data, i) => (
-                <ArtistItem key={i} singer={data} />
+              {artist?.data.map((data, i) => (
+                <HomePage_ArtistItem key={i} singer={data} />
                 ))}
           </div> */}
             </div>
 
             <h3 className={styles.titleTrending}>Trending right now</h3>
             <div className={styles.listTrack}>
-              {trackData?.tracks.data.map((data, i) => (
+              {track?.tracks.data.map((data, i) => (
                 <TrackItem key={i} song={data} />
               ))}
             </div>
@@ -48,8 +48,8 @@ export async function getStaticProps() {
   const resArtist = await fetch("https://api.deezer.com/chart/0/artists");
   const resTracks = await fetch("https://api.deezer.com/chart");
 
-  const artistData = await resArtist.json();
-  const trackData = await resTracks.json();
+  const artist = await resArtist.json();
+  const track = await resTracks.json();
 
-  return { props: { artistData, trackData } };
+  return { props: { artist, track } };
 }
