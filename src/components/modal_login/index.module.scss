@@ -1,0 +1,54 @@
+.Modal_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+  
+    .overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(29, 33, 76, 0.919);
+    }
+  
+    form {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 25px;
+      background-color: rgba(8, 8, 46, 0.806);
+      border-radius: 28px;
+
+     
+  
+      input {
+        height: 30px;
+        width: 250px;
+        border: 0;
+        border-radius: 10px;
+        color: black;
+        outline: none;
+        padding:5px;
+      }
+  
+      button {
+        border-radius: 12px;
+        height: 30px;
+        margin-top: 17px;
+        transition: all 0.35s;
+        cursor: pointer;
+       
+  
+        &:hover {
+          border: 1px solid$white;
+          background-color:rgba(8, 8, 46, 0.806);
+          color: $white;
+        }
+      }
+    }
+  }
