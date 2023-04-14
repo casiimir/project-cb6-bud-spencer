@@ -1,0 +1,151 @@
+.Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -3;
+
+  .image {
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 30px;
+    border-radius: 12px;
+  }
+
+  .imagealbum {
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 95px;
+  }
+
+  .artistsong {
+    position: absolute;
+    margin-top: 500px;
+    text-align: center;
+    margin-left: 145px;
+  }
+
+  .commands {
+    position: absolute;
+    margin-top: 590px;
+    margin-left: 110px;
+    display: flex;
+    flex-direction: raw;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .barra {
+    position: absolute;
+    margin-top: 720px;
+    margin-left: 20px;
+  }
+
+  .text {
+    position: absolute;
+    margin-top: 760px;
+    text-align: center;
+    width: 300px;
+    margin-left: 55px;
+  }
+
+  .sidebarcontainer {
+    display: none;
+  }
+  .desktop {
+    display: none;
+  }
+
+  .containerfordesktoponly {
+    display: none;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .sidebarcontainer {
+      display: block;
+    }
+
+    .containerfordesktoponly {
+      display: block;
+
+      position: absolute;
+      height: 120px;
+      width: 1300px;
+      border: 2px solid rgb(1, 209, 227);
+      margin-top: 580px;
+      margin-left: 145px;
+      border-radius: 20px;
+      //   background-color: ;
+    }
+
+    .barra {
+      position: absolute;
+      margin-top: 625px;
+      margin-left: 800px;
+    }
+
+    .text {
+      display: none;
+    }
+
+    .desktop {
+      display: flex;
+      position: absolute;
+      margin-top: 625px;
+      margin-left: 580px;
+      gap: 10px;
+    }
+
+    .iconhearthdesktop {
+      color: red;
+
+      background-color: beige;
+    }
+
+    .iconasharedesktop {
+      color: red;
+      background-color: beige;
+    }
+
+    .iconaplusdesktop {
+      color: red;
+      background-color: beige;
+    }
+
+    .image {
+      margin-top: 0;
+      height: 100vh;
+      width: 1505px;
+      border-radius: 20px;
+    }
+    .imagealbum {
+      position: absolute;
+      margin-left: 700px;
+      margin-top: 200px;
+    }
+
+    .commands {
+      position: absolute;
+      margin-left: 200px;
+      cursor: pointer;
+    }
+
+    .button {
+      cursor: pointer;
+    }
+
+    .artistsong {
+      position: absolute;
+      margin-left: 400px;
+      margin-top: 610px;
+    }
+  }
+}
