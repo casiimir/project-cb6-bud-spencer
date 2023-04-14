@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar";
 import Head from "next/head";
 import Hero from "@/components/hero";
 import TrackItem from "../components/trackItem";
+import Modal_login from "@/components/modal_login/Modal_Login";
 import ArtistItem from "../components/trackItem";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
@@ -24,6 +25,7 @@ export default function Home({ artistData, trackData }) {
             <Navbar title={"Home"} />
             <div className={styles.topArtist}>
               <Hero />
+              <Modal_login />
               {/* <div className={styles.list}>
             <h3 className={styles.titletopArtist}>Top Artist</h3>
               {artistData?.data.map((data, i) => (
