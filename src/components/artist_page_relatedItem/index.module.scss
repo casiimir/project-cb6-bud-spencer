@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap:10px;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    color: $white;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  
+  }
+}
