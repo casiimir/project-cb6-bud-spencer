@@ -1,3 +1,4 @@
+import { useState } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Navbar from "@/components/navbar";
 import Head from "next/head";
@@ -6,11 +7,29 @@ import TrackItem from "../components/trackItem";
 import Modal_login from "@/components/modal_login/Modal_Login";
 import ArtistItem from "../components/trackItem";
 import { Inter } from "next/font/google";
+
 import styles from "@/styles/Home.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ artistData, trackData }) {
+
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  
+
+  const onHandleUsername = (e) => {
+    setUserName(e.target.value);
+  };
+
+  const onHandlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const [modalIsVisibile, setModalIsVisibility] = useState(false);
+
+
+
   return (
     <>
       <Head>
@@ -20,12 +39,12 @@ export default function Home({ artistData, trackData }) {
       </Head>
 
       <main className={styles.main}>
-        <MainLayout>
+        <MainLayout
+        setModalIsVisibility={setModalIsVisibility}>
           <div className={styles.mainContainer}>
             <Navbar title={"Home"} />
             <div className={styles.topArtist}>
               <Hero />
-              <Modal_login />
               {/* <div className={styles.list}>
             <h3 className={styles.titletopArtist}>Top Artist</h3>
               {artistData?.data.map((data, i) => (
@@ -42,6 +61,15 @@ export default function Home({ artistData, trackData }) {
             </div>
           </div>
         </MainLayout>
+
+        {modalIsVisibile && (
+              <Modal_login 
+              setModalIsVisibility={setModalIsVisibility}
+              onHandleUsername={onHandleUsername}
+              onHandlePassword={onHandlePassword}
+              userName={userName}
+              password={password}
+              />)}
       </main>
     </>
   );

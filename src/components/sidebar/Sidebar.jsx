@@ -10,7 +10,16 @@ import {
 } from "react-icons/bi";
 import styles from "./index.module.scss";
 
-const Sidebar = () => {
+const Sidebar = ({setModalIsVisibility}) => {
+
+  const onHandleClick = () => {
+    setModalIsVisibility(true)
+  }
+    
+  
+  
+
+
   return (
     <div className={styles.Sidebar}>
       <div className={styles.icons_sidebar}>
@@ -21,7 +30,7 @@ const Sidebar = () => {
         <BiFolder className={styles.icon_desktop} />
         <BiSearch className={styles.icon_search} />
         <BiMusic className={styles.icon} />
-        <BiUser className={styles.icon} />
+        <BiUser onClick={onHandleClick} setModalIsVisibility={setModalIsVisibility} className={styles.icon}  />
         <hr className={styles.hr} />
         <BiHeart className={styles.icon_desktop} />
         <BiShuffle className={styles.icon_desktop} />
