@@ -5,7 +5,6 @@ import Artist_Page_ArtistItem from "@/components/artist_page_artistItem";
 import Artist_Page_TrackItem from "@/components/artist_page_trackItem";
 import Artist_Page_AlbumItem from "@/components/artist_page_albumItem";
 import Artist_Page_RelatedItem from "@/components/artist_page_relatedItem";
-import Image from "next/image";
 
 export default function ArtistPage({
   artistData,
@@ -50,15 +49,13 @@ export default function ArtistPage({
 }
 
 export async function getStaticProps() {
-  const resArtist = await fetch("https://api.deezer.com/artist/7371074");
-  const resTrack = await fetch(
-    "https://api.deezer.com/artist/7371074/top?limit=10"
-  );
+  const resArtist = await fetch("https://api.deezer.com/artist/27");
+  const resTrack = await fetch("https://api.deezer.com/artist/27/top?limit=10");
   const resAlbum = await fetch(
-    "https://api.deezer.com/artist/7371074/albums?limit=10"
+    "https://api.deezer.com/artist/27/albums?limit=10"
   );
   const resRelated = await fetch(
-    "https://api.deezer.com/artist/7371074/related?limit=10"
+    "https://api.deezer.com/artist/27/related?limit=10"
   );
 
   const artistData = await resArtist.json();
