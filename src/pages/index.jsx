@@ -25,7 +25,7 @@ export default function Home({ artistData, trackData }) {
             <Navbar title={"Home"} />
             <div className={styles.topArtist}>
               <Hero />
-              {/* <Modal_login /> */}
+              <Modal_login />
               {/* <div className={styles.list}>
             <h3 className={styles.titletopArtist}>Top Artist</h3>
               {artistData?.data.map((data, i) => (
