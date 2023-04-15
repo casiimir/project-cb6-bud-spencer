@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding-bottom: 80px;
 
   .container {
     width: 100%;
@@ -40,6 +41,7 @@
       .albumitem {
         display: flex;
         align-items: center;
+        gap: 20px;
         overflow-x: auto;
         overflow-y: hidden;
         scroll-behavior: smooth;
@@ -47,6 +49,8 @@
         height: 150px;
         width: 100vw;
         flex: 0 0 auto;
+        position: relative;
+
         &::-webkit-scrollbar {
           height: 8px;
           width: 4px;
@@ -68,6 +72,7 @@
   .ArtistPage {
     z-index: -3;
     .container {
+      padding-bottom: 20px;
       .content_category_page {
         width: 90vw;
         margin: auto;
