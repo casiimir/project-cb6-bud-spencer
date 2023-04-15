@@ -1,0 +1,69 @@
+.container{
+
+}
+
+
+@media screen and (min-width: 1000px) {
+.container{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+  border-radius: 10px;;
+  &:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+    .playIcon{
+      filter: opacity(1);
+      transform: translate(0px, 0px);
+    }
+  }
+  
+.AlbumItem {
+  display: flex;
+  align-items: center;
+  gap: 30px; ;
+  img {
+    border-radius: 30%;
+  }
+
+  .text{
+    .contentArtist {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 3px;
+      .icon {
+        font-size: 12px;
+      }
+      .artist {
+        font-size: 12px;
+        color: $light-grey;
+      }
+    }
+  }
+}
+}
+
+.playIcon{
+  width:50px;
+  height:50px;
+  background-color: rgb(78, 78, 232);
+  border-radius: 50%;
+  color: rgb(230, 217, 217);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  cursor: pointer;
+  filter: opacity(0);
+  transition: all 0.25s;
+  box-shadow: 1px 1px 1px rgb(62, 58, 58);
+  transform: translate(0px, -10px);
+
+}
+}
+.dots{
+  font-size: 22px;
+}
