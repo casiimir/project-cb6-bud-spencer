@@ -1,3 +1,4 @@
+import { useState } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Navbar from "@/components/navbar";
 import Head from "next/head";
@@ -7,11 +8,29 @@ import Home_Page_ArtistItem from "../components/home_page_artistItem";
 import Home_Page_AlbumItem from "../components/home_page_albumItem";
 import Home_Page_GenreItem from "../components/home_page_genreItem";
 import { Inter } from "next/font/google";
+import Modal_login from "@/components/modal_login/Modal_Login";
 import styles from "@/styles/Home.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export default function Home({ artistData, trackData, albumData, genreData }) {
+
+
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  
+
+  const onHandleUsername = (e) => {
+    setUserName(e.target.value);
+  };
+
+  const onHandlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const [modalIsVisibile, setModalIsVisibility] = useState(false);
+
   return (
     <>
       <Head>
@@ -22,7 +41,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
       </Head>
 
       <main className={styles.main}>
-        <MainLayout>
+        <MainLayout setModalIsVisibility={setModalIsVisibility}>
           <div className={styles.mainContainer}>
             <Navbar title={"Home"} />  
             <div className={styles.container} >
@@ -83,6 +102,15 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
           </div>
           </div>
         </MainLayout>
+        
+          {modalIsVisibile && (
+              <Modal_login 
+              setModalIsVisibility={setModalIsVisibility}
+              onHandleUsername={onHandleUsername}
+              onHandlePassword={onHandlePassword}
+              userName={userName}
+              password={password}
+              />)} 
       </main>
     </>
   );
@@ -99,4 +127,4 @@ export async function getStaticProps() {
   const genreData = await resGenre.json();
 
   return { props: { artistData, trackData, albumData, genreData } };
-}
+

@@ -1,0 +1,122 @@
+.ErrorPage{
+    color: $off-white;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .icon{
+        position: fixed;
+        top:-80px;
+        right: 280px;
+        color:  #0b7e95;
+        height: 300px;
+        width: 600px;
+        transform: rotate(15deg);
+        filter: brightness(180%);
+    }
+
+    
+    .iconError{
+        position: fixed;
+        top:0;
+        left:37%;
+        font-size: 7rem;
+        color:$white;
+        
+    }
+    .titleError{
+        position: fixed;
+        top:120px;
+        left:37%;
+        font-size: 1.5rem;
+        color:$white;
+        
+    }
+
+    .textError{
+        position: fixed;
+        top:220px;
+        left:37%;
+        font-size: 1.5rem;
+        color:$white;
+    }
+    .inputError{
+        position: fixed;
+        left:37%;
+        bottom: 30px;
+        background: none;
+        width: 100px;
+        height: 50px;
+        border-radius: 7px;
+        color:$off-white;
+        box-shadow: 0px 0px 2px 1px $white;
+        cursor: pointer;
+        transition: transform 1.5s;
+        
+
+        &:hover{
+            transform: scaleX(-1);
+            
+            
+        }
+    }
+}
+
+
+
+@media screen and (min-width: 1000px) {
+    .ErrorPage {
+        color: $grey;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+
+        .inputError{
+        position: fixed;
+        bottom: 0;
+        background: none;
+        width: 100px;
+        height: 50px;
+        border-radius: 7px;
+        border:none;
+        color:$off-white;
+        box-shadow: 0px 0px 2px 1px $white;
+        cursor: pointer;
+        transition: transform 1.5s;
+            
+    
+            &:hover{
+                transform: scaleX(-1);
+            }
+        }
+
+        .icon{
+            position: fixed;
+            top:-10px;
+            right: 20px;
+            color:  #0b7e95;
+            height: 300px;
+            width: 900px;
+            transform: rotate(15deg);
+            filter: brightness(180%);
+            
+        }
+    
+    }
+   
+  }

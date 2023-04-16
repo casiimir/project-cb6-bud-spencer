@@ -17,7 +17,7 @@
     }
     .icon_search {
       font-size: 20px;
-      color: grey;
+      color: rgba(251, 251, 251, 0.479);
       cursor: pointer;
       transition: all 0.3s;
       &:hover {
@@ -47,7 +47,7 @@
     position: relative;
     padding: 0;
     width: 120px;
-    background-color: #336a88;
+    background-color: $primary-color;
     z-index: 0;
     .icons_sidebar {
       width: 75px;
@@ -73,7 +73,7 @@
       .icon_desktop {
         display: block;
         font-size: 20px;
-        color: rgba(251, 251, 251, 0.479);
+        color: rgba(251, 251, 251, 0.572);
         cursor: pointer;
         transition: all 0.3s;
         &:hover {
