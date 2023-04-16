@@ -1,0 +1,158 @@
+.TrackItem {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 10px;;
+
+  &:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+  }
+
+
+  .mainContent {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    &:hover{
+      .indice{
+        display: none;
+      }
+      .playIcon{
+        display: block;
+        font-size: 40px;
+        color: rgb(0, 48, 114);
+      }
+
+    }
+    .indice{
+      color: gray;
+      display:none;
+    }
+    .playIcon{
+      display: none;
+     
+    }
+    img {
+      border-radius: 30%;
+    }
+    .contentTitle {
+      .title {
+        font-weight: bold;
+      }
+      .contentArtist {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 3px;
+        .icon {
+          font-size: 12px;
+        }
+        .artist {
+          font-size: 12px;
+          color: $light-grey;
+        }
+      }
+    }
+  }
+
+ 
+  .info {
+    
+    .followers{
+      display: none;
+    
+    }
+    .duration{
+      display: none;
+    
+    }
+    .reactionsIcons{
+      .heart{ 
+        font-size: 22px;
+        
+  
+      }
+  
+      .dots{ 
+        font-size: 22px;
+        display: none;
+      }
+  
+  }
+
+ 
+}
+
+}
+
+
+@media screen and (min-width: 1000px) {
+  .TrackItem {
+    
+  
+    .mainContent {
+      .indice{
+        display:block;
+      }
+      
+      .contentTitle {
+        .title {
+        
+        }
+        .contentArtist {
+        
+          .icon {
+            
+          }
+          .artist {
+            
+          }
+        }
+      }
+    }
+  
+   
+    .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    font-size: 12px;
+   
+    .followers{
+      display: block;
+      color:gray;
+    }
+    
+    .duration{
+      display: block;
+    
+    }
+.reactionsIcons{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+
+    .heart{ 
+     
+      
+
+    }
+
+    .dots{ 
+      display:block;
+      font-size: 22px;
+    }
+    }
+  }
+
+    
+  }
+  }
+  
+

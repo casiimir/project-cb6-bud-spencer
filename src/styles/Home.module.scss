@@ -3,6 +3,47 @@
   display: flex;
   flex-direction: column;
 
+  .container{
+    gap:20px;
+.leftSide{
+  .artistListMobile{
+    display:flex;
+   flex-direction: column;
+   gap:20px;
+   padding:20px;
+
+ .listTopArtist{
+   display: flex;
+   gap:30px;
+   
+
+ }
+ 
+  }
+  .mainListGenre{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    padding:20px;
+  .listGenre{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    overflow: auto;
+    
+  }
+}
+  .title{
+    display:none;
+    flex-direction: row;
+    justify-content: space-between;
+    .seeAll{
+      color: rgb(48, 48, 215);
+      text-decoration: underline;
+      font-size: 15px;
+      cursor: pointer;
+    }
+  }
   .titleTrending {
     margin-left: 20px;
     color: $white;
@@ -16,15 +57,42 @@
     flex-grow: 1;
     overflow-y: auto;
     padding-bottom: 80px;
+    cursor: pointer;
   }
 }
-
+.rightSide{
+display:none
+}
+}
+}
 @media screen and (min-width: 1000px) {
   .mainContainer {
     padding: 0 20px;
+    // display: flex;
+    // flex-direction: column;
+  .container{
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+    .leftSide{
+      .artistListMobile{
+    display:none;
+      }
 
-    display: flex;
-    flex-direction: column;
+      .mainListGenre{
+        display:none;
+      }
+      .title{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .seeAll{
+          color: rgb(48, 48, 215);
+          text-decoration: underline;
+          font-size: 15px;
+          cursor: pointer;
+        }
+      }
     .titleTrending {
       margin-left: 20px;
       color: $grey;
@@ -37,5 +105,41 @@
       overflow: auto;
       padding-bottom: 0;
     }
+    }
+    .rightSide{    
+      display:flex;
+      flex-direction: column;
+      gap:60px;
+      // height: 100vh;
+      // .listTopArtist{
+        // height: 100%;
+        // overflow: auto;
+
+        .title{
+          display:flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .seeAll{
+            color: rgb(48, 48, 215);
+            text-decoration: underline;
+            font-size: 15px;
+            cursor: pointer;
+          }
+        }
+    .titleTopArtist {
+      margin-left: 20px;
+      color: $grey;
+    }
+    .listTopArtist {
+      width: 700px;
+      margin-left: 18px;
+      margin-top: 20px;
+      height: 50vh;
+      overflow: auto;
+      padding-bottom: 0;
+    }
   }
 }
+}
+}
+// }
