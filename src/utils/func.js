@@ -18,4 +18,3 @@
   export {secondsToMinutes,padTo2Digits}
 
 
-export { minuteToSeconds, shortDescription };

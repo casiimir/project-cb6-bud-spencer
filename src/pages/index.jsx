@@ -127,4 +127,4 @@ export async function getStaticProps() {
   const genreData = await resGenre.json();
 
   return { props: { artistData, trackData, albumData, genreData } };
-
+}
