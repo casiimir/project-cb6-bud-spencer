@@ -7,7 +7,10 @@ import { TbPlayerPlayFilled } from "react-icons/tb";
 import { BiHeart } from "react-icons/bi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { RxShare2 } from "react-icons/rx";
+import React, { useState, useRef, useEffect } from "react";
+import ReactAudioPlayer from "react-audio-player";
 
+// import globalsong from "../../../public/globalimages/traccia.mp3";
 import globalimages from "../../../public/globalimages/cielostellato.jpeg";
 import {
   ImLoop2,
@@ -58,7 +61,7 @@ const TrackPage = () => {
           alt={"album"}
           className={styles.imagealbum}
         />
-      </div>
+      </div>{" "}
       <div className={styles.sidebarcontainer}>
         <Sidebar />
       </div>
@@ -102,7 +105,14 @@ const TrackPage = () => {
         perferendis beatae reprehenderit velit consequatur vero assumenda
         maiores eum error voluptatibus?
       </div> */}
-      <div className={styles.containerfordesktoponly}></div>
+      <div className={styles.containerfordesktoponly}></div>{" "}
+      <div className={styles.staticplayer}>
+        <ReactAudioPlayer
+          src="https://cdns-preview-c.dzcdn.net/stream/c-c7f32280916bc10e989ca5f4ed3b8afb-7.mp3"
+          autoPlay
+          controls
+        />
+      </div>
     </div>
   );
 };
