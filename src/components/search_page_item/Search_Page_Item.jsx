@@ -4,15 +4,19 @@ import styles from "./index.module.scss";
 
 const Search_Page_Item = ({ item }) => {
   return (
-    <div className={styles.Search_Page_Item}>
+    <div className={styles.container}>
       <Image
         src={item.album.cover_medium}
-        width={200}
-        height={200}
+        width={120}
+        height={120}
         alt={item.album.title}
       />
-      <p className={styles.name_artist}>{item.artist.name}</p>
-      <p className={styles.title_album}>{shortDescription(item.album.title)}</p>
+      <div className={styles.text}>
+        <h4 className={styles.name_artist}>{item.artist.name}</h4>
+        <p className={styles.title_album}>
+          {shortDescription(item.album.title)}
+        </p>
+      </div>
     </div>
   );
 };

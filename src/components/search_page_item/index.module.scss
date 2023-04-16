@@ -1,17 +1,30 @@
-.Search_Page_Item {
-  cursor: pointer;
-  box-shadow: 0px 0px 6px $primary-color;
-  border-radius: 10px;
-  max-width: 250px;
-  max-height: 350px;
+.container {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  padding: 20px;
+  gap: 10px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+
   img {
-    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 50%;
   }
-  .name_artist {
-    font-weight: bold;
+  .text {
+    max-width: 200px;
+    margin: auto;
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex: 0 0 auto;
   }
 }
