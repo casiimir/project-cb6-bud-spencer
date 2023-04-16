@@ -4,6 +4,7 @@
   justify-content: center;
   gap: 20px;
   padding: 10px;
+
   .info_artist {
     display: flex;
     align-items: center;
@@ -14,12 +15,11 @@
       border-radius: 50%;
     }
   }
-  .name_artist {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  .name_artist_desktop {
     text-transform: uppercase;
+  }
+  .name_artist {
+    display: none;
   }
 }
 
@@ -28,9 +28,13 @@
     padding: 30px;
     display: flex;
     align-items: center;
-
+    .name_artist_desktop {
+      display: none;
+    }
     .name_artist {
-      filter: drop-shadow(0px 0px 8px $primary-color);
+      text-transform: uppercase;
+      display: block;
+      filter: drop-shadow(0px 0px 5px $primary-color);
       margin: auto;
       font-size: 50px;
     }
