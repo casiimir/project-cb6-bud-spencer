@@ -12,66 +12,64 @@
         gap: 20px;
         padding: 20px;
 
-        .listTopArtist {
-          display: flex;
-          gap: 30px;
-        }
-      }
-      .mainListGenre {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        padding: 20px;
-        .listGenre {
-          display: flex;
-          flex-direction: row;
-          gap: 10px;
-          overflow: auto;
-        }
-      }
-      .title {
-        display: none;
-        flex-direction: row;
-        justify-content: space-between;
-        .seeAll {
-          color: rgb(48, 48, 215);
-          text-decoration: underline;
-          font-size: 15px;
-          cursor: pointer;
-        }
-      }
-      .titleTrending {
-        margin-left: 20px;
-        color: $white;
-      }
-      .listTrack {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        margin-left: 0;
-        flex-grow: 1;
-        overflow-y: auto;
-        padding-bottom: 80px;
-        cursor: pointer;
-        &::-webkit-scrollbar {
-          height: 8px;
-          width: 4px;
-        }
-        &::-webkit-scrollbar-track {
-          background: transparent;
-          border-radius: 10px;
-        }
-        &::-webkit-scrollbar-thumb {
-          border-radius: 10px;
-          background-color: transparent;
-        }
-      }
-    }
-    .rightSide {
-      display: none;
+   .titleTopArtist {
+    margin-left: 20px;
+    color: white
+  }
+ .listTopArtist{
+   display: flex;
+   gap:30px;
+   
+
+ }
+ 
+  }
+  .mainListGenre{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    padding:20px;
+  .listGenre{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    overflow: auto;
+    
+  }
+}
+  .title{
+    display:flex;
+    padding-bottom:20px;
+    flex-direction: row;
+    justify-content: space-between;
+    .seeAll{
+      color: rgb(48, 48, 215);
+      text-decoration: underline;
+      font-size: 15px;
+      cursor: pointer;
     }
   }
+  .titleTrending {
+    margin-left: 20px;
+    color: $white;
+    
+  }
+  .listTrack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 97vw;
+    margin-left: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    cursor: pointer;
+  }
+}
+.rightSide{
+display:none
+}
+}
 }
 @media screen and (min-width: 1000px) {
   .mainContainer {

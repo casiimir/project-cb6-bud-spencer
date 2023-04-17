@@ -48,7 +48,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
             <div className={styles.leftSide} > 
             <Hero /> 
             <section className={styles.artistListMobile} >
-            <h2 className={styles.titleTrendingMobile}>Trending right now</h2>
+            <h3 className={styles.titleTopArtist}>Top Artist</h3>
             <div className={styles.listTopArtist}>
               {artistData?.data.map((data, i) => (
                 <Home_Page_ArtistItem key={i} data={data} />

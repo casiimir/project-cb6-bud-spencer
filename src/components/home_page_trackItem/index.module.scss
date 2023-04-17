@@ -4,38 +4,34 @@
 
   justify-content: space-between;
   gap: 20px;
-  padding: 15px;
-  border-radius: 10px;;
+  border-radius: 10px;
 
-  &:hover{
-    background-color: lightgrey;
+  &:hover {
+    background-color: rgba(128, 126, 126, 0.511);
     cursor: pointer;
   }
-
 
   .mainContent {
     display: flex;
     align-items: center;
     gap: 20px;
     width: 100%;
-    &:hover{
-      .indice{
+    &:hover {
+      .index {
         display: none;
       }
-      .playIcon{
+      .playIcon {
         display: block;
         font-size: 40px;
         color: rgb(0, 48, 114);
       }
-
     }
-    .indice{
+    .index {
       color: gray;
-      display:none;
+      display: block;
     }
-    .playIcon{
+    .playIcon {
       display: none;
-     
     }
     img {
       border-radius: 30%;
@@ -60,99 +56,76 @@
     }
   }
 
- 
   .info {
     
-    .followers{
+    .followers {
       display: none;
-    
     }
-    .duration{
+    .duration {
       display: none;
-    
     }
-    .reactionsIcons{
-      .heart{ 
+    .reactionsIcons {
+      display:flex;
+      .heart {
+        display: block;
         font-size: 22px;
-        
-  
       }
-  
-      .dots{ 
+
+      .dots {
         font-size: 22px;
         display: none;
       }
-  
+    }
   }
-
- 
 }
-
-}
-
 
 @media screen and (min-width: 1000px) {
   .TrackItem {
-    
-  
     .mainContent {
-      .indice{
-        display:block;
+      .index {
+        display: block;
       }
-      
+
       .contentTitle {
         .title {
-        
         }
         .contentArtist {
-        
           .icon {
-            
           }
           .artist {
-            
           }
         }
       }
     }
-  
-   
+
     .info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    font-size: 12px;
-   
-    .followers{
-      display: block;
-      color:gray;
-    }
-    
-    .duration{
-      display: block;
-    
-    }
-.reactionsIcons{
-  display: flex;
-  flex-direction: row;
-  gap:10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      font-size: 12px;
 
-    .heart{ 
-     
-      
+      .followers {
+        display: block;
+        color: gray;
+      }
 
-    }
+      .duration {
+        display: block;
+      }
+      .reactionsIcons {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
 
-    .dots{ 
-      display:block;
-      font-size: 22px;
-    }
+        .heart {
+        }
+
+        .dots {
+          display: block;
+          font-size: 22px;
+        }
+      }
     }
   }
-
-    
-  }
-  }
-  
-
+}
