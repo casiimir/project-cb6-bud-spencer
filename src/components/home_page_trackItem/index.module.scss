@@ -1,14 +1,15 @@
 .TrackItem {
   display: flex;
   align-items: center;
-
   justify-content: space-between;
   gap: 20px;
   border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
 
   &:hover {
-    background-color: rgba(128, 126, 126, 0.511);
-    cursor: pointer;
+    background-color: rgba(128, 126, 126, 0.2);
   }
 
   .mainContent {
@@ -57,7 +58,6 @@
   }
 
   .info {
-    
     .followers {
       display: none;
     }
@@ -65,7 +65,7 @@
       display: none;
     }
     .reactionsIcons {
-      display:flex;
+      display: flex;
       .heart {
         display: block;
         font-size: 22px;
