@@ -1,12 +1,13 @@
-import styles from "./index.module.scss";
+import styles from "./styles.module.scss";
 import Image from "next/image";
-import Sidebar from "../sidebar";
 import { TbPlayerSkipForward } from "react-icons/tb";
 import { TbPlayerSkipBack } from "react-icons/tb";
+import { BsFillPlayCircleFill, BsFillPauseCircleFill } from "react-icons/bs";
 import { TbPlayerPlayFilled } from "react-icons/tb";
 import { BiHeart } from "react-icons/bi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { RxShare2 } from "react-icons/rx";
+import Sidebar from  "../../components/sidebar/Sidebar"
 import React, { useState, useRef, useEffect } from "react";
 // import ReactAudioPlayer from "react-audio-player";
 
@@ -21,7 +22,32 @@ import {
   ImShare2,
 } from "react-icons/im";
 
-const TrackPage = () => {
+export default function TrackPage ({trackData}){
+  
+const [currentTrack, setCurrentTrack] = useState(null);
+const [isPlaying, setIsPlaying] = useState(false);
+
+const playTrack = (trackUrl) => {
+  if (currentTrack) {
+    if (currentTrack.paused) {
+      currentTrack.play();
+      setIsPlaying(true);
+    } else {
+      currentTrack.pause();
+      setIsPlaying(false);
+    }
+  } else {
+    const audio = new Audio(trackUrl);
+    audio.onended = () => {
+      setIsPlaying(false);
+      setCurrentTrack(null);
+    };
+    audio.play();
+    setCurrentTrack(audio);
+    setIsPlaying(true);
+  }
+};
+
   return (
     <div
       className={styles.Container}
@@ -54,7 +80,7 @@ const TrackPage = () => {
         />
         <Image
           src={
-            "https://e-cdns-images.dzcdn.net/images/cover/2e018122cb56986277102d2041a592c8/500x500-000000-80-0-0.jpg"
+            trackData.artist.picture_medium
           }
           width={220}
           height={220}
@@ -66,15 +92,24 @@ const TrackPage = () => {
         <Sidebar />
       </div>
       <div className={styles.artistsong}>
-        <h1>artista</h1>
-        <h3>canzone</h3>
+        <h1>{trackData.artist.name}</h1>
+        <h3>{trackData.title_short}</h3>
       </div>
       <div className={styles.commands}>
         <TbPlayerSkipBack size="1.5em" />
-        <button className={styles.button}>
-          <TbPlayerPlayFilled className={styles.play} size="3em" />
-        </button>
-
+        {/* <button className={styles.button}>
+          <TbPlayerPlayFilled className={styles.play} size="3em"  />
+        </button> */}
+          <button
+              className={styles.playButton}
+             onClick={() => playTrack(trackData.preview)}
+              >
+                 {isPlaying ? (
+                  <BsFillPauseCircleFill size={30} />
+                  ) : (
+                    <BsFillPlayCircleFill size={30} />
+                  )}
+          </button>
         <TbPlayerSkipForward size="1.5em" />
       </div>
       <div className={styles.desktop}>
@@ -117,4 +152,16 @@ const TrackPage = () => {
   );
 };
 
-export default TrackPage;
+
+export async function getServerSideProps(context) {
+    const resTrack = await fetch(
+      `https://api.deezer.com/track/${context.query.track_id}`
+    );
+    const trackData = await resTrack.json();
+
+    return {
+      props: {
+        trackData,
+      },
+    };
+  }

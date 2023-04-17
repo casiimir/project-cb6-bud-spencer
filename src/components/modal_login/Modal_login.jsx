@@ -2,6 +2,7 @@ import { useState } from "react";
 import references from "@/utils/references"
 import Image from "next/image";
 import styles from "./index.module.scss";
+import logo from "../../../public/logo/budz.png"
 
 const Modal_login = ({setModalIsVisibility, onHandleUsername, 
   onHandlePassword, userName, password}) => {
@@ -30,14 +31,13 @@ const Modal_login = ({setModalIsVisibility, onHandleUsername,
         <p className={styles.info1}>Iscriviti per ricevere brani e podcast illimitati. Non è necessaria alcuna carta di credito.
         </p>
       <div className={styles.containerLogin}>
-        {/* <Image
-          src={"/logo.png"}
-          alt="logo.png"
-          width={300}
-          height={300}
+        <Image
+          src={logo}
+          alt={"logo.png"}
+          width={30}
+          height={30}
           className={styles.logo}
-        /> */}
-        <h1>BUDZ</h1>
+        />
         <form onSubmit={onHandleSubmit}>
           <input
             type="text"

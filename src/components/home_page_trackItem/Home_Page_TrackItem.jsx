@@ -1,13 +1,19 @@
 import styles from "./index.module.scss";
 import {BiUser,BiHeart, BiDotsHorizontalRounded,BiPlay} from "react-icons/bi";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import {secondsToMinutes,padTo2Digits} from "@/utils/func"
 
 const Home_Page_TrackItem = ({data, trackIndex}) => {
+  
+  const router = useRouter();
+  
+  const goToTrackPage = () => {
+    router.push(`/track_page/${data.id}`);
+  };
 
-  return (
-    
-    <div className={styles.TrackItem}>
+  return ( 
+    <div className={styles.TrackItem} onClick={() => goToTrackPage()}>
       <div className={styles.mainContent}>
       <p className={styles.index}>{data?.position?padTo2Digits(data?.position):padTo2Digits(trackIndex+1)}</p>
       <BiPlay className={styles.playIcon}/>
