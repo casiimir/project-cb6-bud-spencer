@@ -81,17 +81,17 @@ export default function ArtistPage({
             <div className={styles.box_container}>
               <h2>Top songs </h2>
               {trackData.data.length > 0 && (
-                <div className={styles.buttons}>
+                <>
                   <BiChevronLeft
-                    className={styles.btn_scroll}
+                    className={styles.btn_scroll_left}
                     onClick={() => back(artistRef, "artist")}
                   />
 
                   <BiChevronRight
-                    className={styles.btn_scroll}
+                    className={styles.btn_scroll_right}
                     onClick={() => forward(artistRef, "artist")}
                   />
-                </div>
+                </>
               )}
             </div>
             <div className={styles.albumitem} ref={artistRef}>
@@ -103,17 +103,17 @@ export default function ArtistPage({
             <div className={styles.box_container}>
               <h2>Top albums </h2>
               {albumData.data.length > 0 && (
-                <div className={styles.buttons}>
+                <>
                   <BiChevronLeft
-                    className={styles.btn_scroll}
+                    className={styles.btn_scroll_left}
                     onClick={() => back(albumRef, "album")}
                   />
 
                   <BiChevronRight
-                    className={styles.btn_scroll}
+                    className={styles.btn_scroll_right}
                     onClick={() => forward(albumRef, "album")}
                   />
-                </div>
+                </>
               )}
             </div>
             <div className={styles.albumitem} ref={albumRef}>
@@ -125,17 +125,17 @@ export default function ArtistPage({
             <div className={styles.box_container}>
               <h2>Related Artists </h2>
               {relatedData.data.length > 0 && (
-                <div className={styles.buttons}>
+                <>
                   <BiChevronLeft
-                    className={styles.btn_scroll}
+                    className={styles.btn_scroll_left}
                     onClick={() => back(tracksRef, "track")}
                   />
 
                   <BiChevronRight
-                    className={styles.btn_scroll}
+                    className={styles.btn_scroll_right}
                     onClick={() => forward(tracksRef, "track")}
                   />
-                </div>
+                </>
               )}
             </div>
             <div className={styles.albumitem} ref={tracksRef}>

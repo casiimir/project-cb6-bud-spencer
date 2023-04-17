@@ -1,10 +1,18 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { BiUser, BiDotsHorizontalRounded, BiPlay } from "react-icons/bi";
 
 const Home_Page_AlbumItem = ({ data }) => {
+  console.log(data);
+  const router = useRouter();
+
+  const single_album = () => {
+    router.push(`/album_page/${data.id}`);
+  };
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={single_album}>
       <div className={styles.AlbumItem}>
         <Image
           className={styles.img}
@@ -21,10 +29,12 @@ const Home_Page_AlbumItem = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className={styles.playIcon}>
-        <BiPlay />
+      <div className={styles.icons_play}>
+        <div className={styles.playIcon}>
+          <BiPlay />
+        </div>
+        <BiDotsHorizontalRounded className={styles.dots} />
       </div>
-      <BiDotsHorizontalRounded className={styles.dots} />
     </div>
   );
 };

@@ -8,7 +8,6 @@ const Home_Page_ArtistItem = ({ data }) => {
 
   const single_artist = () => {
     router.push(`/artist_page/${data.id}`);
-    console.log(data);
   };
 
   return (
@@ -23,10 +22,12 @@ const Home_Page_ArtistItem = ({ data }) => {
         />
         <h4 className={styles.artistName}>{data?.name}</h4>
       </div>
-      <div className={styles.playIcon}>
-        <BiPlay />
+      <div className={styles.icons_play}>
+        <div className={styles.playIcon}>
+          <BiPlay />
+        </div>
+        <BiDotsHorizontalRounded className={styles.dots} />
       </div>
-      <BiDotsHorizontalRounded className={styles.dots} />
     </div>
   );
 };

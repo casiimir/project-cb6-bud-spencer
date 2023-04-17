@@ -6,70 +6,90 @@
   .container {
     gap: 20px;
     .leftSide {
+      padding-bottom: 80px;
       .artistListMobile {
         display: flex;
         flex-direction: column;
         gap: 20px;
         padding: 20px;
 
-   .titleTopArtist {
-    margin-left: 20px;
-    color: white
-  }
- .listTopArtist{
-   display: flex;
-   gap:30px;
-   
-
- }
- 
-  }
-  .mainListGenre{
-    display: flex;
-    flex-direction: row;
-    gap:10px;
-    padding:20px;
-  .listGenre{
-    display: flex;
-    flex-direction: row;
-    gap:10px;
-    overflow: auto;
-    
-  }
-}
-  .title{
-    display:flex;
-    padding-bottom:20px;
-    flex-direction: row;
-    justify-content: space-between;
-    .seeAll{
-      color: rgb(48, 48, 215);
-      text-decoration: underline;
-      font-size: 15px;
-      cursor: pointer;
+        .titleTopArtist {
+          color: white;
+        }
+        .listTopArtist {
+          display: flex;
+          width: 90vw;
+          overflow-x: auto;
+          &::-webkit-scrollbar {
+            height: 8px;
+            width: 4px;
+          }
+          &::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: transparent;
+          }
+        }
+      }
+      .mainListGenre {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        padding: 20px;
+        .listGenre {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          overflow: auto;
+        }
+      }
+      .title {
+        display: flex;
+        padding-bottom: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        .seeAll {
+          color: rgb(48, 48, 215);
+          text-decoration: underline;
+          font-size: 15px;
+          cursor: pointer;
+        }
+      }
+      .titleTrending {
+        margin-left: 20px;
+        color: $white;
+      }
+      .listTrack {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 97vw;
+        margin-left: 0;
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 20px;
+        cursor: pointer;
+        &::-webkit-scrollbar {
+          height: 8px;
+          width: 4px;
+        }
+        &::-webkit-scrollbar-track {
+          background: rgb(175, 166, 166);
+          border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background-color: grey;
+        }
+      }
+    }
+    .rightSide {
+      display: none;
     }
   }
-  .titleTrending {
-    margin-left: 20px;
-    color: $white;
-    
-  }
-  .listTrack {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 97vw;
-    margin-left: 0;
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 20px;
-    cursor: pointer;
-  }
-}
-.rightSide{
-display:none
-}
-}
 }
 @media screen and (min-width: 1000px) {
   .mainContainer {
@@ -93,6 +113,9 @@ display:none
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          .titleTopArtist {
+            margin-left: 20px;
+          }
           .seeAll {
             color: rgb(48, 48, 215);
             text-decoration: underline;
@@ -116,7 +139,7 @@ display:none
       .rightSide {
         display: flex;
         flex-direction: column;
-        gap: 60px;
+        gap: 40px;
         width: 30vw;
         // height: 100vh;
         // .listTopArtist{
@@ -145,6 +168,7 @@ display:none
           margin-left: 18px;
           margin-top: 20px;
           height: 40vh;
+          gap: 30px;
           overflow: auto;
           padding-bottom: 0;
           &::-webkit-scrollbar {
@@ -152,12 +176,12 @@ display:none
             width: 4px;
           }
           &::-webkit-scrollbar-track {
-            background: transparent;
+            background: rgb(175, 166, 166);
             border-radius: 10px;
           }
           &::-webkit-scrollbar-thumb {
             border-radius: 10px;
-            background-color: transparent;
+            background-color: grey;
           }
         }
       }
