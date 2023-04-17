@@ -1,0 +1,225 @@
+.Container {
+    background-color: #30333c54;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -3;
+  
+    .image {
+      position: absolute;
+      margin-top: 80px;
+      margin-left: 35px;
+      border-radius: 12px;
+    }
+  
+    .staticplayer {
+      position: absolute;
+      margin-top: 512px;
+      margin-left: 250px;
+    }
+  
+    .imagealbum {
+      position: absolute;
+      margin-top: 120px;
+      margin-left: 95px;
+    }
+  
+    .layeropaco {
+      img {
+        position: fixed;
+        top: 50px;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        left: 0;
+        height: 100vh;
+        opacity: 0.8;
+      }
+    }
+  
+    .artistsong {
+      position: absolute;
+      margin-top: 480px;
+      text-align: center;
+      margin-left: 150px;
+    }
+  
+    .commands {
+      position: absolute;
+      margin-top: 570px;
+      margin-left: 110px;
+      display: flex;
+      flex-direction: raw;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .button {
+      width: 100px;
+      height: 100px;
+  
+      border-radius: 50%;
+    }
+  
+    .barra {
+      position: absolute;
+      margin-top: 700px;
+      margin-left: 55px;
+      img {
+        width: 300px;
+        height: 30px;
+      }
+    }
+  
+    .text {
+      position: absolute;
+      margin-top: 740px;
+      text-align: center;
+      width: 300px;
+      margin-left: 55px;
+    }
+  
+    .sidebarcontainer {
+      display: none;
+    }
+    .desktop {
+      display: none;
+    }
+  
+    .containerfordesktoponly {
+      display: none;
+    }
+  
+    //   .randomimage {
+    //     position: absolute;
+    //     margin-top: 700px;
+    //     margin-left: 25px;
+    //     max-width: 10px;
+    //     max-height: 30px;
+    //   }
+  
+    @media screen and (min-width: 1000px) {
+      .sidebarcontainer {
+        display: block;
+        z-index: -1;
+      }
+  
+      .layeropaco {
+        display: none;
+      }
+  
+      .containerfordesktoponly {
+        display: block;
+  
+        position: absolute;
+        height: 120px;
+        width: 1300px;
+        border: 2px solid rgb(1, 1, 61);
+        margin-top: 580px;
+        margin-left: 178px;
+        border-radius: 20px;
+        background-color: #02014f;
+        color: #fff;
+        opacity: 0.5;
+        box-shadow: 0px 1px 2px 0px rgba(0, 255, 255, 0.7),
+          1px 2px 4px 0px rgba(0, 255, 255, 0.7),
+          2px 4px 8px 0px rgba(0, 255, 255, 0.7),
+          2px 4px 16px 0px rgba(0, 255, 255, 0.7);
+        //   background-color: ;
+      }
+  
+      .barra {
+        position: absolute;
+        margin-top: 615px;
+        margin-left: 800px;
+        z-index: 2;
+        color: #fff;
+        img {
+          width: 360px;
+          height: 50px;
+          border-radius: 12px;
+        }
+      }
+  
+      .text {
+        display: none;
+      }
+  
+      .desktop {
+        display: flex;
+        position: absolute;
+        margin-top: 625px;
+        margin-left: 600px;
+        gap: 20px;
+        z-index: 2;
+      }
+  
+      .iconhearthdesktop {
+        color: rgb(255, 255, 255);
+      }
+  
+      .iconasharedesktop {
+        color: rgb(255, 255, 255);
+      }
+  
+      .button {
+        height: 80px;
+        width: 80px;
+  
+        box-shadow: 0px 1px 2px 0px rgba(0, 255, 255, 0.7),
+          1px 2px 4px 0px rgba(0, 255, 255, 0.7),
+          2px 4px 8px 0px rgba(0, 255, 255, 0.7),
+          2px 4px 16px 0px rgba(0, 255, 255, 0.7);
+      }
+  
+      .iconaplusdesktop {
+        color: rgb(255, 255, 255);
+  
+        // font-weight: 900;
+      }
+  
+      .image {
+        margin-top: 0;
+        height: 100vh;
+        width: 100%;
+        border-radius: 40px;
+        margin-left: 80px;
+      }
+      .imagealbum {
+        position: absolute;
+        margin-left: 600px;
+        margin-top: 100px;
+        height: 400px;
+        width: 400px;
+      }
+  
+      .commands {
+        position: absolute;
+        margin-left: 200px;
+        margin-top: 596px;
+  
+        z-index: 2;
+        color: #fff;
+      }
+  
+      .artistsong {
+        position: absolute;
+        margin-left: 420px;
+        margin-top: 610px;
+        z-index: 2;
+        color: #fff;
+      }
+  
+      .iconsfordesktopflexend {
+        position: absolute;
+        display: flex;
+        margin-left: 685px;
+        gap: 20px;
+        color: #fff;
+        z-index: 2;
+      }
+    }
+  }
+  

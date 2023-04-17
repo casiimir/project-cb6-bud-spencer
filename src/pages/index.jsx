@@ -16,7 +16,8 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home({ artistData, trackData, albumData, genreData }) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-
+  const [isLoading, setIsLoading] = useState(true);
+ 
   const onHandleUsername = (e) => {
     setUserName(e.target.value);
   };
@@ -67,11 +68,11 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                     <h3 className={styles.titleTrending}>Trending right now</h3>
                     <p className={styles.seeAll}>See All</p>
                   </div>
-                  <div className={styles.listTrack}>
+                  {!artistData? <p>ciao</p> : <div className={styles.listTrack}>
                     {trackData?.tracks.data.map((data, i) => (
                       <Home_Page_TrackItem key={i} data={data} />
                     ))}
-                  </div>
+                  </div>}
                 </section>
               </div>
               <div className={styles.rightSide}>
@@ -116,6 +117,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
   );
 }
 export async function getStaticProps() {
+
   const resArtist = await fetch("https://api.deezer.com/chart/0/artists");
   const resTracks = await fetch("https://api.deezer.com/chart");
   const resAlbum = await fetch("https://api.deezer.com/chart/0/albums");
@@ -125,6 +127,8 @@ export async function getStaticProps() {
   const trackData = await resTracks.json();
   const albumData = await resAlbum.json();
   const genreData = await resGenre.json();
+  
+  
 
   return { props: { artistData, trackData, albumData, genreData } };
 }
