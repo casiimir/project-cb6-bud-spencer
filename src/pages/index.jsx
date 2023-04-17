@@ -17,19 +17,8 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home({ artistData, trackData, albumData, genreData }) {
 
 
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  
 
-  const onHandleUsername = (e) => {
-    setUserName(e.target.value);
-  };
-
-  const onHandlePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const [modalIsVisibile, setModalIsVisibility] = useState(false);
+  const [modalIsVisibile, setmodalvisibility] = useState(true);
 
   return (
     <>
@@ -41,7 +30,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
       </Head>
 
       <main className={styles.main}>
-        <MainLayout setModalIsVisibility={setModalIsVisibility}>
+        <MainLayout >
           <div className={styles.mainContainer}>
             <Navbar title={"Home"} />  
             <div className={styles.container} >
@@ -105,11 +94,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
         
           {modalIsVisibile && (
               <Modal_login 
-              setModalIsVisibility={setModalIsVisibility}
-              onHandleUsername={onHandleUsername}
-              onHandlePassword={onHandlePassword}
-              userName={userName}
-              password={password}
+              setmodalvisibility={setmodalvisibility}
               />)} 
       </main>
     </>

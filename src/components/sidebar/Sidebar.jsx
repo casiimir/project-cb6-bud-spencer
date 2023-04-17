@@ -8,17 +8,10 @@ import {
   BiShuffle,
   BiStar,
 } from "react-icons/bi";
+import Link from "next/link";
 import styles from "./index.module.scss";
 
-const Sidebar = ({setModalIsVisibility}) => {
-
-  const onHandleClick = () => {
-    setModalIsVisibility(true)
-  }
-    
-  
-  
-
+const Sidebar = () => {
 
   return (
     <div className={styles.Sidebar}>
@@ -30,9 +23,13 @@ const Sidebar = ({setModalIsVisibility}) => {
         <BiFolder className={styles.icon_desktop} />
         <BiSearch className={styles.icon_search} />
         <BiMusic className={styles.icon} />
-        <BiUser onClick={onHandleClick} setModalIsVisibility={setModalIsVisibility} className={styles.icon}  />
+        <Link href="/about_page">
+        <BiUser className={styles.icon}  />
+        </Link>
         <hr className={styles.hr} />
+        <Link href="/favorites_page">
         <BiHeart className={styles.icon_desktop} />
+        </Link>
         <BiShuffle className={styles.icon_desktop} />
         <BiStar className={styles.icon_desktop} />
       </div>

@@ -1,7 +1,9 @@
-import styles from "./index.module.scss";
+
 import {BiUser,BiHeart, BiDotsHorizontalRounded,BiPlay} from "react-icons/bi";
 import Image from "next/image";
 import {secondsToMinutes,padTo2Digits} from "@/utils/func"
+import styles from "./index.module.scss";
+
 
 const Home_Page_TrackItem = ({ data }) => {
 
@@ -25,7 +27,9 @@ const Home_Page_TrackItem = ({ data }) => {
       <p className={styles.duration}>{secondsToMinutes(data.duration)}</p>
       <p className={styles.followers}>{data.rank}</p>
       <div className={styles.reactionsIcons}>
+  
       <BiHeart className={styles.heart} />
+     
       <BiDotsHorizontalRounded className={styles.dots}/>
       </div>
       
