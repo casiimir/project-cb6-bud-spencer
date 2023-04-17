@@ -3,14 +3,14 @@
   display: flex;
   flex-direction: column;
 
-  .container{
-    gap:20px;
-.leftSide{
-  .artistListMobile{
-    display:flex;
-   flex-direction: column;
-   gap:20px;
-   padding:20px;
+  .container {
+    gap: 20px;
+    .leftSide {
+      .artistListMobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
 
    .titleTopArtist {
     margin-left: 20px;
@@ -76,76 +76,92 @@ display:none
     padding: 0 20px;
     // display: flex;
     // flex-direction: column;
-  .container{
+    .container {
       padding: 0;
       display: flex;
       flex-direction: row;
-    .leftSide{
-      .artistListMobile{
-    display:none;
-      }
-
-      .mainListGenre{
-        display:none;
-      }
-      .title{
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
-        .seeAll{
-          color: rgb(48, 48, 215);
-          text-decoration: underline;
-          font-size: 15px;
-          cursor: pointer;
+      .leftSide {
+        width: 60vw;
+        .artistListMobile {
+          display: none;
         }
-      }
-    .titleTrending {
-      margin-left: 20px;
-      color: $grey;
-    }
-    .listTrack {
-      width: 700px;
-      margin-left: 18px;
-      margin-top: 20px;
-      height: 50vh;
-      overflow: auto;
-      padding-bottom: 0;
-    }
-    }
-    .rightSide{    
-      display:flex;
-      flex-direction: column;
-      gap:60px;
-      // height: 100vh;
-      // .listTopArtist{
-        // height: 100%;
-        // overflow: auto;
 
-        .title{
-          display:flex;
+        .mainListGenre {
+          display: none;
+        }
+        .title {
+          display: flex;
           flex-direction: row;
           justify-content: space-between;
-          .seeAll{
+          .seeAll {
             color: rgb(48, 48, 215);
             text-decoration: underline;
             font-size: 15px;
             cursor: pointer;
           }
         }
-    .titleTopArtist {
-      margin-left: 20px;
-      color: $grey;
-    }
-    .listTopArtist {
-      width: 700px;
-      margin-left: 18px;
-      margin-top: 20px;
-      height: 50vh;
-      overflow: auto;
-      padding-bottom: 0;
+        .titleTrending {
+          margin-left: 20px;
+          color: $grey;
+        }
+        .listTrack {
+          width: 100%;
+          margin-left: 18px;
+          margin-top: 20px;
+          height: 50vh;
+          overflow: auto;
+          padding-bottom: 0;
+        }
+      }
+      .rightSide {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        width: 30vw;
+        // height: 100vh;
+        // .listTopArtist{
+        // height: 100%;
+        // overflow: auto;
+
+        .title {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .titleTopAlbum {
+            margin-left: 20px;
+          }
+          .seeAll {
+            color: rgb(48, 48, 215);
+            text-decoration: underline;
+            font-size: 15px;
+            cursor: pointer;
+          }
+        }
+        .titleTopArtist {
+          margin-left: 20px;
+          color: $grey;
+        }
+        .listTopArtist {
+          margin-left: 18px;
+          margin-top: 20px;
+          height: 40vh;
+          overflow: auto;
+          padding-bottom: 0;
+          &::-webkit-scrollbar {
+            height: 8px;
+            width: 4px;
+          }
+          &::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: transparent;
+          }
+        }
+      }
     }
   }
-}
-}
 }
 // }

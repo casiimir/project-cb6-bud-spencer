@@ -1,0 +1,50 @@
+.Tendina_Menu {
+  position: absolute;
+  top: 80px;
+  left: -1000px;
+  border-top: 3px solid $primary-color;
+  border-radius: 6px;
+  width: 180px;
+  height: 400px;
+
+  padding: 20px;
+  background-color: $grey;
+  color: $off_white;
+  transition: all 0.5s;
+  z-index: 2;
+
+  .content {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        font-size: 14px;
+      }
+
+      .icon {
+        cursor: pointer;
+        font-size: 30px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px $primary-color;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+.show {
+  left: 10px;
+}
+
+@media screen and (min-width: 1000px) {
+  .Tendina_Menu {
+    display: none;
+  }
+}
