@@ -55,19 +55,21 @@
     gap: 1rem;
     padding: 2rem;
 
-    h1{
+    .logo{
+      border:2px solid red;
       position: absolute;
       transform: translate(100%, -80%);
-      top: -170%;
-      left: -170%;
+      top: -150px;
+      left: -320px;
+      width: 235px;
+      height: 80px;
       font-style: normal;
-      font-weight: 700;
-      font-size: 28px;
       line-height: 39px;
       text-align: center;
       letter-spacing: 0.1em;
       color: #009ee2;
     }
+
     form{
       display: flex;
       flex-direction: column;
