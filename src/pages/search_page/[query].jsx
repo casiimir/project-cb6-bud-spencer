@@ -3,37 +3,162 @@ import Navbar from "@/components/navbar";
 import Search_Page_Item from "@/components/search_page_item";
 import styles from "./styles.module.scss";
 import { useRouter } from "next/router";
+import { useRef } from "react";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
-export default function Search_page({ data }) {
-  console.log(data);
+export default function Search_page({ artistData, albumData, trackData }) {
+  const artistRef = useRef(null);
+  const albumRef = useRef(null);
+  const tracksRef = useRef(null);
   const router = useRouter();
+
+  let scrollArtist = 0;
+  let scrollAlbum = 0;
+  let scrollTracks = 0;
+
+  const forward = (refDiv, scrollItem) => {
+    switch (scrollItem) {
+      case "artist":
+        if (scrollArtist < refDiv.current.scrollWidth) {
+          scrollArtist += 400;
+          refDiv.current.scrollLeft = scrollArtist;
+        }
+        break;
+      case "album":
+        if (scrollAlbum < refDiv.current.scrollWidth) {
+          scrollAlbum += 400;
+          refDiv.current.scrollLeft = scrollAlbum;
+        }
+        break;
+      case "track":
+        if (scrollTracks < refDiv.current.scrollWidth) {
+          scrollTracks += 400;
+          refDiv.current.scrollLeft = scrollTracks;
+        }
+        break;
+    }
+  };
+
+  const back = (refDiv, scrollItem) => {
+    switch (scrollItem) {
+      case "artist":
+        if (scrollArtist > 0) {
+          scrollArtist -= 400;
+          refDiv.current.scrollLeft = scrollArtist;
+        }
+        break;
+      case "album":
+        if (scrollAlbum > 0) {
+          scrollAlbum -= 400;
+          refDiv.current.scrollLeft = scrollAlbum;
+        }
+        break;
+      case "track":
+        if (scrollTracks > 0) {
+          scrollTracks -= 400;
+          refDiv.current.scrollLeft = scrollTracks;
+        }
+        break;
+    }
+  };
 
   return (
     <MainLayout>
       <Navbar title={"Budz"} />
+      <div className={styles.content_category_page}>
+        <div className={styles.box_container}>
+          <h2>{`Results for '${router.query.query}' in Artists:`}</h2>
+          {artistData.length > 0 && (
+            <div className={styles.buttons}>
+              <BiChevronLeft
+                className={styles.btn_scroll}
+                onClick={() => back(artistRef, "artist")}
+              />
 
-      <p
-        className={styles.text}
-      >{`I risultati della tua ricerca '${router.query.query}'`}</p>
-      <div className={styles.content_search}>
-        {data.length === 0 && <h4>Nessun risultato</h4>}
-        {data.map((item, i) => (
-          <Search_Page_Item item={item} key={i} />
-        ))}
+              <BiChevronRight
+                className={styles.btn_scroll}
+                onClick={() => forward(artistRef, "artist")}
+              />
+            </div>
+          )}
+          <div className={styles.albumitem} ref={artistRef}>
+            {artistData.length === 0 && <h4>No results</h4>}
+
+            {artistData.map((item, i) => (
+              <Search_Page_Item item={item} key={i} />
+            ))}
+          </div>
+        </div>
+        <div className={styles.box_container}>
+          <h2>{`Results for '${router.query.query}' in Albums:`}</h2>
+          {albumData.length > 0 && (
+            <div className={styles.buttons}>
+              <BiChevronLeft
+                className={styles.btn_scroll}
+                onClick={() => back(albumRef, "album")}
+              />
+
+              <BiChevronRight
+                className={styles.btn_scroll}
+                onClick={() => forward(albumRef, "album")}
+              />
+            </div>
+          )}
+          <div className={styles.albumitem} ref={albumRef}>
+            {albumData.length === 0 && <h4>No results</h4>}
+
+            {albumData.map((item, i) => (
+              <Search_Page_Item item={item} key={i} />
+            ))}
+          </div>
+        </div>
+        <div className={styles.box_container}>
+          <h2>{`Results for '${router.query.query}' in Tracks:`}</h2>
+          {trackData.length > 0 && (
+            <div className={styles.buttons}>
+              <BiChevronLeft
+                className={styles.btn_scroll}
+                onClick={() => back(tracksRef, "track")}
+              />
+
+              <BiChevronRight
+                className={styles.btn_scroll}
+                onClick={() => forward(tracksRef, "track")}
+              />
+            </div>
+          )}
+          <div className={styles.albumitem} ref={tracksRef}>
+            {trackData.length === 0 && <h4>No results</h4>}
+
+            {trackData.map((item, i) => (
+              <Search_Page_Item item={item} key={i} />
+            ))}
+          </div>
+        </div>
       </div>
     </MainLayout>
   );
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(
-    `https://api.deezer.com/search?q=${context.query.query}`
+  const resArtist = await fetch(
+    `https://api.deezer.com/search?q=artist:"${context.query.query}"`
   );
-  const data = await res.json();
+  const resAlbum = await fetch(
+    `https://api.deezer.com/search?q=album:"${context.query.query}"`
+  );
+  const resTrack = await fetch(
+    `https://api.deezer.com/search?q=track:"${context.query.query}"`
+  );
+  const artistData = await resArtist.json();
+  const albumData = await resAlbum.json();
+  const trackData = await resTrack.json();
 
   return {
     props: {
-      data: data.data,
+      artistData: artistData.data,
+      albumData: albumData.data,
+      trackData: trackData.data,
     },
   };
 }

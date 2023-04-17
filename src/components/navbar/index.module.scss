@@ -40,6 +40,7 @@
       border: none;
       border-radius: 10px;
       outline: none;
+      color: $white;
     }
   }
 }
@@ -72,6 +73,7 @@
         left: 42px;
       }
       input {
+        color: $grey;
         width: 300px;
         background-color: $off_white;
         box-shadow: 0px 0px 4px #0000001d;

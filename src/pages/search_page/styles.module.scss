@@ -1,18 +1,43 @@
-.text {
-  text-align: center;
-}
-.content_search {
+.content_category_page {
+  padding: 20px 20px 85px 20px;
+  margin-top: 20px;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   gap: 20px;
-  width: 90vw;
-  overflow: auto;
-  padding-bottom: 100px;
-
+  flex-grow: 1;
+  margin: auto;
+  .box_container {
+    position: relative;
+    margin-bottom: 20px;
+    h2 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+    .buttons {
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      width: 86vw;
+      margin-top: 60px;
+      z-index: 3;
+      .btn_scroll {
+        font-size: 40px;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px $primary-color;
+        background-color: $grey;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
   &::-webkit-scrollbar {
-    height: 8px;
+    height: 10px;
     width: 4px;
   }
   &::-webkit-scrollbar-track {
@@ -21,12 +46,51 @@
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #ffffff4f;
+    background-color: #7c7c7c42;
+  }
+
+  .albumitem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    height: 150px;
+    width: 100vw;
+    flex: 0 0 auto;
+    position: relative;
+    padding-right: 150px;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: transparent;
+    }
   }
 }
 
 @media screen and (min-width: 1000px) {
-  .content_search {
+  .content_category_page {
     padding: 20px;
+    width: 90vw;
+    margin: auto;
+    .box_container {
+      h2 {
+        margin-bottom: 10px;
+        font-size: 25px;
+      }
+      .buttons {
+        display: flex;
+      }
+    }
   }
 }
