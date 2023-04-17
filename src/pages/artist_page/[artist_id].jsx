@@ -80,57 +80,66 @@ export default function ArtistPage({
           <div className={styles.content_category_page}>
             <div className={styles.box_container}>
               <h2>Top songs </h2>
-              <div className={styles.buttons}>
-                <BiChevronLeft
-                  className={styles.btn_scroll}
-                  onClick={() => back(artistRef, "artist")}
-                />
+              {trackData.data.length > 0 && (
+                <div className={styles.buttons}>
+                  <BiChevronLeft
+                    className={styles.btn_scroll}
+                    onClick={() => back(artistRef, "artist")}
+                  />
 
-                <BiChevronRight
-                  className={styles.btn_scroll}
-                  onClick={() => forward(artistRef, "artist")}
-                />
-              </div>
+                  <BiChevronRight
+                    className={styles.btn_scroll}
+                    onClick={() => forward(artistRef, "artist")}
+                  />
+                </div>
+              )}
             </div>
             <div className={styles.albumitem} ref={artistRef}>
+              {trackData.data.length === 0 && <h4>No results</h4>}
               {trackData?.data.map((data, i) => (
                 <Artist_Page_TrackItem key={i} data={data} />
               ))}
             </div>
             <div className={styles.box_container}>
               <h2>Top albums </h2>
-              <div className={styles.buttons}>
-                <BiChevronLeft
-                  className={styles.btn_scroll}
-                  onClick={() => back(albumRef, "album")}
-                />
+              {albumData.data.length > 0 && (
+                <div className={styles.buttons}>
+                  <BiChevronLeft
+                    className={styles.btn_scroll}
+                    onClick={() => back(albumRef, "album")}
+                  />
 
-                <BiChevronRight
-                  className={styles.btn_scroll}
-                  onClick={() => forward(albumRef, "album")}
-                />
-              </div>
+                  <BiChevronRight
+                    className={styles.btn_scroll}
+                    onClick={() => forward(albumRef, "album")}
+                  />
+                </div>
+              )}
             </div>
             <div className={styles.albumitem} ref={albumRef}>
+              {albumData.data.length === 0 && <h4>No results</h4>}
               {albumData?.data.map((data, i) => (
                 <Artist_Page_AlbumItem key={i} data={data} />
               ))}
             </div>
             <div className={styles.box_container}>
               <h2>Related Artists </h2>
-              <div className={styles.buttons}>
-                <BiChevronLeft
-                  className={styles.btn_scroll}
-                  onClick={() => back(tracksRef, "track")}
-                />
+              {relatedData.data.length > 0 && (
+                <div className={styles.buttons}>
+                  <BiChevronLeft
+                    className={styles.btn_scroll}
+                    onClick={() => back(tracksRef, "track")}
+                  />
 
-                <BiChevronRight
-                  className={styles.btn_scroll}
-                  onClick={() => forward(tracksRef, "track")}
-                />
-              </div>
+                  <BiChevronRight
+                    className={styles.btn_scroll}
+                    onClick={() => forward(tracksRef, "track")}
+                  />
+                </div>
+              )}
             </div>
             <div className={styles.albumitem} ref={tracksRef}>
+              {relatedData.data.length === 0 && <h4>No results</h4>}
               {relatedData?.data.map((data, i) => (
                 <Artist_Page_RelatedItem key={i} data={data} />
               ))}

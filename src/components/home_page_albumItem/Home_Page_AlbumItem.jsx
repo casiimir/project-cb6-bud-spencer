@@ -1,7 +1,6 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
-import {BiUser, BiDotsHorizontalRounded,BiPlay} from "react-icons/bi";
-
+import { BiUser, BiDotsHorizontalRounded, BiPlay } from "react-icons/bi";
 
 const Home_Page_AlbumItem = ({ data }) => {
   return (
@@ -12,22 +11,21 @@ const Home_Page_AlbumItem = ({ data }) => {
           src={data?.cover_medium}
           width={80}
           height={80}
-          alt={data?.name}
+          alt={data?.title}
         />
         <div className={styles.text}>
-          <h4>{data?.title}</h4> 
+          <h4>{data?.title}</h4>
           <div className={styles.contentArtist}>
-        <BiUser className={styles.icon} />
-        <p className={styles.artist}>{data?.artist.name}</p>
-      </div>       
-            </div>
-
+            <BiUser className={styles.icon} />
+            <p className={styles.artist}>{data?.artist.name}</p>
+          </div>
+        </div>
       </div>
       <div className={styles.playIcon}>
-      <BiPlay/>
+        <BiPlay />
       </div>
-      <BiDotsHorizontalRounded className={styles.dots}/>
-       </div>
+      <BiDotsHorizontalRounded className={styles.dots} />
+    </div>
   );
 };
 
