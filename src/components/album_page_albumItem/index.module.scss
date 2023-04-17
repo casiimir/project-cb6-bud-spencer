@@ -1,0 +1,108 @@
+.container {
+  .upper_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    .img_album {
+      align-items: center;
+      gap: 10px;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+    .name_album {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-transform: uppercase;
+      filter: drop-shadow(0px 0px 8px $primary-color);
+      margin: auto;
+    }
+  }
+
+  .bottom_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 300px;
+    width: 100%;
+    padding:10px 30px;
+
+    .contributors_album {
+      display: flex;
+      flex-direction: row;
+      min-width: 300px;
+    }
+
+    .info_album {
+      display: none;
+    }
+    .artistName_mobile {
+      display: block;
+      filter: drop-shadow(0px 0px 8px $primary-color);
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    .upper_info {
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      .img_album {
+        align-items: center;
+        gap: 10px;
+        margin:0;
+        padding:0;
+
+        img {
+          border-radius: 50%;
+          margin:0;
+          padding:0;
+        }
+      }
+      .name_album {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-transform: uppercase;
+        filter: drop-shadow(0px 0px 8px $primary-color);
+        font-size: 50px;
+      }
+    }
+
+    .bottom_info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      .contributors_album {
+        display: flex;
+        flex-direction: row;
+        min-width: 300px;
+      
+      }
+      .artistName_mobile {
+        display: none;
+      }
+      .info_album {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        font-size: 15px;
+        gap: 10px;
+      }
+    }
+  }
+}

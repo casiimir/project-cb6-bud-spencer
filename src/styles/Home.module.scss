@@ -12,6 +12,10 @@
    gap:20px;
    padding:20px;
 
+   .titleTopArtist {
+    margin-left: 20px;
+    color: white
+  }
  .listTopArtist{
    display: flex;
    gap:30px;
@@ -34,7 +38,8 @@
   }
 }
   .title{
-    display:none;
+    display:flex;
+    padding-bottom:20px;
     flex-direction: row;
     justify-content: space-between;
     .seeAll{
@@ -47,16 +52,17 @@
   .titleTrending {
     margin-left: 20px;
     color: $white;
+    
   }
   .listTrack {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
+    width: 97vw;
     margin-left: 0;
     flex-grow: 1;
     overflow-y: auto;
-    padding-bottom: 80px;
+    padding: 20px;
     cursor: pointer;
   }
 }
