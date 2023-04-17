@@ -9,6 +9,7 @@ import {
   BiStar,
 } from "react-icons/bi";
 import styles from "./index.module.scss";
+import Link from "next/link"
 
 const Sidebar = ({setModalIsVisibility}) => {
 
@@ -33,7 +34,14 @@ const Sidebar = ({setModalIsVisibility}) => {
         <BiUser onClick={onHandleClick} setModalIsVisibility={setModalIsVisibility} className={styles.icon}  />
         <hr className={styles.hr} />
         <BiHeart className={styles.icon_desktop} />
-        <BiShuffle className={styles.icon_desktop} />
+
+        <Link href="/shuffle_page">
+  
+    <BiShuffle className={styles.icon_desktop} />
+  
+</Link>
+
+
         <BiStar className={styles.icon_desktop} />
       </div>
     </div>
