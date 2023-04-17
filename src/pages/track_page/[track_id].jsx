@@ -28,7 +28,7 @@ const [currentTrack, setCurrentTrack] = useState(null);
 const [isPlaying, setIsPlaying] = useState(false);
 
 const playTrack = (trackUrl) => {
-  if (currentTrack && currentTrack.src === trackUrl) {
+  if (currentTrack) {
     if (currentTrack.paused) {
       currentTrack.play();
       setIsPlaying(true);
@@ -37,10 +37,6 @@ const playTrack = (trackUrl) => {
       setIsPlaying(false);
     }
   } else {
-    if (currentTrack) {
-      currentTrack.pause();
-      setIsPlaying(false);
-    }
     const audio = new Audio(trackUrl);
     audio.onended = () => {
       setIsPlaying(false);
