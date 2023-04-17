@@ -7,9 +7,8 @@ const Hero = () => {
       <div className={styles.hero_content}>
         <div className={styles.content_img}>
           <Image
-            className={styles.img}
             src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg"
-            width={700}
+            width={100}
             height={250}
             alt="image-hero"
           />

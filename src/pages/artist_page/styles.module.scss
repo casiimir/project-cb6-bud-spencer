@@ -1,5 +1,6 @@
 .ArtistPage {
   color: $white;
+
   height: 100vh;
   z-index: -1;
   background-repeat: no-repeat;
@@ -30,6 +31,7 @@
         position: relative;
         margin-bottom: 20px;
         h2 {
+          filter: drop-shadow(6px 6px 6px #000);
           margin-bottom: 10px;
           font-size: 22px;
         }
