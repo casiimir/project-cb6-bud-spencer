@@ -10,6 +10,7 @@ const ErrorPage = () => {
     <div className={styles.ErrorPage}>
       <div className={styles.error}>
       <TbError404 className={styles.iconError} />
+      <div className={styles.contentLogo}>
       <Image
         src={logo}
         width={80}
@@ -17,6 +18,7 @@ const ErrorPage = () => {
         alt={"image_logo_404"}
         className={styles.logo}
       />
+      </div>
       </div>
       <div className={styles.infoError}>
       <p className={styles.titleError}>Ops... I did it again</p>

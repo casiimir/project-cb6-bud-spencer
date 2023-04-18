@@ -11,7 +11,7 @@ import {
 import styles from "./index.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../../public/logo/budz_cuffie.png";
+import logo from "../../../public/logo/cuffie.png";
 
 const Sidebar = ({ setModalIsVisibility }) => {
   const onHandleClick = () => {
@@ -21,8 +21,10 @@ const Sidebar = ({ setModalIsVisibility }) => {
   return (
     <div className={styles.Sidebar}>
       <div className={styles.icons_sidebar}>
+        <div className={styles.containerLogo}>
         <div className={styles.logo}>
-          <Image src={logo} height={60} width={60} alt={"logo"} />
+          <Image src={logo} height={40} width={45} alt={"logo"} />
+        </div>
         </div>
         <Link href="/">
           <BiHomeAlt className={styles.icon} />
