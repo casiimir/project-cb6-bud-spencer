@@ -27,9 +27,9 @@ const Sidebar = () => {
     <div className={styles.Sidebar}>
       <div className={styles.icons_sidebar}>
         <div className={styles.containerLogo}>
-        <div className={styles.logo}>
-          <Image src={logo} height={40} width={45} alt={"logo"} />
-        </div>
+          <div className={styles.logo}>
+            <Image src={logo} height={40} width={45} alt={"logo"} />
+          </div>
         </div>
         <Link href="/">
           <BiHomeAlt className={styles.icon} />

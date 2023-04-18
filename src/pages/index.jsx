@@ -33,7 +33,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
       <main className={styles.main}>
         <MainLayout>
           <div className={styles.mainContainer}>
-            <Navbar title={"Dudz"} />
+            <Navbar title={"Budz"} />
             <div className={styles.container}>
               <div className={styles.leftSide}>
                 <Hero genreData={genreData} />

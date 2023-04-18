@@ -24,6 +24,6 @@ export const sliderArray = [
   {
     id: 5,
     image: "https://i.ytimg.com/vi/qP-f-s7odLE/maxresdefault.jpg",
-    title: "Bambini",
+    title: "Kids",
   },
 ];
