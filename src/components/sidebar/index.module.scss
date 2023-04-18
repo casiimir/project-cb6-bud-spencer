@@ -13,10 +13,16 @@
     justify-content: space-around;
     height: 60px;
     border-radius: 18px;
-    .logo {
-      display: none;
-    }
+
+    // .containerLogo{
+    //   display: none;
+    //   .logo{
+    //     display: none;
+    //   }
+    // }
+    
     .icon_search {
+      
       font-size: 20px;
       color: rgba(251, 251, 251, 0.479);
       cursor: pointer;
@@ -45,6 +51,7 @@
 
 @media screen and (min-width: 1000px) {
   .Sidebar {
+    
     position: relative;
     padding: 0;
     width: 120px;
@@ -59,9 +66,26 @@
       justify-content: space-between;
       padding-bottom: 20px;
       background-color: transparent;
-      .logo {
-        margin-top: 30px;
-        display: block;
+
+      .containerLogo{
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        background: rgba(251, 251, 251, 0.896);
+        box-shadow: 0px 4px 5px 1px #000000;
+        border-radius: 100%;
+        width: 60px;
+        height: 60px;
+  
+        .logo {
+          
+          position: fixed;
+          top:-3px;
+          left: 20%;
+          margin-top: 30px;
+          display: block;
+          filter:drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
       }
       .icon_search {
         display: none;

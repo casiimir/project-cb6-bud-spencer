@@ -1,10 +1,16 @@
 import { BiFolder, BiHeart, BiShuffle, BiStar } from "react-icons/bi";
+import logo from "../../../public/logo/cuffie.png";
+import Image from "next/image";
 import styles from "./index.module.scss";
 
 const Tendina_Menu = ({ tendina }) => {
   return (
     <div className={`${styles.Tendina_Menu} ${tendina && styles.show}`}>
-      <h4>Logo</h4>
+      <div className={styles.boxLogo}>
+        <div className={styles.logo2}>
+          <Image src={logo} height={40} width={45} alt={"logo"} />
+        </div>
+        </div>
       <div className={styles.content}>
         <div className={styles.box}>
           <BiFolder className={styles.icon} />
