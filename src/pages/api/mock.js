@@ -19,7 +19,7 @@ export const sliderArray = [
   {
     id: 4,
     image: "https://wallpapercave.com/wp/wp2836032.jpg",
-    title: "Reggeton",
+    title: "Reggaeton",
   },
   {
     id: 5,
