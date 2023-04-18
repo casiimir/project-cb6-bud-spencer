@@ -56,7 +56,6 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                 <section>
                   <div className={styles.title}>
                     <h3 className={styles.titleTrending}>Trending right now</h3>
-                    <p className={styles.seeAll}>See All</p>
                   </div>
                   {!artistData ? (
                     <p>ciao</p>
@@ -73,7 +72,6 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                 <section>
                   <div className={styles.title}>
                     <h3 className={styles.titleTopArtist}>Top Artist</h3>
-                    <p className={styles.seeAll}>See All</p>
                   </div>
                   <div className={styles.listTopArtist}>
                     {artistData?.data.map((data, i) => (
@@ -84,7 +82,6 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                 <section>
                   <div className={styles.title}>
                     <h3 className={styles.titleTopAlbum}>Top Albums</h3>
-                    <p className={styles.seeAll}>See All</p>
                   </div>
                   <div className={styles.listTopArtist}>
                     {albumData?.data.map((data, i) => (

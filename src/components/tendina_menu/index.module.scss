@@ -7,7 +7,7 @@
   width: 180px;
   height: 400px;
 
-  .boxLogo{
+  .boxLogo {
     margin-top: 20px;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@
       display: block;
       text-align: center;
       padding-top: 5px;
-      filter:drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
   }
 
@@ -41,9 +41,13 @@
     .box {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-around;
       p {
+        cursor: pointer;
         font-size: 14px;
+        &:hover {
+          color: $primary-color;
+        }
       }
 
       .icon {
@@ -66,9 +70,9 @@
   .Tendina_Menu {
     display: none;
 
-    .boxLogo{
+    .boxLogo {
       display: none;
-      .logo2{
+      .logo2 {
         display: none;
       }
     }

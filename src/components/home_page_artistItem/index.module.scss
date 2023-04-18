@@ -6,6 +6,16 @@
   align-items: center;
   padding: 10px;
   border-radius: 10px;
+  &:hover {
+    background-color: rgba(128, 126, 126, 0.2);
+
+    .icons_play {
+      .starIcon {
+        filter: opacity(1);
+        transform: translate(0px, 0px);
+      }
+    }
+  }
 
   .ArtistItem {
     display: flex;
