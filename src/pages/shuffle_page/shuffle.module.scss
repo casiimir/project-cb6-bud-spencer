@@ -6,30 +6,99 @@
     font-size: 32px;
     font-weight: bold;
     margin: 20px;
+    filter:drop-shadow(1px 4px 5px rgba(242, 241, 245, 0.504));
   }
 
-  .albumitem {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 30px;
-  }
-
-  .trackItem {
+  .albumitm {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
-    margin-bottom: 30px;
-    flex-basis: calc(25% - 30px);
-    margin: 15px;
+    justify-content: center;
+    gap:30px;
+
+    .trackItm {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 400px;
+      transition: all 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: rgba(128, 126, 126, 0.2);
+
+         }
+
+      img{
+        cursor: pointer;
+        width: 150px;
+        height: 150px;
+      }
+
+      p{
+        cursor: pointer;
+      }
+    }
+
+    .playBtn {
+    cursor: pointer;
+    background: none;
+    color: $off-white;
+    border: none;
   }
 
-  .playButton {
-    padding: 10px;
-    border: none;
-    color: #000049;
-    margin-top: 10px;
-    cursor: pointer;
   }
 }
+
+@media screen and (min-width: 1000px) {
+  .ShufflePage {
+    display: block;
+    overflow: scroll;
+    
+  
+    .albumitm {
+      display: block;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap:30px;
+      
+      
+       .trackItm {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap:20px;
+        width: 920px;
+        transition: all 0.2s;
+
+        &:hover {
+          transform: scale(1);
+          background-color: rgba(128, 126, 126, 0.2);
+        }
+          
+  
+        img{
+          cursor: pointer;
+          width: 200px;
+          height: 200px;
+        }
+
+        p{
+          cursor: pointer;
+        }
+
+        .playBtn {
+          cursor: pointer;
+          background: none;
+          color: $grey;
+          border: none;
+        }
+      }
+  
+    }
+  }
+}
+
+
+
