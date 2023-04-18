@@ -1,9 +1,9 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
 
-const Artist_Page_AlbumItem = ({ data }) => {
+const Artist_Page_AlbumItem = ({ data, action }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={() => action(data)}>
       <Image
         src={data.cover_medium}
         alt={data.title}

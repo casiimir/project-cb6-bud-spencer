@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./index.module.scss";
 
-const Hero = () => {
+const Hero = ({ genreData }) => {
   return (
     <div className={styles.Hero}>
       <div className={styles.hero_content}>
@@ -26,3 +26,11 @@ const Hero = () => {
 };
 
 export default Hero;
+
+export async function getStaticProps() {
+  const resGenre = await fetch("https://api.deezer.com/genre/");
+
+  const genreData = await resGenre.json();
+
+  return { props: { genreData } };
+}

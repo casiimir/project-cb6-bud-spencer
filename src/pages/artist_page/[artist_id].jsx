@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Navbar from "@/components/navbar";
 import Artist_Page_ArtistItem from "@/components/artist_page_artistItem";
@@ -17,11 +18,22 @@ export default function ArtistPage({
   const artistRef = useRef(null);
   const albumRef = useRef(null);
   const tracksRef = useRef(null);
+  const router = useRouter();
 
   let scrollArtist = 0;
   let scrollAlbum = 0;
   let scrollTracks = 0;
 
+  const single_album = (item) => {
+    router.push(`/album_page/${item.id}`);
+    console.log(item);
+  };
+  const single_track = (item) => {
+    router.push(`/track_page/${item.id}`);
+  };
+  const single_artist = (item) => {
+    router.push(`/artist_page/${item.id}`);
+  };
   const forward = (refDiv, scrollItem) => {
     switch (scrollItem) {
       case "artist":
@@ -97,7 +109,11 @@ export default function ArtistPage({
             <div className={styles.albumitem} ref={artistRef}>
               {trackData.data.length === 0 && <h4>No results</h4>}
               {trackData?.data.map((data, i) => (
-                <Artist_Page_TrackItem key={i} data={data} />
+                <Artist_Page_TrackItem
+                  action={single_track}
+                  key={i}
+                  data={data}
+                />
               ))}
             </div>
             <div className={styles.box_container}>
@@ -119,7 +135,11 @@ export default function ArtistPage({
             <div className={styles.albumitem} ref={albumRef}>
               {albumData.data.length === 0 && <h4>No results</h4>}
               {albumData?.data.map((data, i) => (
-                <Artist_Page_AlbumItem key={i} data={data} />
+                <Artist_Page_AlbumItem
+                  action={single_album}
+                  key={i}
+                  data={data}
+                />
               ))}
             </div>
             <div className={styles.box_container}>
@@ -141,7 +161,11 @@ export default function ArtistPage({
             <div className={styles.albumitem} ref={tracksRef}>
               {relatedData.data.length === 0 && <h4>No results</h4>}
               {relatedData?.data.map((data, i) => (
-                <Artist_Page_RelatedItem key={i} data={data} />
+                <Artist_Page_RelatedItem
+                  action={single_artist}
+                  key={i}
+                  data={data}
+                />
               ))}
             </div>
           </div>

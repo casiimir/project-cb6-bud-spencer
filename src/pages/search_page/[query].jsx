@@ -7,6 +7,7 @@ import { useRef } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 export default function Search_page({ artistData, albumData, trackData }) {
+  console.log(albumData);
   const artistRef = useRef(null);
   const albumRef = useRef(null);
   const tracksRef = useRef(null);
@@ -15,6 +16,16 @@ export default function Search_page({ artistData, albumData, trackData }) {
   let scrollArtist = 0;
   let scrollAlbum = 0;
   let scrollTracks = 0;
+
+  const single_album = (item) => {
+    router.push(`/album_page/${item.album.id}`);
+  };
+  const single_track = (item) => {
+    router.push(`/track_page/${item.id}`);
+  };
+  const single_artist = (item) => {
+    router.push(`/artist_page/${item.artist.id}`);
+  };
 
   const forward = (refDiv, scrollItem) => {
     switch (scrollItem) {
@@ -69,69 +80,69 @@ export default function Search_page({ artistData, albumData, trackData }) {
         <div className={styles.box_container}>
           <h2>{`Results for '${router.query.query}' in Artists:`}</h2>
           {artistData.length > 0 && (
-            <div className={styles.buttons}>
+            <>
               <BiChevronLeft
-                className={styles.btn_scroll}
+                className={styles.btn_left}
                 onClick={() => back(artistRef, "artist")}
               />
 
               <BiChevronRight
-                className={styles.btn_scroll}
+                className={styles.btn_right}
                 onClick={() => forward(artistRef, "artist")}
               />
-            </div>
+            </>
           )}
           <div className={styles.albumitem} ref={artistRef}>
             {artistData.length === 0 && <h4>No results</h4>}
 
             {artistData.map((item, i) => (
-              <Search_Page_Item item={item} key={i} />
+              <Search_Page_Item action={single_artist} item={item} key={i} />
             ))}
           </div>
         </div>
         <div className={styles.box_container}>
           <h2>{`Results for '${router.query.query}' in Albums:`}</h2>
           {albumData.length > 0 && (
-            <div className={styles.buttons}>
+            <>
               <BiChevronLeft
-                className={styles.btn_scroll}
+                className={styles.btn_left}
                 onClick={() => back(albumRef, "album")}
               />
 
               <BiChevronRight
-                className={styles.btn_scroll}
+                className={styles.btn_right}
                 onClick={() => forward(albumRef, "album")}
               />
-            </div>
+            </>
           )}
           <div className={styles.albumitem} ref={albumRef}>
             {albumData.length === 0 && <h4>No results</h4>}
 
             {albumData.map((item, i) => (
-              <Search_Page_Item item={item} key={i} />
+              <Search_Page_Item action={single_album} item={item} key={i} />
             ))}
           </div>
         </div>
         <div className={styles.box_container}>
           <h2>{`Results for '${router.query.query}' in Tracks:`}</h2>
           {trackData.length > 0 && (
-            <div className={styles.buttons}>
+            <>
               <BiChevronLeft
-                className={styles.btn_scroll}
+                className={styles.btn_left}
                 onClick={() => back(tracksRef, "track")}
               />
 
               <BiChevronRight
-                className={styles.btn_scroll}
+                className={styles.btn_right}
                 onClick={() => forward(tracksRef, "track")}
               />
-            </div>
+            </>
           )}
           <div className={styles.albumitem} ref={tracksRef}>
             {trackData.length === 0 && <h4>No results</h4>}
 
             {trackData.map((item, i) => (
-              <Search_Page_Item item={item} key={i} />
+              <Search_Page_Item action={single_track} item={item} key={i} />
             ))}
           </div>
         </div>
