@@ -20,15 +20,15 @@ export default function TrackPage({ trackData }) {
     <MainLayout>
       <div
         className={styles.TrackPage}
-        style={{ backgroundImage: `url(${trackData.album?.cover_medium})` }}
-        // style={{ backgroundImage: `url(https://italianiedimburgo.com/wp-content/uploads/2017/02/milky-way-starry-sky-night-sky-star-956981.jpeg)` }}
-      >
+
+        style={{ backgroundImage: `url(${trackData.album.cover_xl})` }}      >
         <div className={styles.container}>
           <Image
             className={styles.img}
-            src={trackData.artist?.picture_medium}
-            width={600}
-            height={600}
+            src={trackData.artist.picture_xl}
+            width={500}
+            height={500}
+
             alt={trackData.title}
           />
          <div className={styles.deezerPlayer}>

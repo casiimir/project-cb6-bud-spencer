@@ -37,9 +37,10 @@ const Home_Page_TrackItem = ({ data, trackIndex }) => {
     router.push(`/track_page/${data.id}`);
   };
 
+
   return (
-    <div className={styles.TrackItem} onClick={() => goToTrackPage()}>
-      <div className={styles.mainContent}>
+    <div className={styles.TrackItem} >
+      <div className={styles.mainContent} onClick={() => goToTrackPage()} >
         <p className={styles.index}>
           {data?.position ? padTo2Digits(data?.position) : padTo2Digits(trackIndex + 1)}
         </p>
@@ -57,6 +58,7 @@ const Home_Page_TrackItem = ({ data, trackIndex }) => {
             <p className={styles.artist}>{data?.artist.name}</p>
           </div>
         </div>
+
       </div>
 
       <div className={styles.info}>

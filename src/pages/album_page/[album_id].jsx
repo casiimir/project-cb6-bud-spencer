@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar";
 import styles from "./styles.module.scss";
 import Album_Page_AlbumItem from "@/components/album_page_albumItem";
 import Home_Page_TrackItem from "@/components/home_page_trackItem";
+import { BsFillPlayCircleFill } from "react-icons/bs";
 import { useState } from "react";
 
 export default function Search_page({ albumData }) {
@@ -11,8 +12,6 @@ export default function Search_page({ albumData }) {
   const onHandleShowPlayer = () => {
     setPlayer(true);
   };
-
-  
 
   const onHandleHidePlayer = () => {
     setPlayer(false);
@@ -36,7 +35,9 @@ export default function Search_page({ albumData }) {
                 allowtransparency="true"
                 allow="encrypted-media; clipboard-write"
               ></iframe>
-              <div className={styles.closePlayer}   onClick={onHandleHidePlayer}>x</div>
+              <div className={styles.closePlayer} onClick={onHandleHidePlayer}>
+                x
+              </div>
             </div>
           )}
           <div className={styles.albumItem}>
@@ -44,7 +45,12 @@ export default function Search_page({ albumData }) {
           </div>
           <div className={styles.titles}>
             <h2>Tracks </h2>
-            <h3 className={styles.buttonPlayer} onClick={onHandleShowPlayer}>Listen now all the tracks!</h3>
+            <div className={styles.buttonPlayer} onClick={onHandleShowPlayer}>
+              <div className={styles.buttonIcon}>
+                <BsFillPlayCircleFill />
+              </div>
+              <h3>Listen now all the tracks!</h3>
+            </div>
           </div>
 
           <div className={styles.trackItem}>
