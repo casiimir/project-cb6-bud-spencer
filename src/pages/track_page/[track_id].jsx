@@ -20,13 +20,13 @@ export default function TrackPage({ trackData }) {
     <MainLayout>
       <div
         className={styles.TrackPage}
-        style={{ backgroundImage: `url(${trackData.album.cover_xl})` }}
+        style={{ backgroundImage: `url(${trackData.album?.cover_medium})` }}
         // style={{ backgroundImage: `url(https://italianiedimburgo.com/wp-content/uploads/2017/02/milky-way-starry-sky-night-sky-star-956981.jpeg)` }}
       >
         <div className={styles.container}>
           <Image
             className={styles.img}
-            src={trackData.artist.picture_xl}
+            src={trackData.artist?.picture_medium}
             width={600}
             height={600}
             alt={trackData.title}
