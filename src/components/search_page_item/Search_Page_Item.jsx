@@ -2,9 +2,9 @@ import Image from "next/image";
 import { shortDescription } from "@/utils/func";
 import styles from "./index.module.scss";
 
-const Search_Page_Item = ({ item }) => {
+const Search_Page_Item = ({ item, action }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={() => action(item)}>
       <Image
         src={item.album.cover_medium}
         width={120}

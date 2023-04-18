@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { BiUser, BiDotsHorizontalRounded, BiPlay } from "react-icons/bi";
 
 const Home_Page_AlbumItem = ({ data }) => {
-  console.log(data);
   const router = useRouter();
 
   const single_album = () => {

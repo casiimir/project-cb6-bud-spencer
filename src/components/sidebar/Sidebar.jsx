@@ -36,8 +36,8 @@ const Sidebar = ({ setModalIsVisibility }) => {
           className={styles.icon}
         />
         <hr className={styles.hr} />
-        <Link href="/favorites_page">
-          <BiHeart className={styles.icon_desktop} />
+        <Link className={styles.icon_desktop} href="/favorites_page">
+          <BiHeart />
         </Link>
         <Link className={styles.icon_desktop} href="/shuffle_page">
           <BiShuffle />
