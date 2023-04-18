@@ -23,6 +23,9 @@ const Home_Page_ArtistItem = ({ data }) => {
         <h4 className={styles.artistName}>{data?.name}</h4>
       </div>
       <div className={styles.icons_play}>
+        <p className={styles.artist_name}>
+        {data?.name}
+        </p>
         <div className={styles.playIcon}>
           <BiPlay />
         </div>

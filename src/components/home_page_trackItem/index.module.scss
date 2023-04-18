@@ -24,11 +24,11 @@
       .playIcon {
         display: block;
         font-size: 40px;
-        color: rgb(0, 48, 114);
+        color:$primary-color;
       }
     }
     .index {
-      color: gray;
+      color: $white;;
       display: block;
     }
     .playIcon {
@@ -84,6 +84,7 @@
     .mainContent {
       .index {
         display: block;
+        color: $grey;
       }
 
       .contentTitle {

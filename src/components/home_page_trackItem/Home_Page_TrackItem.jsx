@@ -13,8 +13,8 @@ const Home_Page_TrackItem = ({data, trackIndex}) => {
   };
 
   return ( 
-    <div className={styles.TrackItem} onClick={() => goToTrackPage()}>
-      <div className={styles.mainContent}>
+    <div className={styles.TrackItem} >
+      <div className={styles.mainContent} onClick={() => goToTrackPage()}>
       <p className={styles.index}>{data?.position?padTo2Digits(data?.position):padTo2Digits(trackIndex+1)}</p>
       <BiPlay className={styles.playIcon}/>
       <Image src={data.artist.picture_medium? data.artist.picture_medium : data.album.cover_medium } width={65} height={65} alt={data.title} />
