@@ -11,6 +11,7 @@
       height: 250px;
       position: relative;
       .content_img {
+        position: relative;
         width: 100%;
         height: 250px;
         border-radius: 15px;
@@ -20,7 +21,19 @@
         margin-left: 18px;
         img {
           object-fit: cover;
-          width: 100%;
+          width: auto;
+        }
+        p {
+          position: absolute;
+          bottom: -10px;
+          left: 20px;
+          font-size: 100px;
+          font-weight: bold;
+          color: #ffffffbc;
+          border-radius: 12px;
+          filter: drop-shadow(0px 0px 10px #4034ed);
+          z-index: 10;
+          text-transform: uppercase;
         }
       }
       .dots {
@@ -49,4 +62,10 @@
       }
     }
   }
+}
+.dot_trasform {
+  width: 6px;
+  border-radius: 6px;
+  height: 20px;
+  background-color: $white;
 }

@@ -20,6 +20,7 @@ export default function TrackPage({ trackData }) {
     <MainLayout>
       <div
         className={styles.TrackPage}
+
         style={{ backgroundImage: `url(${trackData.album.cover_xl})` }}      >
         <div className={styles.container}>
           <Image
@@ -27,6 +28,7 @@ export default function TrackPage({ trackData }) {
             src={trackData.artist.picture_xl}
             width={500}
             height={500}
+
             alt={trackData.title}
           />
          <div className={styles.deezerPlayer}>

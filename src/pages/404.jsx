@@ -16,7 +16,9 @@ const ErrorPage = () => {
 
     
     <div className={styles.ErrorPage}>
+
       <div className={styles.logo}>
+
       <Image
         src={budz}
         width={125}
@@ -35,6 +37,7 @@ const ErrorPage = () => {
         alt={"image_logo_404"}
       
       />
+      </div>
       </div>
       <div className={styles.infoError}>
       <h1 className={styles.titleError}>Oops... I did it again!</h1>

@@ -10,15 +10,20 @@
     background-color: rgba(128, 126, 126, 0.2);
 
     .icons_play {
+
       .artist_name {
         
        
       }
       .playIcon {
+
+      .starIcon {
+
         filter: opacity(1);
         transform: translate(0px, 0px);
       }
     }
+
 
     .ArtistItem{
       img{
@@ -26,6 +31,7 @@
 
       }
     }
+
   }
 
   .ArtistItem {
@@ -46,6 +52,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 6px;
+
     .artist_name {
       z-index: 2;
       font-size: 16px;
@@ -59,6 +66,11 @@
       background-color: $primary-color;
       border-radius: 50%;
       color: rgb(230, 217, 217);
+
+    .starIcon {
+      width: 30px;
+      height: 30px;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -66,7 +78,7 @@
       cursor: pointer;
       filter: opacity(0);
       transition: all 0.25s;
-      box-shadow: 1px 1px 1px rgb(62, 58, 58);
+
       transform: translate(0px, -10px);
     }
 
@@ -89,7 +101,7 @@
       background-color: rgba(128, 126, 126, 0.2);
 
       .icons_play {
-        .playIcon {
+        .starIcon {
           filter: opacity(1);
           transform: translate(0px, 0px);
         }
