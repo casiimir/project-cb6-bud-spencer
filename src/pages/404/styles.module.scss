@@ -1,4 +1,97 @@
-.ErrorPage{
+.ErrorPage {
+  color: $off-white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(ellipse at top, $primary-color, transparent),
+    radial-gradient(ellipse at bottom, $grey, transparent);
+
+  .logo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 40px;
+    gap: 30px;
+
+    transform: translate(0, 4px);
+
+   
+    .budz {
+      scale:60%
+    }
+  }
+
+  .cassette {
+    position: absolute;
+    top: calc(50% - 265px);
+    left: calc(53% - 280px);
+    z-index: -1;
+    scale:60%
+  }
+}
+.infoError {
+  filter: drop-shadow(0px 0px 4px $primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.70rem;
+  position: absolute;
+  width: 500px;
+  height: 250px;
+
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(30% - 250px);
+  z-index: -1;
+
+  .btnError {
+    margin-top: 40px;
+    bottom: 15%;
+    background: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 7px;
+    color: $off-white;
+    box-shadow: 0px 4px 5px 1px #000000;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-size: 0.6rem;
+
+    &:hover {
+      transform: scale(0.8);
+    }
+  }
+}
+.deezer_container{
+  position: absolute;
+  bottom:10px;
+  right: 20px;
+
+  .logo_title {
+    transform: translate(12px, 4px);
+    color: black;
+    font-size: 0.7rem;
+   
+  }
+  .deezer {
+     transform: translate(0, 4px);
+      scale:70%
+  }
+}
+@media screen and (min-width: 1000px) {
+  .ErrorPage {
     color: $off-white;
     width: 100%;
     height: 100vh;
@@ -7,140 +100,84 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #3b33a4;
-    
-    .error{
-        display: flex;
-        align-items: center;
-        justify-content: center; 
 
-        .iconError{
-            position: fixed;
-            top:30%;
-            font-size: 10rem;
-        }
-            
-        .contentLogo{
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            top:0;
-            width: 230px;
-            transform: translate(-10%, -150%);
-            border-radius: 12px;
-            background: rgba(250, 250, 250, 0.218);
-            box-shadow: 0px 4px 5px 3px #121129;
-            filter:drop-shadow(0px 4px 4px rgba(248, 248, 248, 0.618));
-            
-            gap: 1rem;
-            padding: 2rem;
-            .logo{
-                
-                width: 200px;
-                
-            }
-        }
-        
-        
+
+    background: radial-gradient(ellipse at top, $primary-color, transparent),
+      radial-gradient(ellipse at bottom, $grey, transparent);
+
+    .logo {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 40px;
+      gap: 30px;
+
+      transform: translate(0, 4px);
+      .budz {
+        scale:100%
+      }
+     
+
     }
 
-    .infoError{
-        display: flex;
-        align-items: center;
-        justify-content: center; 
-        
-        .titleError{
-            text-align: center;
-            text-transform: uppercase;
-            position: fixed;
-            font-size: 1.5rem;
-            position: fixed;
-            bottom:40%;
-            font-size: 2rem;
-            
-        }
-        .textError{
-            text-align: center;
-            text-transform: uppercase;
-            position: fixed;
-            bottom:30%;
-            font-size: 1.8rem;
-        }
-        .btnError{
-            position: fixed;
-            bottom: 15%;
-            background: none;
-            width: 210px;
-            height: 50px;
-            border-radius: 7px;
-            color:$off-white;
-            box-shadow: 0px 4px 5px 1px #000000;
-            cursor: pointer;
-            transition: transform 0.2s;
-
-            &:hover{
-                transform: scaleX(1.1);
- 
-            }
-        }
-    
+    .cassette {
+      position: absolute;
+      top: calc(50% - 265px);
+      left: calc(65% - 300px);
+      z-index: -1;
+      scale:120%
     }
   }
+  .infoError {
+    display: flex;
 
-  @media screen and (min-width: 1000px) {
-    .ErrorPage {
-        color: $off-white;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 1.5rem;
-        background: #3b33a4;
-    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.5rem;
+    position: absolute;
+    width: 500px;
+    height: 250px;
 
-        .inputError{
-        position: fixed;
-        bottom: 0;
-        background: none;
-        width: 100px;
-        height: 50px;
-        border-radius: 7px;
-        border:none;
-        color:$off-white;
-        box-shadow: 0px 0px 2px 1px $white;
-        cursor: pointer;
-        transition: transform 1.5s;
-            
-    
-            &:hover{
-                transform: scaleX(-1);
-            }
-        }
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(30% - 250px);
+    z-index: -1;
 
-        .icon{
-            position: fixed;
-            top:-10px;
-            right: 20px;
-            color:  #0b7e95;
-            height: 300px;
-            width: 900px;
-            transform: rotate(15deg);
-            filter: brightness(180%);
-            
-        }
-    
+    .btnError {
+      margin-top: 40px;
+      bottom: 15%;
+      background: none;
+      width: 210px;
+      height: 50px;
+      border-radius: 7px;
+      color: $off-white;
+      box-shadow: 0px 4px 5px 1px #000000;
+      cursor: pointer;
+      transition: transform 0.2s;
+      font-size: 0.9rem;
+
+      &:hover {
+        transform: scale(0.8);
+      }
+    }
+  }
+  .deezer_container{
+
+    .logo_title {
+      transform: translate(0px, 0px);
+      color: black;
+      font-size: 1rem ;
+    }
+    .deezer {
+      transform: translate(0, 4px);
+      scale:100%
     }
    
   }
+}

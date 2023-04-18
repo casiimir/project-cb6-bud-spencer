@@ -9,7 +9,7 @@
     background-color: lightgrey;
     cursor: pointer;
     .icons_play {
-      .playIcon {
+      .folderIcon {
         filter: opacity(1);
         transform: translate(0px, 0px);
       }
@@ -46,21 +46,16 @@
     align-items: center;
     justify-content: space-between;
     gap: 6px;
-    .playIcon {
-      width: 50px;
-      height: 50px;
-      background-color: rgb(78, 78, 232);
-      border-radius: 50%;
-      color: rgb(230, 217, 217);
+    .folderIcon {
+      width: 30px;
+      height: 30px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       font-size: 35px;
       cursor: pointer;
       filter: opacity(0);
       transition: all 0.25s;
-      box-shadow: 1px 1px 1px rgb(62, 58, 58);
-      transform: translate(0px, -10px);
     }
 
     .dots {

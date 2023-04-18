@@ -11,9 +11,8 @@ const Album_Page_AlbumItem = ({ data }) => {
         <div className={styles.img_album}>
           <Image
             className={styles.img}
-            src={data?.cover_medium}
-            width={200}
-            height={200}
+            src={data?.cover_xl}
+            fill
             alt={data?.title}
           />
         </div>

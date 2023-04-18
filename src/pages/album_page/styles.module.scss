@@ -19,26 +19,25 @@
       display: flex;
       align-items: center;
       width: 100%;
-      padding: 20px;
-      position:relative;
+      padding: 0 20px 20px 20px;
+      position: relative;
 
-      .closePlayer{
+      .closePlayer {
         display: flex;
         justify-content: center;
         align-items: center;
         position: absolute;
         width: 26px;
-        height: 26px;
+        height: 25px;
         z-index: 2;
-        top:30px;
-        right:30px;
-        font-weight:bold ;
+        top: 8px;
+        left: 28px;
+        font-weight: bold;
         font-size: 23px;
-        cursor:pointer;
+        cursor: pointer;
         border: 2px solid rgb(95, 94, 94);
-        &:hover{
+        &:hover {
           background-color: rgb(31, 31, 31);
-        
         }
       }
     }
@@ -56,11 +55,28 @@
       padding: 20px;
       filter: drop-shadow(0px 0px 4px rgb(31, 31, 31));
       gap: 100px;
+      h2 {
+        font-size: 1rem;
+      }
       .buttonPlayer {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
+        color: $primary-color;
+        h3 {
+          font-size: 1rem;
+        }
+        .buttonIcon {
+          font-size: 20px;
+          transform: translate(0px, 3px);
+          &:hover {
+            scale: 120%;
+          }
+        }
       }
     }
-
 
     .trackItem {
       align-items: center;
@@ -116,8 +132,27 @@
         padding: 20px;
         filter: drop-shadow(0px 0px 4px rgb(31, 31, 31));
         gap: 100px;
+
+        h2 {
+          font-size: 1.5rem;
+        }
         .buttonPlayer {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          justify-content: center;
           cursor: pointer;
+          color: $primary-color;
+          h3 {
+            font-size: 1.5rem;
+          }
+          .buttonIcon {
+            font-size: 30px;
+            transform: translate(0px, 3px);
+            &:hover {
+              scale: 120%;
+            }
+          }
         }
       }
       .trackItem {

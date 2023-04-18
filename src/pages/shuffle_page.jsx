@@ -1,13 +1,11 @@
 import { useState } from "react";
-// import { Link } from "next/link";
 import { BsFillPlayCircleFill, BsFillPauseCircleFill } from "react-icons/bs";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import ArtistPageTrackItem from "@/components/artist_page_trackItem";
 import styles from "../pages/shuffle_page/shuffle.module.scss";
 
 export default function ShufflePage({ data }) {
-/* data = array di brani musicali */
-  /* gestisco lo stato del player audio con due stati */
+
   const [currentTrack, setCurrentTrack] = useState(false);
   const [playingTrackIndex, setPlayingTrackIndex] = useState(null);
 
@@ -35,20 +33,18 @@ export default function ShufflePage({ data }) {
       
       <div className={styles.ShufflePage}>
       <h2>Shuffle</h2>
-      <div className={styles.albumitem}>
+      <div className={styles.albumitm}>
         {data?.data.map((data, i) => (
-          <div key={i} className={styles.trackItem}>
+          <div key={i} className={styles.trackItm}>
             <ArtistPageTrackItem data={data} />
-            <button
-  className={styles.playButton}
-  onClick={() => playTrack(data.preview, i)}
->
-  {playingTrackIndex === i ? (
-    <BsFillPauseCircleFill size={30} />
-  ) : (
-    <BsFillPlayCircleFill size={30} />
-  )}
-</button>
+            <button className={styles.playBtn}
+              onClick={() => playTrack(data.preview, i)}>
+              {playingTrackIndex === i ? (
+                <BsFillPauseCircleFill size={30} />
+                ) : (
+              <BsFillPlayCircleFill size={30} />
+            )}
+            </button>
           </div>
         ))}
       </div>

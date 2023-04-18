@@ -14,17 +14,7 @@ import styles from "@/styles/Home.module.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ artistData, trackData, albumData, genreData }) {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-
-  const onHandleUsername = (e) => {
-    setUserName(e.target.value);
-  };
-
-  const onHandlePassword = (e) => {
-    setPassword(e.target.value);
-  };
 
   const [modalIsVisibile, setModalIsVisibility] = useState(false);
 
@@ -41,12 +31,12 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
       </Head>
 
       <main className={styles.main}>
-        <MainLayout setModalIsVisibility={setModalIsVisibility}>
+        <MainLayout>
           <div className={styles.mainContainer}>
-            <Navbar title={"Dudz"} />
+            <Navbar title={"Budz"} />
             <div className={styles.container}>
               <div className={styles.leftSide}>
-                <Hero />
+                <Hero genreData={genreData} />
                 <section className={styles.artistListMobile}>
                   <h3 className={styles.titleTopArtist}>Top Artist</h3>
                   <div className={styles.listTopArtist}>
@@ -66,7 +56,6 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                 <section>
                   <div className={styles.title}>
                     <h3 className={styles.titleTrending}>Trending right now</h3>
-                    <p className={styles.seeAll}>See All</p>
                   </div>
                   {!artistData ? (
                     <p>ciao</p>
@@ -83,7 +72,6 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                 <section>
                   <div className={styles.title}>
                     <h3 className={styles.titleTopArtist}>Top Artist</h3>
-                    <p className={styles.seeAll}>See All</p>
                   </div>
                   <div className={styles.listTopArtist}>
                     {artistData?.data.map((data, i) => (
@@ -94,7 +82,6 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                 <section>
                   <div className={styles.title}>
                     <h3 className={styles.titleTopAlbum}>Top Albums</h3>
-                    <p className={styles.seeAll}>See All</p>
                   </div>
                   <div className={styles.listTopArtist}>
                     {albumData?.data.map((data, i) => (
@@ -108,13 +95,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
         </MainLayout>
 
         {modalIsVisibile && (
-          <Modal_login
-            setModalIsVisibility={setModalIsVisibility}
-            onHandleUsername={onHandleUsername}
-            onHandlePassword={onHandlePassword}
-            userName={userName}
-            password={password}
-          />
+          <Modal_login setModalIsVisibility={setModalIsVisibility} />
         )}
       </main>
     </>

@@ -26,7 +26,6 @@ export default function ArtistPage({
 
   const single_album = (item) => {
     router.push(`/album_page/${item.id}`);
-    console.log(item);
   };
   const single_track = (item) => {
     router.push(`/track_page/${item.id}`);
