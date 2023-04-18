@@ -1,11 +1,10 @@
 import Sidebar from "@/components/sidebar";
 import styles from "./index.module.scss";
 
-const MainLayout = ({ children, setModalIsVisibility }) => {
+const MainLayout = ({ children }) => {
   return (
     <div className={styles.MainLayout}>
-      <Sidebar 
-      setModalIsVisibility={setModalIsVisibility}/>
+      <Sidebar />
       <div className={styles.content}>{children}</div>
     </div>
   );

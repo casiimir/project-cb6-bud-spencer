@@ -33,6 +33,7 @@ const Navbar = ({ title }) => {
         <BiSearchAlt className={styles.icon_search} />
         <form onSubmit={onSubmit}>
           <input
+            id="ancor"
             value={inputSearch}
             onChange={(e) => setInputSearch(e.target.value)}
             type="text"
