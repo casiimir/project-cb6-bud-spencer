@@ -7,7 +7,6 @@ import { useRef } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 export default function Search_page({ artistData, albumData, trackData }) {
-  console.log(albumData);
   const artistRef = useRef(null);
   const albumRef = useRef(null);
   const tracksRef = useRef(null);
