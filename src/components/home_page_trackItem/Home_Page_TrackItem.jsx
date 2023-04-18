@@ -7,35 +7,41 @@ import Image from "next/image";
 import { secondsToMinutes, padTo2Digits } from "@/utils/func";
 
 const Home_Page_TrackItem = ({ data, trackIndex }) => {
+
   const router = useRouter();
 
-  // Definisco uno stato per l'elenco dei brani preferiti
-  const [favorites, setFavorites] = useState(
-    typeof window !== "undefined"
-      ? JSON.parse(localStorage.getItem("favorites")) || []
-      : []
-  );
+  const [favorites, setFavorites] = useState([]);
 
-  // Definisco una funzione di callback per aggiornare lo stato di favorites
-  const handleToggleFavorite = useCallback(() => {
-    setFavorites((prevFavorites) => {
-      const isFavorite = prevFavorites.some((f) => f.id === data.id);
-      if (isFavorite) {
-        return prevFavorites.filter((f) => f.id !== data.id);
-      } else {
-        return [...prevFavorites, data];
-      }
-    });
-  }, [data]);
+  const [isHeartFilled, setIsHeartFilled] = useState(false)
 
-  // Salvo i dati dei brani preferiti in localStorage ogni volta che favorites viene aggiornato
+  const handleToggleFavorites = (item) => {
+    const currentFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const index = currentFavorites.findIndex((fav) => JSON.stringify(fav) === JSON.stringify(item));
+  
+    if (index !== -1)  {
+      const updatedFavorites = [...currentFavorites];
+      updatedFavorites.splice(index, 1);
+      setIsHeartFilled(false)
+      setFavorites(updatedFavorites);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    } else {
+      const updatedFavorites = currentFavorites.concat(item);
+      setIsHeartFilled(true)
+      setFavorites(updatedFavorites);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    }
+  }
+
   useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
+    const currentFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const index = currentFavorites.findIndex((fav) => JSON.stringify(fav) === JSON.stringify(data));
+    setIsHeartFilled(index !== -1);
+  }, [data]);
 
   const goToTrackPage = () => {
     router.push(`/track_page/${data.id}`);
   };
+
 
   return (
     <div className={styles.TrackItem} onClick={() => goToTrackPage()}>
@@ -64,12 +70,12 @@ const Home_Page_TrackItem = ({ data, trackIndex }) => {
         <p className={styles.followers}>{data.rank}</p>
         <div className={styles.reactionsIcons}>
           {/* Mostra il cuore pieno se il brano è nei preferiti, altrimenti il cuore vuoto */}
-          {favorites.some((f) => f.id === data.id) ? (
+          {isHeartFilled ? (
             <AiFillHeart
               className={`${styles.heart} ${styles.active}`}
               onClick={(e) => {
                 e.stopPropagation();
-                handleToggleFavorite();
+                handleToggleFavorites(data);
               }}
             />
           ) : (
@@ -77,7 +83,7 @@ const Home_Page_TrackItem = ({ data, trackIndex }) => {
               className={styles.heart}
               onClick={(e) => {
                 e.stopPropagation();
-                handleToggleFavorite();
+                handleToggleFavorites(data);
               }}
             />
           )}
