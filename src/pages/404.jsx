@@ -24,9 +24,7 @@ const ErrorPage = () => {
         width={125}
         height={45}
         alt={"logo_budz"}
-        className={styles.budz}
-      
-      />
+        className={styles.budz} />
      
       </div>
       <div className={styles.cassette}>
@@ -38,7 +36,7 @@ const ErrorPage = () => {
       
       />
       </div>
-      </div>
+      
       <div className={styles.infoError}>
       <h1 className={styles.titleError}>Oops... I did it again!</h1>
       <h2 className={styles.textError}>Page not found</h2>
@@ -55,7 +53,7 @@ const ErrorPage = () => {
       
       />
       </div>
-    </div>
+   </div>
   );
 };
 

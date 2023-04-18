@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { BiDotsHorizontalRounded, BiStar } from "react-icons/bi";
+import { BiDotsHorizontalRounded, BiStar, BiPlay } from "react-icons/bi";
 
 const Home_Page_ArtistItem = ({ data }) => {
   const router = useRouter();
@@ -36,6 +36,7 @@ const Home_Page_ArtistItem = ({ data }) => {
         </div>
         <BiDotsHorizontalRounded className={styles.dots} />
       </div>
+    </div>
     </div>
   );
 };
