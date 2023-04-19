@@ -48,7 +48,11 @@ const Sidebar = () => {
         <Link className={styles.icon_desktop} href="/favorites_page">
           <BiHeart />
         </Link>
+
+        <Link className={styles.icon_desktop} href="/favoriteAlbum_page">
         <BiFolder className={styles.icon_desktop} />
+        </Link>
+       
 
         <BiStar className={styles.icon_desktop} />
       </div>

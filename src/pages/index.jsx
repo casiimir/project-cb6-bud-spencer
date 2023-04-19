@@ -18,6 +18,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
   const [logged, setLogged] = useState(false);
   const [login, setLogin] = useState(false);
   const router = useRouter();
+  const [isHome, setIsHome] = useState(true)
 
   useEffect(() => {
     if (localStorage.getItem("logged") != null) {
@@ -76,7 +77,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                     ) : (
                       <div className={styles.listTrack}>
                         {trackData?.tracks.data.map((data, i) => (
-                          <Home_Page_TrackItem key={i} data={data} />
+                          <Home_Page_TrackItem key={i} data={data} isHome={isHome} />
                         ))}
                       </div>
                     )}
