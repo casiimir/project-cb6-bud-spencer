@@ -39,6 +39,8 @@
     gap: 40px;
     margin-top: 40px;
     .box {
+      color: $white;
+      text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: space-around;

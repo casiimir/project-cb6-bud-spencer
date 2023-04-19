@@ -1,7 +1,12 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { BiUser, BiDotsHorizontalRounded, BiFolder } from "react-icons/bi";
+import {
+  BiUser,
+  BiDotsHorizontalRounded,
+  BiFolder,
+  BiPlay,
+} from "react-icons/bi";
 
 const Home_Page_AlbumItem = ({ data }) => {
   const router = useRouter();
@@ -22,6 +27,7 @@ const Home_Page_AlbumItem = ({ data }) => {
         />
         <div className={styles.text}>
           <h4>{data?.title}</h4>
+          <p className={styles.artist_name_fluo}>{data?.title}</p>
           <div className={styles.contentArtist}>
             <BiUser className={styles.icon} />
             <p className={styles.artist}>{data?.artist.name}</p>
@@ -29,10 +35,13 @@ const Home_Page_AlbumItem = ({ data }) => {
         </div>
       </div>
       <div className={styles.icons_play}>
-        <div className={styles.folderIcon}>
-          <BiFolder />
+        <div className={styles.playIcon}>
+          <BiPlay />
         </div>
-        <BiDotsHorizontalRounded className={styles.dots} />
+        <div className={styles.reactionIcons}>
+          <BiFolder />
+          <BiDotsHorizontalRounded className={styles.dots} />
+        </div>
       </div>
     </div>
   );

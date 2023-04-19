@@ -42,7 +42,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
       </Head>
 
       <main className={styles.main}>
-        {logged ? (
+      {logged ? (
           <MainLayout>
             <div className={styles.mainContainer}>
               <Navbar title={"Budz"} />
@@ -57,7 +57,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                       ))}
                     </div>
                   </section>
-                  {/* <section className={styles.mainListGenre}>
+                {/* <section className={styles.mainListGenre}>
             <Home_Page_GenreItem data={{name:"Choose your Category"}} />
               <div className={styles.listGenre}>
               {genreData?.data.map((data, i) => (
