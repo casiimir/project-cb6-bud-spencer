@@ -14,7 +14,7 @@ import styles from "@/styles/Home.module.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ artistData, trackData, albumData, genreData }) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [modalIsVisibile, setModalIsVisibility] = useState(false);
 

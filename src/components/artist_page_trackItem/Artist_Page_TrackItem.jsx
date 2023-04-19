@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
+import { BiUser } from "react-icons/bi";
 
 const Artist_Page_TrackItem = ({ data, action }) => {
   return (
@@ -12,7 +13,14 @@ const Artist_Page_TrackItem = ({ data, action }) => {
       />
       <div className={styles.text}>
         <h4>{data.title}</h4>
-        <p>{`Album: ${data.album.title}`}</p>
+        {!data?.contributors? 
+        <div className={styles.contentArtist}>
+        <BiUser className={styles.icon} />
+        <p className={styles.artist}>{data?.artist.name}</p>
+      </div>
+      : null}
+        <p  className={styles.albumTitle} >{`Album: ${data.album.title}` }</p>
+      
       </div>
     </div>
   );

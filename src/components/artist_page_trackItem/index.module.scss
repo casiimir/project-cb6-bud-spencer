@@ -14,9 +14,26 @@
   .text {
     max-width: 200px;
     margin: auto;
-    p {
-      font-size: 12px;
-    }
+    display:flex;
+    flex-direction: column;
+    gap:4px;
+
+     .contentArtist {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 3px;
+        .icon {
+          font-size: 12px;
+        }
+        .artist {
+          font-size: 12px;
+          color: $light-grey;
+        }
+      }
+      .albumTitle{
+        font-size: 12px;
+      }
   }
 }
 
