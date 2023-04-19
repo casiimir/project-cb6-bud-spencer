@@ -1,12 +1,12 @@
 import styles from "./index.module.scss";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BiUser, BiDotsHorizontalRounded, BiPlay } from "react-icons/bi";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { secondsToMinutes, padTo2Digits } from "@/utils/func";
 
-const Home_Page_TrackItem = ({ data, trackIndex }) => {
+const Home_Page_TrackItem = ({ data, trackIndex, isHome, onRemoveFavorite }) => {
 
   const router = useRouter();
 
@@ -15,20 +15,26 @@ const Home_Page_TrackItem = ({ data, trackIndex }) => {
   const [isHeartFilled, setIsHeartFilled] = useState(false)
 
   const handleToggleFavorites = (item) => {
-    const currentFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const index = currentFavorites.findIndex((fav) => JSON.stringify(fav) === JSON.stringify(item));
-  
-    if (index !== -1)  {
-      const updatedFavorites = [...currentFavorites];
-      updatedFavorites.splice(index, 1);
-      setIsHeartFilled(false)
-      setFavorites(updatedFavorites);
-      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    } else {
-      const updatedFavorites = currentFavorites.concat(item);
-      setIsHeartFilled(true)
-      setFavorites(updatedFavorites);
-      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+
+    if (!isHome) {
+      onRemoveFavorite()
+    }
+    else{
+      const currentFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      const index = currentFavorites.findIndex((fav) => JSON.stringify(fav) === JSON.stringify(item));
+    
+      if (index !== -1)  {
+        const updatedFavorites = [...currentFavorites];
+        updatedFavorites.splice(index, 1);
+        setIsHeartFilled(false)
+        setFavorites(updatedFavorites);
+        localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      } else {
+        const updatedFavorites = currentFavorites.concat(item);
+        setIsHeartFilled(true)
+        setFavorites(updatedFavorites);
+        localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      }
     }
   }
 
@@ -63,14 +69,12 @@ const Home_Page_TrackItem = ({ data, trackIndex }) => {
             <p className={styles.artist}>{data?.artist.name}</p>
           </div>
         </div>
-
       </div>
 
       <div className={styles.info}>
         <p className={styles.duration}>{secondsToMinutes(data.duration)}</p>
         <p className={styles.followers}>{data.rank}</p>
         <div className={styles.reactionsIcons}>
-          {/* Mostra il cuore pieno se il brano è nei preferiti, altrimenti il cuore vuoto */}
           {isHeartFilled ? (
             <AiFillHeart
               className={`${styles.heart} ${styles.active}`}

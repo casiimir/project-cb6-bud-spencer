@@ -16,6 +16,8 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home({ artistData, trackData, albumData, genreData }) {
   const [isLoading, setIsLoading] = useState(false);
 
+  const [isHome, setIsHome] = useState(true)
+
   const [modalIsVisibile, setModalIsVisibility] = useState(false);
 
   return (
@@ -70,7 +72,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                   ) : (
                     <div className={styles.listTrack}>
                       {trackData?.tracks.data.map((data, i) => (
-                        <Home_Page_TrackItem key={i} data={data} />
+                        <Home_Page_TrackItem key={i} data={data} isHome={isHome} />
                       ))}
                     </div>
                   )}
