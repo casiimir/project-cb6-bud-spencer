@@ -1,11 +1,9 @@
 import styles from "../pages/favorites_page/fave.module.scss";
 import { useState, useEffect } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
-import { useRouter } from "next/router";
 import Home_Page_TrackItem from "@/components/home_page_trackItem";
 
  const Favorites_Page = ({data, trackIndex }) => {
-  const router = useRouter();
 
   const [favorites, setFavorites] = useState([]);
 
@@ -40,10 +38,6 @@ import Home_Page_TrackItem from "@/components/home_page_trackItem";
     }
   }, [favorites]);
   
-
-  const goToTrackPage = (trackId) => {
-    router.push(`/track_page/${trackId}`);
-  };
 
 
   return (
