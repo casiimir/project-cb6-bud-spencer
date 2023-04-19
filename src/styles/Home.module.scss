@@ -1,3 +1,59 @@
+.login_container {
+    width: 100%;
+    height: 100vh;
+
+  .login_overlay {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    background-color: $primary-color;
+    filter: opacity(90%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 12;}
+    .login_box {
+      position: fixed;
+       top:calc(50% - 150px);
+       left:calc(50% - 300px);
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       gap:20px;
+      z-index: 12;
+      font-size: 0.8rem;
+      width: 600px;
+      height: 300px;
+      background: linear-gradient(83deg, rgb(116, 152, 223) 40%, #eee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: rgb(185, 190, 191);
+      .login_button {
+        margin-top: 40px;
+        bottom: 15%;
+        background: none;
+        width: 100px;
+        height: 25px;
+        border-radius: 7px;
+        color: $off-white;
+        box-shadow: 0px 4px 5px 1px #000000;
+        cursor: pointer;
+        transition: transform 0.2s;
+    
+        &:hover {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+
+
 .mainContainer {
   padding: 0;
   display: flex;
@@ -86,6 +142,65 @@
   }
 }
 @media screen and (min-width: 1000px) {
+
+  .login_container {
+    
+    width: 100%;
+    height: 100vh;
+
+  .login_overlay {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    background-color: $primary-color;
+    filter: opacity(90%);
+    backdrop-filter: blur(6px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 11;}
+    .login_box {
+      position: fixed;
+       top:calc(50% - 150px);
+       left:calc(50% - 300px);
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       gap:20px;
+      z-index: 12;
+      font-size: 1.5rem;
+      width: 600px;
+      height: 300px;
+      background: linear-gradient(83deg, rgb(116, 152, 223) 40%, #eee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: rgb(185, 190, 191);
+      .login_button {
+        margin-top: 40px;
+        bottom: 15%;
+        background: none;
+        width: 100px;
+        height: 25px;
+        border-radius: 7px;
+        color: $off-white;
+        box-shadow: 0px 4px 5px 1px #000000;
+        cursor: pointer;
+        transition: transform 0.2s;
+    
+        &:hover {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+
+
   .mainContainer {
     padding: 0 20px;
     // display: flex;
