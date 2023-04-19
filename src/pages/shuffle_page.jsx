@@ -1,52 +1,54 @@
-import { useState } from "react";
-import { BsFillPlayCircleFill, BsFillPauseCircleFill } from "react-icons/bs";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
-import ArtistPageTrackItem from "@/components/artist_page_trackItem";
+import Artist_Page_TrackItem from "@/components/artist_page_trackItem";
 import styles from "../pages/shuffle_page/shuffle.module.scss";
+import { useRouter } from "next/router";
+import Navbar from "@/components/navbar";
+export default function ShufflePage({ dataFirstShuffle,dataSecondShuffle,dataThirdShuffle }) {
+  const router = useRouter();
+  
 
-export default function ShufflePage({ data }) {
-
-  const [currentTrack, setCurrentTrack] = useState(false);
-  const [playingTrackIndex, setPlayingTrackIndex] = useState(null);
-
-  const playTrack = (trackUrl, index) => {  
-    if (currentTrack) {
-      currentTrack.pause();
-      if (playingTrackIndex === index) {
-        setPlayingTrackIndex(null);
-        return;
-      }
-    }
-    const audio = new Audio(trackUrl);
-
-    audio.onended = () => {
-      setPlayingTrackIndex(null);
-    };
-
-    audio?.play();
-    setCurrentTrack(audio);
-    setPlayingTrackIndex(index);
+  const single_track = (item) => {
+    router.push(`/track_page/${item.id}`);
   };
 
   return (
     <MainLayout>
-      
-      <div className={styles.ShufflePage}>
-      <h2>Shuffle</h2>
-      <div className={styles.albumitm}>
-        {data?.data.map((data, i) => (
-          <div key={i} className={styles.trackItm}>
-            <ArtistPageTrackItem data={data} />
-            <button className={styles.playBtn}
-              onClick={() => playTrack(data.preview, i)}>
-              {playingTrackIndex === i ? (
-                <BsFillPauseCircleFill size={30} />
-                ) : (
-              <BsFillPlayCircleFill size={30} />
-            )}
-            </button>
-          </div>
-        ))}
+      <div className={styles.shuffle_page}>
+      <Navbar title={"Shuffle"} />
+      <div className={styles.track_list_container}>
+        <div className={styles.track_list}>
+          {dataFirstShuffle?.data.map((data, i) => (
+            <div key={i} className={styles.track_item}>
+              <Artist_Page_TrackItem
+                data={data}
+                key={i}
+                action={single_track}
+              />
+            </div>
+          ))}
+        </div>
+        <div className={styles.track_list}>
+          {dataSecondShuffle?.data.map((data, i) => (
+            <div key={i} className={styles.track_item}>
+              <Artist_Page_TrackItem
+                data={data}
+                key={i}
+                action={single_track}
+              />
+            </div>
+          ))}
+        </div>
+        <div className={styles.track_list}>
+          {dataThirdShuffle?.data.map((data, i) => (
+            <div key={i} className={styles.track_item}>
+              <Artist_Page_TrackItem
+                data={data}
+                key={i}
+                action={single_track}
+              />
+            </div>
+          ))}
+        </div>
       </div>
       </div>
     </MainLayout>
@@ -54,47 +56,48 @@ export default function ShufflePage({ data }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://api.deezer.com/user/5277344544/flow");
-  const data = await res.json();
+  const resFirstShuffle = await fetch("https://api.deezer.com/user/5277344544/flow");
+  const resSecondShuffle = await fetch("https://api.deezer.com/user/5331777944/flow");
+  const resThirdShuffle = await fetch("https://api.deezer.com/user/5331777944/flow");
+
+
+  const dataFirstShuffle = await resFirstShuffle.json();
+  const dataSecondShuffle = await resSecondShuffle.json();
+  const dataThirdShuffle = await resThirdShuffle.json();
 
   return {
     props: {
-      data,
+      dataFirstShuffle,dataSecondShuffle,dataThirdShuffle
     },
   };
 }
 
+// const playTrack = (trackUrl, index) => {
+//   if (index === playingTrackIndex) {
+//     if (currentTrack.paused) {
+//       currentTrack.play();
+//     } else {
+//       currentTrack.pause();
+//     }
+//     return;
+//   }
 
+//   if (currentTrack) {
+//     currentTrack.pause();
+//   }
 
+//   const audio = new Audio(trackUrl);
 
-  // const playTrack = (trackUrl, index) => {
-  //   if (index === playingTrackIndex) {
-  //     if (currentTrack.paused) {
-  //       currentTrack.play();
-  //     } else {
-  //       currentTrack.pause();
-  //     }
-  //     return;
-  //   }
+//   audio.addEventListener("ended", () => {
+//     setPlayingTrackIndex(null);
+//   });
 
-  //   if (currentTrack) {
-  //     currentTrack.pause();
-  //   }
+//   audio.play();
+//   setCurrentTrack(audio);
+//   setPlayingTrackIndex(index);
+// };
 
-  //   const audio = new Audio(trackUrl);
-
-  //   audio.addEventListener("ended", () => {
-  //     setPlayingTrackIndex(null);
-  //   });
-
-  //   audio.play();
-  //   setCurrentTrack(audio);
-  //   setPlayingTrackIndex(index);
-  // };
-
-
-  ////
-
+////
 
 //   const playTrack = (trackUrl, index) => {
 //     if (playingTrackIndex === index) {
@@ -139,7 +142,3 @@ export async function getStaticProps() {
 //     setPlayingTrackIndex(index);
 //   }
 // };
-
-
-  
-

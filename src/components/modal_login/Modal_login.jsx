@@ -1,13 +1,13 @@
-import { useState } from "react";
 import references from "@/utils/references";
 import Image from "next/image";
 import styles from "./index.module.scss";
 import logo from "../../../public/logo/budz.png";
+import { useState } from "react";
 
 const Modal_login = ({ setModalIsVisibility }) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-
+  const [wrongCredential, setWrongCredential] = useState(true);
   const onHandleUsername = (e) => {
     setUserName(e.target.value);
   };
@@ -19,20 +19,24 @@ const Modal_login = ({ setModalIsVisibility }) => {
   const onHandleSubmit = (e) => {
     e.preventDefault();
     if (userName === references.username && password === references.password) {
-      setModalIsVisibility(false);
+      // if (typeof window !== "undefined") {
+      //   localStorage.setItem("logged", true),
+      // }
+      setModalIsVisibility(false)
     } else {
-      <div>
-        <p>Username o password errati</p>
-      </div>;
+      setWrongCredential(true)
     }
   };
 
   return (
     <div className={styles.Modal_login}>
+      {wrongCredential && <h1>Rieseguiihih laccesso!</h1>}
+
       <p className={styles.info1}>
         Iscriviti per ricevere brani e podcast illimitati. Non è necessaria
         alcuna carta di credito.
       </p>
+
       <div className={styles.containerLogin}>
         <Image
           src={logo}
