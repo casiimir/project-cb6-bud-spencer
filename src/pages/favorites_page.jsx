@@ -72,5 +72,3 @@ import Home_Page_TrackItem from "@/components/home_page_trackItem";
 
 export default Favorites_Page;
 
-
-

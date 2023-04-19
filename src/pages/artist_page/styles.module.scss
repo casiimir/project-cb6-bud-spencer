@@ -36,6 +36,7 @@
         }
 
         .btn_scroll_left {
+          display: none;
           position: absolute;
           top: 135px;
           left: 10px;
@@ -50,6 +51,7 @@
           cursor: pointer;
         }
         .btn_scroll_right {
+          display: none;
           position: absolute;
           top: 135px;
           right: 0px;
@@ -123,9 +125,11 @@
             font-size: 25px;
           }
           .btn_scroll_left {
+            display: block;
             top: 100px;
           }
           .btn_scroll_right {
+            display: block;
             top: 100px;
           }
         }

@@ -31,7 +31,7 @@ export default function Search_page({ albumData }) {
                 src={`https://widget.deezer.com/widget/dark/album/${albumData.id}?tracklist=false`}
                 width="100%"
                 height="130"
-                frameborder="0"
+                frameBorder="0"
                 allowtransparency="true"
                 allow="encrypted-media; clipboard-write"
               ></iframe>

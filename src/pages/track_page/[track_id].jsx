@@ -1,17 +1,19 @@
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import { TbPlayerSkipForward } from "react-icons/tb";
-import { TbPlayerSkipBack } from "react-icons/tb";
-import { BsFillPlayCircleFill, BsFillPauseCircleFill } from "react-icons/bs";
-import { TbPlayerPlayFilled } from "react-icons/tb";
-import { BiHeart } from "react-icons/bi";
-import { AiOutlinePlus } from "react-icons/ai";
-import { RxShare2 } from "react-icons/rx";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
+import YoutubeModal from "@/components/youtubeModal";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
-import cielostellato from "../../../public/globalimages/cielostellato.jpeg";
 
-export default function TrackPage({ trackData }) {
+export default function TrackPage({ trackData, youtubeId }) {
+  const [youtubeModal, setYoutubeModal] = useState(false);
+
+  const openModalYoutube = () => {
+    setYoutubeModal(true);
+  };
+  const closeModalYoutube = () => {
+    setYoutubeModal(false);
+  };
+
   return (
     <MainLayout>
       <div
@@ -26,17 +28,26 @@ export default function TrackPage({ trackData }) {
             height={500}
             alt={trackData.title}
           />
-          <div className={styles.deezerPlayer}>
-            <iframe
-              title="deezer-widget"
-              src={`https://widget.deezer.com/widget/dark/track/${trackData.id}?tracklist=false`}
-              width="100%"
-              height="130"
-              frameborder="0"
-              allowtransparency="true"
-              allow="encrypted-media; clipboard-write"
-            ></iframe>
+          <div className={styles.player}>
+            <div className={styles.deezerPlayer}>
+              <iframe
+                title="deezer-widget"
+                src={`https://widget.deezer.com/widget/dark/track/${trackData.id}?tracklist=false`}
+                width="100%"
+                height="130"
+                frameBorder="0"
+                allowtransparency="true"
+                allow="encrypted-media; clipboard-write"
+              ></iframe>
+            </div>
+            <h4 onClick={openModalYoutube}>Guarda il video</h4>
           </div>
+          {youtubeModal && (
+            <YoutubeModal
+              closeModalYoutube={closeModalYoutube}
+              youtubeId={youtubeId}
+            />
+          )}
         </div>
       </div>
     </MainLayout>
@@ -49,9 +60,27 @@ export async function getServerSideProps(context) {
   );
   const trackData = await resTrack.json();
 
+  const searchQuery =
+    trackData.title
+      .replaceAll(" ", "+")
+      .replaceAll(",", "+")
+      .replaceAll(".", "+") +
+    "+" +
+    trackData.artist.name
+      .replaceAll(" ", "+")
+      .replaceAll(",", "+")
+      .replaceAll(".", "+");
+
+  const resYoutube = await fetch(
+    `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&key=AIzaSyDXm7O6AY7HQGSWdWBLmvyMM1RC9D1NHro`
+  );
+
+  const youtubeData = await resYoutube.json();
+
   return {
     props: {
       trackData,
+      youtubeId: youtubeData.items[0].id.videoId,
     },
   };
 }

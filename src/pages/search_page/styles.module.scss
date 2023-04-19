@@ -17,6 +17,7 @@
       font-size: 22px;
     }
     .btn_left {
+      display: none;
       position: absolute;
       top: 135px;
       left: 10px;
@@ -31,6 +32,7 @@
       cursor: pointer;
     }
     .btn_right {
+      display: none;
       position: absolute;
       top: 135px;
       right: 0px;
@@ -98,9 +100,11 @@
         font-size: 25px;
       }
       .btn_left {
+        display: block;
         top: 100px;
       }
       .btn_right {
+        display: block;
         top: 100px;
       }
     }
