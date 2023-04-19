@@ -45,6 +45,14 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                     ))}
                   </div>
                 </section>
+                <section className={styles.albumListMobile}>
+                  <h3 className={styles.titleTopAlbum}>Top Albums</h3>
+                  <div className={styles.listTopArtist}>
+                    {albumData?.data.map((data, i) => (
+                      <Home_Page_AlbumItem key={i} data={data} />
+                    ))}
+                  </div>
+                </section>
                 {/* <section className={styles.mainListGenre}>
             <Home_Page_GenreItem data={{name:"Choose your Category"}} />
               <div className={styles.listGenre}>

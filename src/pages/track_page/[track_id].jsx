@@ -11,45 +11,37 @@ import React, { useState, useRef, useEffect } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import cielostellato from "../../../public/globalimages/cielostellato.jpeg";
 
-
-
 export default function TrackPage({ trackData }) {
-
-
   return (
     <MainLayout>
       <div
         className={styles.TrackPage}
-
-        style={{ backgroundImage: `url(${trackData.album.cover_xl})` }}      >
+        style={{ backgroundImage: `url(${trackData.album.cover_xl})` }}
+      >
         <div className={styles.container}>
           <Image
             className={styles.img}
             src={trackData.artist.picture_xl}
             width={500}
             height={500}
-
             alt={trackData.title}
           />
-         <div className={styles.deezerPlayer}>
-         <iframe
-            title="deezer-widget"
-            src={`https://widget.deezer.com/widget/dark/track/${trackData.id}?tracklist=false`}
-            width="100%"
-            height="130"
-            frameborder="0"
-            allowtransparency="true"
-            allow="encrypted-media; clipboard-write"
-          ></iframe>
-         </div>
+          <div className={styles.deezerPlayer}>
+            <iframe
+              title="deezer-widget"
+              src={`https://widget.deezer.com/widget/dark/track/${trackData.id}?tracklist=false`}
+              width="100%"
+              height="130"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media; clipboard-write"
+            ></iframe>
+          </div>
         </div>
       </div>
     </MainLayout>
   );
 }
-
-
-
 
 export async function getServerSideProps(context) {
   const resTrack = await fetch(

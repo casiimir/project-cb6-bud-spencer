@@ -34,6 +34,33 @@
           }
         }
       }
+      .albumListMobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+
+        .titleTopAlbum {
+          color: white;
+        }
+        .listTopArtist {
+          display: flex;
+          width: 90vw;
+          overflow-x: auto;
+          &::-webkit-scrollbar {
+            height: 8px;
+            width: 4px;
+          }
+          &::-webkit-scrollbar-track {
+            background: rgba(7, 7, 7, 0.098);
+            border-radius: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: rgba(215, 208, 208, 0.122);
+          }
+        }
+      }
       .mainListGenre {
         display: flex;
         flex-direction: row;
@@ -99,6 +126,9 @@
         .artistListMobile {
           display: none;
         }
+        .albumListMobile {
+          display: none;
+        }
 
         .mainListGenre {
           display: none;
@@ -117,7 +147,7 @@
         }
         .listTrack {
           width: 100%;
-          height: 50vh;
+          height: 58vh;
           overflow: auto;
           padding-bottom: 0;
         }
@@ -147,10 +177,10 @@
         .listTopArtist {
           margin-left: 18px;
           margin-top: 20px;
-          height: 36vh;
+          height: 40vh;
           gap: 30px;
           overflow: auto;
-          padding-bottom: 40px;
+          padding-bottom: 60px;
           &::-webkit-scrollbar {
             height: 8px;
             width: 4px;
