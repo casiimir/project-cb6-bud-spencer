@@ -1,93 +1,94 @@
 .container {
-  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
   align-items: center;
-  padding: 10px;
   border-radius: 10px;
+  padding:10px;
+
+
   &:hover {
     background-color: rgba(128, 126, 126, 0.2);
+    .ArtistItem {
 
     .icons_play {
-
-      .artist_name {
-        
-       
-      }
       .playIcon {
-
-      .starIcon {
-
         filter: opacity(1);
-        transform: translate(0px, 0px);
+        transform: translate(-5px, -25px);
       }
     }
-
-
-    .ArtistItem{
-      img{
-      filter:saturate(100%);
+    .image_name{
+      img{ filter: saturate(100%);
 
       }
     }
-
   }
-  }
+}
   .ArtistItem {
     display: flex;
     align-items: center;
-    gap: 30px;
-    img {
-      border-radius: 30%;
-      scale: 130%;
-      filter:saturate(30%);
+    justify-content: center;
+    width: 200px;
+   
+
+    
+    .image_name {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100px;
+      img {
+        border-radius: 30%;
+        scale: 100%;
+        filter: saturate(50%);
+      }
+      .artistName {
+        display: none;
+      }
     }
-    .artistName {
-      display: none;
+    .reactionIcons {
+      display:flex;
+      font-size:1.3rem;
+      gap:3px;
+      
     }
   }
   .icons_play {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-
-    .artist_name {
-      z-index: 2;
-      font-size: 16px;
-      transform: translate(-70px, 0px);
-      width: 50px;
-      filter: drop-shadow(0px 2px 10px $primary-color);
-    }
-    .playIcon {
-      width: 35px;
-      height: 35px;
-      background-color: $primary-color;
-      border-radius: 50%;
-      color: rgb(230, 217, 217);
-
-    .starIcon {
-      width: 30px;
-      height: 30px;
-
+    .artist_name_fluo {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 25px;
+      z-index: 2;
+      font-size: 16px;
+      transform: translate(-90px, 20px);
+      width: 50px;
+      height:50px;
+      filter: drop-shadow(0px 2px 10px $primary-color);
+    }
+
+    .playIcon {
+      width: 50px;
+      height: 50px;
+      background-color: $primary-color;
+      border-radius: 50%;
+      color: rgb(230, 217, 217);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 35px;
       cursor: pointer;
       filter: opacity(0);
       transition: all 0.25s;
-
-      transform: translate(0px, -10px);
-    }
-
-    .dots {
-      display: none;
+      box-shadow: 1px 1px 1px rgb(62, 58, 58);
+      transform: translate(-5px, 0px);
     }
   }
 }
-}
+
+
+
+
 @media screen and (min-width: 1000px) {
   .container {
     display: flex;
@@ -97,33 +98,45 @@
     align-items: center;
     padding: 10px;
     border-radius: 10px;
+
     &:hover {
       background-color: rgba(128, 126, 126, 0.2);
+      .ArtistItem {
 
       .icons_play {
-        .starIcon {
+        .playIcon {
           filter: opacity(1);
-          transform: translate(0px, 0px);
+          transform: translate(30px, 0px);
         }
       }
     }
-
+  }
     .ArtistItem {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 30px;
-      img {
-        border-radius: 30%;
-        scale: 100%;
+      width: 100%;
+      
+      .image_name {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 100px;
+        img {
+          border-radius: 30%;
+          scale: 100%;
+        }
+        .artistName {
+          display: block;
+        }
       }
-      .artistName {
-        display: block;
-      }
-    }
+     
     .icons_play {
-      .artist_name {
+      .artist_name_fluo {
         display: none;
       }
+
       .playIcon {
         width: 50px;
         height: 50px;
@@ -138,13 +151,10 @@
         filter: opacity(0);
         transition: all 0.25s;
         box-shadow: 1px 1px 1px rgb(62, 58, 58);
-        transform: translate(0px, -10px);
-      }
-
-      .dots {
-        display: block;
-        font-size: 22px;
+        transform: translate(30px, -10px);
       }
     }
+    
+  }
   }
 }

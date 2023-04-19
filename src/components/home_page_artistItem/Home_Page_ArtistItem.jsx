@@ -13,6 +13,7 @@ const Home_Page_ArtistItem = ({ data }) => {
   return (
     <div className={styles.container}>
       <div className={styles.ArtistItem} onClick={() => single_artist()}>
+        <div className={styles.image_name}>
         <Image
           className={styles.img}
           src={data?.picture_medium}
@@ -21,22 +22,19 @@ const Home_Page_ArtistItem = ({ data }) => {
           alt={data?.name}
         />
         <h4 className={styles.artistName}>{data?.name}</h4>
-      </div>
-      <div className={styles.icons_play}>
-
-        <p className={styles.artist_name}>
-        {data?.name}
-        </p>
+        </div>
+        <div className={styles.icons_play}>
+        <p className={styles.artist_name_fluo}>{data?.name}</p>
         <div className={styles.playIcon}>
           <BiPlay />
-
-        <div className={styles.starIcon}>
-          <BiStar />
-
         </div>
-        <BiDotsHorizontalRounded className={styles.dots} />
       </div>
-    </div>
+        <div className={styles.reactionIcons}>
+          <BiStar />
+          <BiDotsHorizontalRounded className={styles.dots} />
+        </div>
+      </div>
+      
     </div>
   );
 };
