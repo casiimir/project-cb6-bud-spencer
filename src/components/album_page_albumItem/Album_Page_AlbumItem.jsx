@@ -6,9 +6,8 @@ import { useState } from "react";
 
 import Home_Page_ArtistItem from "../home_page_artistItem/Home_Page_ArtistItem";
 
-const Album_Page_AlbumItem = ({ data }) => {
+const Album_Page_AlbumItem = ({ data, isAlbumPage }) => {
 
-  const [isAlbumPage, setIsAlbumPage] = useState(true)
 
   const explicitLyrics = data?.explicit_content_lyrics !== 0;
   return (
