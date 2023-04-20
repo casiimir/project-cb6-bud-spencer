@@ -38,15 +38,15 @@ export default function LoginPage() {
   return (
     <div className={styles.Modal_login}>
       <p className={styles.info1}>
-        Iscriviti per ricevere brani e podcast illimitati. Non è necessaria
-        alcuna carta di credito.
+        Sign up to get unlimited songs and podcasts with occasional ads. No
+        credit card needed. Sign up free
       </p>
       {errorPopup && (
         <div className={styles.popup_container}>
           <div className={styles.popup_overlay}></div>
           <div className={styles.error_popup}>
             <p onClick={onHandleHidePopup}>x</p>
-            <h4>Wrong Emeail or Password, please try again</h4>
+            <h4>Wrong Username or Password, please try again</h4>
           </div>
         </div>
       )}

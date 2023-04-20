@@ -8,9 +8,9 @@ const YoutubeModal = ({ youtubeId, closeModalYoutube }) => {
         <iframe
           width="100%"
           height="500px"
-          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&showinfo=0`}
+          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=0&showinfo=0`}
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
