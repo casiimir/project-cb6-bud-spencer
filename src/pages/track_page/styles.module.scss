@@ -19,16 +19,39 @@
     justify-content: center;
     align-items: center;
 
-    .img {
-      border-radius: 20px;
-      box-shadow: 2px 6px 6px rgba(144, 143, 143, 0.605);
-      scale: 50%;
+    .Navbar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100vw;
     }
+    .img_icon {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .img {
+        border-radius: 20px;
+        box-shadow: 2px 6px 6px rgba(144, 143, 143, 0.605);
+        scale: 50%;
+      }
+      .like {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+
     .player {
       width: 96%;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+
       flex-direction: column;
       position: absolute;
       bottom: 100px;
@@ -70,12 +93,20 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
-      .img {
-        border-radius: 20px;
-        box-shadow: 2px 6px 6px rgba(144, 143, 143, 0.605);
-        scale: 100%;
+      .img_icon {
+        width: 500px;
+        height: 500px;
+        .img {
+          margin-bottom: 20px;
+          border-radius: 20px;
+          box-shadow: 2px 6px 6px rgba(144, 143, 143, 0.605);
+          scale: 100%;
+        }
+        .like {
+          right: 20px;
+        }
       }
+
       .player {
         bottom: 20px;
 

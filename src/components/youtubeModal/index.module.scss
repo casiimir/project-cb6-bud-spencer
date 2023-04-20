@@ -9,8 +9,10 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.579);
   .YoutubeModal {
+    margin-top: -80px;
     position: relative;
     width: 80%;
+    cursor: pointer;
 
     p {
       text-decoration: underline;
