@@ -18,7 +18,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
   const [logged, setLogged] = useState(false);
   const [login, setLogin] = useState(false);
   const router = useRouter();
-  const [isHome, setIsHome] = useState(true);
+  
 
   useEffect(() => {
     if (localStorage.getItem("logged") != null) {
@@ -43,95 +43,8 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
       </Head>
 
       <main className={styles.main}>
-        {logged ? (
+        
           <MainLayout>
-            <div className={styles.mainContainer}>
-              <Navbar title={"Budz"} />
-              <div className={styles.container}>
-                <div className={styles.leftSide}>
-                  <Hero genreData={genreData} />
-                  <section className={styles.artistListMobile}>
-                    <h3 className={styles.titleTopArtist}>Top Artist</h3>
-                    <div className={styles.listTopArtist}>
-                      {artistData?.data.map((data, i) => (
-                        <Home_Page_ArtistItem key={i} data={data} />
-                      ))}
-                    </div>
-                  </section>
-                  <section className={styles.albumListMobile}>
-                    <h3 className={styles.titleTopAlbum}>Top Albums</h3>
-                    <div className={styles.listTopArtist}>
-                      {albumData?.data.map((data, i) => (
-                        <Home_Page_AlbumItem key={i} data={data} />
-                      ))}
-                    </div>
-                  </section>
-                  {/* <section className={styles.mainListGenre}>
-            <Home_Page_GenreItem data={{name:"Choose your Category"}} />
-              <div className={styles.listGenre}>
-              {genreData?.data.map((data, i) => (
-                <Home_Page_GenreItem key={i} data={data} />
-              ))}
-            </div>
-            </section> */}
-                  <section>
-                    <div className={styles.title}>
-                      <h3 className={styles.titleTrending}>
-                        Trending right now
-                      </h3>
-                    </div>
-                    {!artistData ? (
-                      <p>ciao</p>
-                    ) : (
-                      <div className={styles.listTrack}>
-                        {trackData?.tracks.data.map((data, i) => (
-                          <Home_Page_TrackItem
-                            key={i}
-                            data={data}
-                            isHome={isHome}
-                          />
-                        ))}
-                      </div>
-                    )}
-                  </section>
-                </div>
-                <div className={styles.rightSide}>
-                  <section>
-                    <div className={styles.title}>
-                      <h3 className={styles.titleTopArtist}>Top Artist</h3>
-                    </div>
-                    <div className={styles.listTopArtist}>
-                      {artistData?.data.map((data, i) => (
-                        <Home_Page_ArtistItem key={i} data={data} />
-                      ))}
-                    </div>
-                  </section>
-                  <section>
-                    <div className={styles.title}>
-                      <h3 className={styles.titleTopAlbum}>Top Albums</h3>
-                    </div>
-                    <div className={styles.listTopArtist}>
-                      {albumData?.data.map((data, i) => (
-                        <Home_Page_AlbumItem key={i} data={data} isHome={isHome} />
-                      ))}
-                    </div>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </MainLayout>
-        ) : (
-          <MainLayout>
-            <div className={styles.login_container}>
-              <div className={styles.login_overlay}></div>
-              <div className={styles.login_box}>
-                <h1>Welcome To Budz</h1>
-                <p>The coolest audio streaming app on the planet</p>
-                <button className={styles.login_button} onClick={goToLoginPage}>
-                  login now!
-                </button>
-              </div>
-            </div>
             <div className={styles.mainContainer}>
               <Navbar title={"Budz"} />
               <div className={styles.container}>
@@ -194,9 +107,20 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                 </div>
               </div>
             </div>
+           
           </MainLayout>
-        )}
+         
       </main>
+      {!logged && <div className={styles.login_container}>
+              <div className={styles.login_overlay}></div>
+              <div className={styles.login_box}>
+                <h1>Welcome To Budz</h1>
+                <p>The coolest audio streaming app on the planet</p>
+                <button className={styles.login_button} onClick={goToLoginPage}>
+                  login now!
+                </button>
+              </div>
+            </div> }
     </>
   );
 }
