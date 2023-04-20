@@ -22,7 +22,6 @@ import { useRouter } from "next/router";
     }, []);
   
     const removeFavorite = (id) => {
-        debugger
       const updatedFavoriteAlbums = favoriteAlbums.filter((f) => f.id !== id);
       setFavoriteAlbums(updatedFavoriteAlbums);
 

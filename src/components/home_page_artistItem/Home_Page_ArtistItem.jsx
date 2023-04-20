@@ -1,14 +1,51 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { BiDotsHorizontalRounded, BiStar, BiPlay } from "react-icons/bi";
+import { useState, useEffect } from "react";
+import { BiDotsHorizontalRounded, BiPlay } from "react-icons/bi";
+import {BsStar, BsStarFill} from "react-icons/bs"
 
-const Home_Page_ArtistItem = ({ data }) => {
+const Home_Page_ArtistItem = ({ data,  isHome, onRemoveFavorite }) => {
   const router = useRouter();
 
   const single_artist = () => {
     router.push(`/artist_page/${data.id}`);
   };
+
+const [favoriteArtist, setFavoriteArtist] = useState([]);
+
+  const [isStarFilled, setIsStarFilled] = useState(false)
+
+  const handleToggleFavorites = (item) => {
+    if (!isHome) {
+      onRemoveFavorite()
+    }
+    else{
+      const currentFavoriteArtist = JSON.parse(localStorage.getItem("favoriteArtists")) || [];
+      const index = currentFavoriteArtist.findIndex((fav) => JSON.stringify(fav) === JSON.stringify(item));
+    
+      if (index !== -1)  {
+        const updatedFavoriteArtist = [...currentFavoriteArtist];
+        updatedFavoriteArtist.splice(index, 1);
+        setIsStarFilled(false)
+        setFavoriteArtist(updatedFavoriteArtist);
+        localStorage.setItem("favoriteArtists", JSON.stringify(updatedFavoriteArtist));
+      } else {
+        const updatedFavoriteArtist = currentFavoriteArtist.concat(item);
+        setIsStarFilled(true)
+        setFavoriteArtist(updatedFavoriteArtist);
+        localStorage.setItem("favoriteArtists", JSON.stringify(updatedFavoriteArtist));
+      }
+    }
+  }
+
+  useEffect(() => {
+    const currentFavoriteArtist = JSON.parse(localStorage.getItem("favoriteArtists")) || [];
+    const index = currentFavoriteArtist.findIndex((fav) => JSON.stringify(fav) === JSON.stringify(data));
+    setIsStarFilled(index !== -1);
+  }, [data]);
+ 
+
 
   return (
     <div className={styles.container}>
@@ -30,7 +67,23 @@ const Home_Page_ArtistItem = ({ data }) => {
           </div>
         </div>
         <div className={styles.reactionIcons}>
-          <BiStar />
+        {isStarFilled ? (
+            <BsStarFill
+              className={`${styles.star} ${styles.active}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleToggleFavorites(data);
+              }}
+            />
+          ) : (
+            <BsStar
+              className={styles.star}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleToggleFavorites(data);
+              }}
+            />
+          )}
           <BiDotsHorizontalRounded className={styles.dots} />
         </div>
       </div>
