@@ -3,6 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import YoutubeModal from "@/components/youtubeModal";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
+import { BiHeart } from "react-icons/bi";
+import Navbar from "@/components/navbar";
 
 export default function TrackPage({ trackData, youtubeId }) {
   const [youtubeModal, setYoutubeModal] = useState(false);
@@ -21,13 +23,20 @@ export default function TrackPage({ trackData, youtubeId }) {
         style={{ backgroundImage: `url(${trackData.album.cover_xl})` }}
       >
         <div className={styles.container}>
-          <Image
-            className={styles.img}
-            src={trackData.artist.picture_xl}
-            width={500}
-            height={500}
-            alt={trackData.title}
-          />
+          <div className={styles.Navbar}>
+            <Navbar />
+          </div>
+          <div className={styles.img_icon}>
+            <Image
+              className={styles.img}
+              src={trackData.artist.picture_xl}
+              width={500}
+              height={500}
+              alt={trackData.title}
+            />
+
+            <BiHeart className={styles.like} />
+          </div>
           <div className={styles.player}>
             <div className={styles.deezerPlayer}>
               <iframe
@@ -40,7 +49,7 @@ export default function TrackPage({ trackData, youtubeId }) {
                 allow="encrypted-media; clipboard-write"
               ></iframe>
             </div>
-            <h4 onClick={openModalYoutube}>Guarda il video</h4>
+            <h4 onClick={openModalYoutube}>Go to video</h4>
           </div>
           {youtubeModal && (
             <YoutubeModal

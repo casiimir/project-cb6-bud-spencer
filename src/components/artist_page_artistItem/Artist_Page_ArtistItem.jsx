@@ -45,6 +45,7 @@ const Artist_Page_ArtistItem = ({ artistData }) => {
           height={200}
           alt={artistData.name}
         />
+
         <h1 className={styles.name_artist_desktop}>{artistData.name}</h1>
         <p>{`N° Albums: ${artistData.nb_album}`}</p>
         <p>{`Follower: ${artistData.nb_fan}`}</p>

@@ -13,26 +13,25 @@ const Tendina_Menu = ({ tendina }) => {
         </div>
       </div>
       <div className={styles.content}>
-        <div className={styles.box}>
+        <Link className={styles.box} href="/favouriteAlbum_page">
           <BiFolder className={styles.icon} />
           <p>Album</p>
-        </div>
-        <div>
-          <Link className={styles.box} href="/favorites_page">
-            <BiHeart className={styles.icon} />
-            <p>Favorites</p>
-          </Link>
-        </div>
-        <div>
-          <Link className={styles.box} href="/shuffle_page">
-            <BiShuffle className={styles.icon} />
-            <p>Shuffle</p>
-          </Link>
-        </div>
-        <div className={styles.box}>
+        </Link>
+
+        <Link className={styles.box} href="/favorites_page">
+          <BiHeart className={styles.icon} />
+          <p>Favorites</p>
+        </Link>
+
+        <Link className={styles.box} href="/shuffle_page">
+          <BiShuffle className={styles.icon} />
+          <p>Shuffle</p>
+        </Link>
+
+        <Link className={styles.box} href="/favoriteArtist_page">
           <BiStar className={styles.icon} />
           <p>Artist</p>
-        </div>
+        </Link>
       </div>
     </div>
   );
