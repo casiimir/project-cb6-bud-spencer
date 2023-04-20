@@ -44,10 +44,10 @@ export default function LoginPage() {
       {errorPopup && (
         <div className={styles.popup_container}>
           <div className={styles.popup_overlay}></div>
-        <div className={styles.error_popup}>
-          <p onClick={onHandleHidePopup}>x</p>
-          <h4>Wrong Emeail or Password, please try again</h4>
-        </div>
+          <div className={styles.error_popup}>
+            <p onClick={onHandleHidePopup}>x</p>
+            <h4>Wrong Emeail or Password, please try again</h4>
+          </div>
         </div>
       )}
       <div className={styles.containerLogin}>

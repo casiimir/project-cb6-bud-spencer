@@ -28,7 +28,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    width: 140px;
+    width: 100px;
 
     img {
       border-radius: 30%;
@@ -55,8 +55,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
-
+    gap: 10px;
+    .playIcon {
+      width: 50px;
+      height: 50px;
+      background-color: $primary-color;
+      border-radius: 50%;
+      color: rgb(230, 217, 217);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 35px;
+      cursor: pointer;
+      filter: opacity(0);
+      transition: all 0.25s;
+      box-shadow: 1px 1px 1px rgb(62, 58, 58);
+      transform: translate(30px, -10px);
+      margin-top: 40px;
+    }
     .dots {
       display: block;
       font-size: 22px;
@@ -88,21 +104,25 @@
         }
       }
     }
-    .playIcon {
-      width: 50px;
-      height: 50px;
-      background-color: $primary-color;
-      border-radius: 50%;
-      color: rgb(230, 217, 217);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 35px;
-      cursor: pointer;
-      filter: opacity(0);
-      transition: all 0.25s;
-      box-shadow: 1px 1px 1px rgb(62, 58, 58);
-      transform: translate(30px, -10px);
+    .icons_play {
+      .playIcon {
+        width: 50px;
+        height: 50px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        color: rgb(230, 217, 217);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        cursor: pointer;
+        filter: opacity(0);
+        transition: all 0.25s;
+        box-shadow: 1px 1px 1px rgb(62, 58, 58);
+        transform: translate(30px, -10px);
+        margin-top: 40px;
+        margin-right: 40px;
+      }
     }
   }
 }
