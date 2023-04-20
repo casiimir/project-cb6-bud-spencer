@@ -1,46 +1,54 @@
 import styles from "./index.module.scss";
 import { useState, useEffect } from "react";
-import { BiUser, BiDotsHorizontalRounded, BiPlay } from "react-icons/bi";
+import { BiUser, BiPlay } from "react-icons/bi";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { secondsToMinutes, padTo2Digits } from "@/utils/func";
 
-const Home_Page_TrackItem = ({ data, trackIndex, isHome, onRemoveFavorite }) => {
-
+const Home_Page_TrackItem = ({
+  data,
+  trackIndex,
+  isHome,
+  onRemoveFavorite,
+}) => {
   const router = useRouter();
 
   const [favorites, setFavorites] = useState([]);
 
-  const [isHeartFilled, setIsHeartFilled] = useState(false)
+  const [isHeartFilled, setIsHeartFilled] = useState(false);
 
   const handleToggleFavorites = (item) => {
-
     if (!isHome) {
-      onRemoveFavorite()
-    }
-    else{
-      const currentFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-      const index = currentFavorites.findIndex((fav) => JSON.stringify(fav) === JSON.stringify(item));
-    
-      if (index !== -1)  {
+      onRemoveFavorite();
+    } else {
+      const currentFavorites =
+        JSON.parse(localStorage.getItem("favorites")) || [];
+      const index = currentFavorites.findIndex(
+        (fav) => JSON.stringify(fav) === JSON.stringify(item)
+      );
+
+      if (index !== -1) {
         const updatedFavorites = [...currentFavorites];
         updatedFavorites.splice(index, 1);
-        setIsHeartFilled(false)
+        setIsHeartFilled(false);
         setFavorites(updatedFavorites);
         localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
       } else {
         const updatedFavorites = currentFavorites.concat(item);
-        setIsHeartFilled(true)
+        setIsHeartFilled(true);
         setFavorites(updatedFavorites);
         localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
       }
     }
-  }
+  };
 
   useEffect(() => {
-    const currentFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const index = currentFavorites.findIndex((fav) => JSON.stringify(fav) === JSON.stringify(data));
+    const currentFavorites =
+      JSON.parse(localStorage.getItem("favorites")) || [];
+    const index = currentFavorites.findIndex(
+      (fav) => JSON.stringify(fav) === JSON.stringify(data)
+    );
     setIsHeartFilled(index !== -1);
   }, [data]);
 
@@ -48,16 +56,21 @@ const Home_Page_TrackItem = ({ data, trackIndex, isHome, onRemoveFavorite }) => 
     router.push(`/track_page/${data.id}`);
   };
 
-
   return (
-    <div className={styles.TrackItem} >
-      <div className={styles.mainContent} onClick={() => goToTrackPage()} >
+    <div className={styles.TrackItem}>
+      <div className={styles.mainContent} onClick={() => goToTrackPage()}>
         <p className={styles.index}>
-          {data?.position ? padTo2Digits(data?.position) : padTo2Digits(trackIndex + 1)}
+          {data?.position
+            ? padTo2Digits(data?.position)
+            : padTo2Digits(trackIndex + 1)}
         </p>
         <BiPlay className={styles.playIcon} />
         <Image
-          src={data.artist.picture_medium ? data.artist.picture_medium : data.album.cover_medium}
+          src={
+            data.artist.picture_medium
+              ? data.artist.picture_medium
+              : data.album.cover_medium
+          }
           width={65}
           height={65}
           alt={data.title}
@@ -92,7 +105,6 @@ const Home_Page_TrackItem = ({ data, trackIndex, isHome, onRemoveFavorite }) => 
               }}
             />
           )}
-          <BiDotsHorizontalRounded className={styles.dots} />
         </div>
       </div>
     </div>
@@ -100,4 +112,3 @@ const Home_Page_TrackItem = ({ data, trackIndex, isHome, onRemoveFavorite }) => 
 };
 
 export default Home_Page_TrackItem;
-
