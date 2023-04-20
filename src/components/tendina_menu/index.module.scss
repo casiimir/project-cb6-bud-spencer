@@ -1,11 +1,15 @@
 .Tendina_Menu {
   position: absolute;
-  top: 80px;
-  left: -1000px;
-  border-top: 3px solid $primary-color;
+  top: -1000px;
+  left: 10px;
+  background-color: $off-white;
   border-radius: 6px;
-  width: 180px;
-  height: 400px;
+  width: 90vw;
+  height: 80vh;
+  padding: 20px;
+  color: $grey;
+  transition: all 0.5s;
+  z-index: 2;
 
   .boxLogo {
     margin-top: 20px;
@@ -26,12 +30,6 @@
     }
   }
 
-  padding: 20px;
-  background-color: $grey;
-  color: $off_white;
-  transition: all 0.5s;
-  z-index: 2;
-
   .content {
     display: flex;
     margin-left: 10px;
@@ -43,29 +41,25 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
+      padding: 10px;
       p {
         cursor: pointer;
         font-size: 14px;
-        &:hover {
-          color: $primary-color;
-        }
+        color: $grey;
       }
 
       .icon {
         cursor: pointer;
         font-size: 30px;
         border-radius: 50%;
-        box-shadow: 0px 0px 10px $primary-color;
-        &:hover {
-          color: $primary-color;
-        }
+        color: $grey;
       }
     }
   }
 }
 .show {
-  left: 10px;
+  top: 80px;
 }
 
 @media screen and (min-width: 1000px) {
