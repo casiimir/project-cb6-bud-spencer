@@ -90,7 +90,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                     </div>
                     <div className={styles.listTopArtist}>
                       {artistData?.data.map((data, i) => (
-                        <Home_Page_ArtistItem key={i} data={data} />
+                        <Home_Page_ArtistItem key={i} data={data} isHome={isHome}/>
                       ))}
                     </div>
                   </section>
@@ -127,7 +127,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                     <h3 className={styles.titleTopArtist}>Top Artist</h3>
                     <div className={styles.listTopArtist}>
                       {artistData?.data.map((data, i) => (
-                        <Home_Page_ArtistItem key={i} data={data} />
+                        <Home_Page_ArtistItem key={i} data={data} isHome={isHome} />
                       ))}
                     </div>
                   </section>
@@ -150,7 +150,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                     ) : (
                       <div className={styles.listTrack}>
                         {trackData?.tracks.data.map((data, i) => (
-                          <Home_Page_TrackItem key={i} data={data} />
+                          <Home_Page_TrackItem key={i} data={data} isHome={isHome}/>
                         ))}
                       </div>
                     )}
@@ -163,7 +163,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                     </div>
                     <div className={styles.listTopArtist}>
                       {artistData?.data.map((data, i) => (
-                        <Home_Page_ArtistItem key={i} data={data} />
+                        <Home_Page_ArtistItem key={i} data={data} isHome={isHome} />
                       ))}
                     </div>
                   </section>
@@ -173,7 +173,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                     </div>
                     <div className={styles.listTopArtist}>
                       {albumData?.data.map((data, i) => (
-                        <Home_Page_AlbumItem key={i} data={data} />
+                        <Home_Page_AlbumItem key={i} data={data} isHome={isHome} />
                       ))}
                     </div>
                   </section>
