@@ -10,6 +10,7 @@ const Home_Page_TrackItem = ({
   data,
   trackIndex,
   isHome,
+  isAlbumPage,
   onRemoveFavorite,
 }) => {
   const router = useRouter();
@@ -19,13 +20,13 @@ const Home_Page_TrackItem = ({
   const [isHeartFilled, setIsHeartFilled] = useState(false);
 
   const handleToggleFavorites = (item) => {
-    if (!isHome) {
+    if (!isHome && !isAlbumPage) {
       onRemoveFavorite();
     } else {
       const currentFavorites =
         JSON.parse(localStorage.getItem("favorites")) || [];
       const index = currentFavorites.findIndex(
-        (fav) => JSON.stringify(fav) === JSON.stringify(item)
+        (fav) => JSON.stringify(fav.id) === JSON.stringify(item.id)
       );
 
       if (index !== -1) {
@@ -47,7 +48,7 @@ const Home_Page_TrackItem = ({
     const currentFavorites =
       JSON.parse(localStorage.getItem("favorites")) || [];
     const index = currentFavorites.findIndex(
-      (fav) => JSON.stringify(fav) === JSON.stringify(data)
+      (fav) => JSON.stringify(fav.id) === JSON.stringify(data.id)
     );
     setIsHeartFilled(index !== -1);
   }, [data]);

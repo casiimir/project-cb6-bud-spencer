@@ -7,6 +7,9 @@ import { BsFillPlayCircleFill } from "react-icons/bs";
 import { useState } from "react";
 
 export default function Search_page({ albumData }) {
+
+  const [isAlbumPage, setIsAlbumPage] = useState(true)
+  
   const [player, setPlayer] = useState(false);
 
   const onHandleShowPlayer = () => {
@@ -41,7 +44,7 @@ export default function Search_page({ albumData }) {
             </div>
           )}
           <div className={styles.albumItem}>
-            <Album_Page_AlbumItem data={albumData} />
+            <Album_Page_AlbumItem data={albumData} isAlbumPage={isAlbumPage}/>
           </div>
           <div className={styles.titles}>
             <h2>Tracks </h2>
@@ -55,7 +58,7 @@ export default function Search_page({ albumData }) {
 
           <div className={styles.trackItem}>
             {albumData?.tracks.data.map((data, i) => (
-              <Home_Page_TrackItem key={i} data={data} trackIndex={i} />
+              <Home_Page_TrackItem key={i} data={data} trackIndex={i} isAlbumPage={isAlbumPage} />
             ))}
           </div>
         </div>

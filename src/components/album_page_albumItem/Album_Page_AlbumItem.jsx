@@ -1,9 +1,14 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
-import { secondsToMinutes, padTo2Digits } from "@/utils/func";
+import { secondsToMinutes } from "@/utils/func";
+
+import { useState } from "react";
+
 import Home_Page_ArtistItem from "../home_page_artistItem/Home_Page_ArtistItem";
 
-const Album_Page_AlbumItem = ({ data }) => {
+const Album_Page_AlbumItem = ({ data, isAlbumPage }) => {
+
+
   const explicitLyrics = data?.explicit_content_lyrics !== 0;
   return (
     <div className={styles.container}>
@@ -23,7 +28,7 @@ const Album_Page_AlbumItem = ({ data }) => {
       <div className={styles.bottom_info}>
         <div className={styles.contributors_album}>
           {data?.contributors.map((data, i) => (
-            <Home_Page_ArtistItem key={i} data={data} />
+            <Home_Page_ArtistItem key={i} data={data} isAlbumPage={isAlbumPage}/>
           ))}
         </div>
        <h3 className={styles.artistName_mobile}>

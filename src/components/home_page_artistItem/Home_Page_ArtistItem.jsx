@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { BiPlay } from "react-icons/bi";
 import { BsStar, BsStarFill } from "react-icons/bs";
 
-const Home_Page_ArtistItem = ({ data, isHome, onRemoveFavorite }) => {
+const Home_Page_ArtistItem = ({ data, isHome, onRemoveFavorite, isAlbumPage }) => {
   const router = useRouter();
 
   const single_artist = () => {
@@ -17,7 +17,7 @@ const Home_Page_ArtistItem = ({ data, isHome, onRemoveFavorite }) => {
   const [isStarFilled, setIsStarFilled] = useState(false);
 
   const handleToggleFavorites = (item) => { 
-    if (!isHome) {
+    if (!isHome && !isAlbumPage) {
       onRemoveFavorite()
     }
     else{
