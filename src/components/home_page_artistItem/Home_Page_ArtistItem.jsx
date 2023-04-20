@@ -16,13 +16,13 @@ const [favoriteArtist, setFavoriteArtist] = useState([]);
 
   const [isStarFilled, setIsStarFilled] = useState(false)
 
-  const handleToggleFavorites = (item) => {
+  const handleToggleFavorites = (item) => { 
     if (!isHome) {
       onRemoveFavorite()
     }
     else{
       const currentFavoriteArtist = JSON.parse(localStorage.getItem("favoriteArtists")) || [];
-      const index = currentFavoriteArtist.findIndex((fav) => JSON.stringify(fav) === JSON.stringify(item));
+      const index = currentFavoriteArtist.findIndex((fav) => JSON.stringify(fav.id) === JSON.stringify(item.id));
     
       if (index !== -1)  {
         const updatedFavoriteArtist = [...currentFavoriteArtist];
@@ -40,10 +40,10 @@ const [favoriteArtist, setFavoriteArtist] = useState([]);
   }
 
   useEffect(() => {
-    const currentFavoriteArtist = JSON.parse(localStorage.getItem("favoriteArtists")) || [];
-    const index = currentFavoriteArtist.findIndex((fav) => JSON.stringify(fav) === JSON.stringify(data));
-    setIsStarFilled(index !== -1);
-  }, [data]);
+      const currentFavoriteArtist = JSON.parse(localStorage.getItem("favoriteArtists")) || [];
+      const index = currentFavoriteArtist.findIndex((fav) => JSON.stringify(fav.id) === JSON.stringify(data.id));
+      setIsStarFilled(index !== -1);
+  }, []);
  
 
 

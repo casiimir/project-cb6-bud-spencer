@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Home_Page_TrackItem from "@/components/home_page_trackItem";
 
- const Favorites_Page = ({data, trackIndex }) => {
+ const Favorites_Page = ({data }) => {
 
   const [favorites, setFavorites] = useState([]);
 
