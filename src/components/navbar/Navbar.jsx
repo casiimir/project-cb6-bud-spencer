@@ -1,5 +1,5 @@
-import { HiMenuAlt1, HiOutlineBell } from "react-icons/hi";
-import { BiSearchAlt } from "react-icons/bi";
+import { HiMenuAlt1 } from "react-icons/hi";
+import { BiSearchAlt, BiUserX } from "react-icons/bi";
 import styles from "./index.module.scss";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -29,11 +29,10 @@ const Navbar = ({ title }) => {
       </div>
       <Tendina_Menu tendina={tendina} />
       <div className={styles.content_icon_input}>
-        <HiOutlineBell className={styles.icon_bell} />
+        <BiUserX className={styles.icon_bell} />
         <BiSearchAlt className={styles.icon_search} />
         <form onSubmit={onSubmit}>
           <input
-            id="ancor"
             value={inputSearch}
             onChange={(e) => setInputSearch(e.target.value)}
             type="text"

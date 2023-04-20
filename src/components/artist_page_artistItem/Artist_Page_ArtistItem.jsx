@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
+import { BiStar } from "react-icons/bi";
 
 const Artist_Page_ArtistItem = ({ artistData }) => {
   return (
@@ -12,9 +13,11 @@ const Artist_Page_ArtistItem = ({ artistData }) => {
           height={200}
           alt={artistData.name}
         />
+
         <h1 className={styles.name_artist_desktop}>{artistData.name}</h1>
         <p>{`N° Albums: ${artistData.nb_album}`}</p>
         <p>{`Follower: ${artistData.nb_fan}`}</p>
+        <BiStar className={styles.star} />
       </div>
       <div className={styles.name_artist}>
         <h1>{artistData.name}</h1>
