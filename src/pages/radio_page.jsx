@@ -7,11 +7,11 @@ import { useState } from "react";
 import Navbar from "@/components/navbar";
 export default function RadioPage({ dataRadioList, dataRadioTracks }) {
   const router = useRouter();
-
+  
   const single_track = (item) => {
     router.push(`/track_page/${item.id}`);
   };
-  const [selectValue, setSelectValue] = useState("");
+  const [selectValue, setSelectValue] = useState("37151");
   //  const [optionFetch, setOptionFetch] = useState([]);
 
   const onHandleInput = (e) => setSelectValue(() => e.target.value);
@@ -20,6 +20,7 @@ export default function RadioPage({ dataRadioList, dataRadioTracks }) {
     e.preventDefault();
     appSetSelectValue(() => selectValue);
   };
+  
 
   // useEffect(() => {
   //   GET(`/products/categories/`).then((data) => setOptionFetch(() => data));
@@ -62,8 +63,8 @@ export default function RadioPage({ dataRadioList, dataRadioTracks }) {
 export async function getStaticProps() {
   const resRadioList = await fetch("https://api.deezer.com/radio/genres");
   const resRadioTracks = await fetch(
-    "https://api.deezer.com/radio/37151/tracks"
-  );
+    `https://api.deezer.com/radio/37151/tracks`
+  ); 
 
   const dataRadioList = await resRadioList.json();
   const dataRadioTracks = await resRadioTracks.json();

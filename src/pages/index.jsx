@@ -95,14 +95,14 @@ export default function Home({ artistData, trackData, albumData, radioData }) {
                     ))}
                   </div>
                 </section>
-                <section className={styles.mainListRadio}>
+                {/* <section className={styles.mainListRadio}>
             <Home_Page_RadioItem data={{title:"Listen now to our Radio!"}} />
               <div className={styles.listRadio}>
               {radioData?.data.map((data, i) => (
                 <Home_Page_RadioItem key={i} data={data} />
               ))}
             </div>
-            </section>
+            </section> */}
                 <section>
                   <div className={styles.title}>
                     <h3 className={styles.titleTrending}>Trending right now</h3>
