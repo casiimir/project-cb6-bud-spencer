@@ -75,7 +75,7 @@ const Home_Page_ArtistItem = ({ data, isHome, onRemoveFavorite, isAlbumPage }) =
         <div className={styles.reactionIcons}>
           {isStarFilled ? (
             <BsStarFill
-              className={`${styles.star} ${styles.active}`}
+              className={`${styles.star_fill} ${styles.active}`}
               onClick={(e) => {
                 e.stopPropagation();
                 handleToggleFavorites(data);

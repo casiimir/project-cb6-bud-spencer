@@ -67,19 +67,33 @@
       transform: translate(-5px, 0px);
       margin-top: 40px;
     }
-    .reactionIcons {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      .folder {
-        font-size: 22px;
-      }
+    
+  }
+  .reactionIcons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    .folder {
+      font-size: 22px;
+    }
+    .folder_fill {
+      font-size: 22px;
+      color: $primary-color;
     }
   }
 }
 @media screen and (min-width: 1000px) {
   .container {
     padding: 10px;
+    &:hover {
+     
+      .icons_play {
+        .playIcon {
+          filter: opacity(1);
+          transform: translate(55px, -20px);
+        }
+      }
+    }
     .AlbumItem {
       .text {
         h4 {
@@ -118,7 +132,7 @@
         filter: opacity(0);
         transition: all 0.25s;
         box-shadow: 1px 1px 1px rgb(62, 58, 58);
-        transform: translate(30px, -10px);
+        transform: translate(55px, -30px);
         margin-top: 40px;
         margin-right: 40px;
       }

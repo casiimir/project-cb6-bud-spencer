@@ -52,7 +52,7 @@
         border-radius: 20px;
         width: 30%;
         height:1450px;
-      margin:20px;
+        margin:20px;
 
         .track_item {
           display: flex;
@@ -60,7 +60,7 @@
           align-items: center;
           gap: 20px;
           z-index: 4;
-
+           flex-wrap: wrap;
           transition: all 0.2s;
         }
       }

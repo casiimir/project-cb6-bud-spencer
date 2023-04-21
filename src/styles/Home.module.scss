@@ -382,6 +382,190 @@
       }
     }
   }
-
+  .login_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+  
+    .login_overlay {
+      width: 100%;
+      height: 100vh;
+      background-color: $primary-color;
+      filter: opacity(80%);
+      backdrop-filter: blur(4px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 12;
+    }
+    .login_box {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 13;
+      font-size: 0.8rem;
+      width: 100%;
+      height: 100vh;
+      color: rgb(208, 205, 205);
+  
+      padding: 15px;
+  
+      .header_login {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        .info1 {
+        }
+        .logo {
+          scale: 70%;
+          background-color: #ffffff;
+          padding:8px;
+          border-radius: 50%;
+          translate:(-17px 0)
+        }
+        .deezer_container {
+          .logo_title {
+            transform: translate(12px, 4px);
+            color: rgb(212, 212, 212);
+            font-size: 0.7rem;
+          }
+          .deezer {
+            transform: translate(0, 4px);
+            scale: 70%;
+            
+          }
+        }
+      }
+      .body_login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 70%;
+        font-size: 1.2rem;
+        .container_form {
+          display: flex;
+          form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 1.4rem;
+  
+            input::placeholder {
+              color: rgb(253, 253, 253);
+            }
+          }
+          input {
+            width: 150px;
+            height: 25px;
+            background: rgba(0, 0, 0, 0.42);
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;     
+            text-align: left;
+            letter-spacing: 0.1em;
+            outline: none;
+            padding: 8px;
+          }
+  
+          .input_login {
+            display: flex;
+            justify-content:center;
+            background: none;
+            width: 150px;
+            height: 25px;
+            padding:3px;
+            color: $primary-color;
+            background-color: $off-white;
+            border: 1px solid black;
+            cursor: pointer;
+            transition: transform 0.2s;
+  
+            &:hover {
+              transform: scale(0.95);
+            }
+          }
+        }
+      }
+      .footer_login {
+        .deezer {
+        }
+        .info2 {
+        }
+      }
+    }
+    
+  .popup_container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 15;
+    
+      .popup_overlay {
+        width: 100%;
+        height: 100vh;
+        background-color: $primary-color;
+        filter: opacity(80%);
+        backdrop-filter: blur(4px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 16;
+      }
+      .popup_error {
+        position: absolute;
+        top:calc(50% - 40px);
+        left:calc(50% - 100px);
+        width:200px;
+        height:80px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 17;
+        font-size: 12px;;
+        color: $primary-color;
+        border-radius: 3px;
+        padding:10px;
+        .close_error {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          translate: (-83px -10px);
+          width: 15px;
+          height: 15px;
+          top: 8px;
+          left: 28px;
+          font-weight: bold;
+          font-size: 14px;
+          cursor: pointer;
+          border: 1px solid rgb(95, 94, 94);
+          &:hover {
+            background-color: $primary-color;
+            color: white;
+          }
+        }
+        p{
+          text-align: center;
+        }
+      }
+  }
+  
+  
+  }
   
 }

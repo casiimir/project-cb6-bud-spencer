@@ -79,10 +79,12 @@ const Home_Page_AlbumItem = ({ data, isHome, onRemoveFavorite }) => {
         <div className={styles.playIcon}>
           <BiPlay />
         </div>
-        <div className={styles.reactionIcons}>
+        
+      </div>
+      <div className={styles.reactionIcons}>
           {isFolderFilled ? (
             <AiFillFolder
-              className={`${styles.folder} ${styles.active}`}
+              className={`${styles.folder_fill} ${styles.active}`}
               onClick={(e) => {
                 e.stopPropagation();
                 handleToggleFavorites(data);
@@ -98,7 +100,6 @@ const Home_Page_AlbumItem = ({ data, isHome, onRemoveFavorite }) => {
             />
           )}
         </div>
-      </div>
     </div>
   );
 };
