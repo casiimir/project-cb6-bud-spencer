@@ -96,7 +96,7 @@ export default function TrackPage({ trackData, youtubeId }) {
             )}
           </div>
           <div className={styles.links}>
-            <p onClick={artist}>Discover more of adele</p>
+            <p onClick={artist}>{`Discover more of ${trackData.title}`}</p>
             <h4 onClick={openModalYoutube}>Watch on Youtube</h4>
           </div>
           <div className={styles.player}>

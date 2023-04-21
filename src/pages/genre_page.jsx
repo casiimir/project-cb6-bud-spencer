@@ -1,6 +1,6 @@
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Artist_Page_TrackItem from "@/components/artist_page_trackItem";
-import styles from "../pages/Genre_page/styles.module.scss";
+import styles from "../pages/genre_page/styles.module.scss";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Navbar from "@/components/navbar";
@@ -53,8 +53,6 @@ export default function GenrePage({ dataGenreList, dataGenreTracks }) {
             </select>
             <input type="submit" value="Search" />
           </form>
-
-     
         </div>
       </div>
     </MainLayout>
