@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
-import { secondsToMinutes } from "@/utils/func";
+import { secondsToMinutes, padTo2Digits } from "@/utils/func";
 
 import { useState } from "react";
 
