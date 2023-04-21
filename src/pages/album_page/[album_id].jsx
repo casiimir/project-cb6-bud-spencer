@@ -52,7 +52,7 @@ export default function Search_page({ albumData }) {
               <div className={styles.buttonIcon}>
                 <BsFillPlayCircleFill />
               </div>
-              <h3>Listen now all the tracks!</h3>
+              <h3>Listen now to all the tracks!</h3>
             </div>
           </div>
 

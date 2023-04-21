@@ -84,7 +84,7 @@ const Home_Page_AlbumItem = ({ data, isHome, onRemoveFavorite }) => {
       <div className={styles.reactionIcons}>
           {isFolderFilled ? (
             <BsFolderFill
-              className={`${styles.folder} ${styles.active}`}
+              className={`${styles.folder_fill} ${styles.active}`}
               onClick={(e) => {
                 e.stopPropagation();
                 handleToggleFavorites(data);
