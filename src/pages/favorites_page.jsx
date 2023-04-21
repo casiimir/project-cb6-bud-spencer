@@ -1,4 +1,4 @@
-import styles from "../pages/favorites_page/fave.module.scss";
+import styles from "../pages/favorites_page/styles.module.scss";
 import { useState, useEffect } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Home_Page_TrackItem from "@/components/home_page_trackItem";

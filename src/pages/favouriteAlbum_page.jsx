@@ -1,4 +1,4 @@
-import styles from "../pages/favoriteAlbum_page/favoriteAlbum_page.module.scss";
+import styles from "../pages/favoriteAlbum_page/styles.module.scss";
 import { useState, useEffect } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Home_Page_AlbumItem from "@/components/home_page_albumItem";
