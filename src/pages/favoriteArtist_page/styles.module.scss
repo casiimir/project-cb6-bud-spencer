@@ -1,0 +1,21 @@
+
+
+.FavoriteArtistPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #555;
+      text-align: center;
+    }
+  
+    .noFavorites {
+      font-size: 2rem;
+      color: #555;
+      text-align: center;
+    }
+  }

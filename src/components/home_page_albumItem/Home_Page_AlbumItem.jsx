@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { AiOutlineFolder, AiFillFolder } from "react-icons/ai";
+import { BsFolder, BsFolderFill } from "react-icons/bs";
 import { BiUser, BiFolder, BiPlay } from "react-icons/bi";
 
 const Home_Page_AlbumItem = ({ data, isHome, onRemoveFavorite }) => {
@@ -83,15 +83,15 @@ const Home_Page_AlbumItem = ({ data, isHome, onRemoveFavorite }) => {
       </div>
       <div className={styles.reactionIcons}>
           {isFolderFilled ? (
-            <AiFillFolder
-              className={`${styles.folder_fill} ${styles.active}`}
+            <BsFolderFill
+              className={`${styles.folder} ${styles.active}`}
               onClick={(e) => {
                 e.stopPropagation();
                 handleToggleFavorites(data);
               }}
             />
           ) : (
-            <AiOutlineFolder
+            <BsFolder
               className={styles.folder}
               onClick={(e) => {
                 e.stopPropagation();
