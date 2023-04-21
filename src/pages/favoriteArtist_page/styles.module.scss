@@ -2,7 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   padding: 1rem;
+  width: 97vw;
+  height: 100vh;
+  overflow-y: auto;
 
   .Navbar {
     width: 100vw;

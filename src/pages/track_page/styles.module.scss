@@ -56,13 +56,15 @@
       p {
         cursor: pointer;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 18px;
+        width: 250px;
+        text-align: center;
         &:hover {
           transform: scale(1.1);
         }
       }
       h4 {
-        font-size: 25px;
+        font-size: 22px;
         cursor: pointer;
         transition: all 0.2s;
         &:hover {
@@ -111,17 +113,17 @@
       justify-content: center;
       align-items: center;
       .img_icon {
-        width: 400px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
         .img {
           margin-bottom: 10px;
           border-radius: 20px;
           box-shadow: 2px 6px 6px rgba(144, 143, 143, 0.605);
-          scale: 80%;
+          scale: 70%;
         }
         .heart {
-          bottom: 50px;
-          right: 20px;
+          bottom: 10px;
+          right: 10px;
         }
       }
 
