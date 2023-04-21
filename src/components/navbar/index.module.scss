@@ -22,7 +22,7 @@
     flex-grow: 1;
     position: relative;
 
-    .icon_bell {
+    .icon_user {
       display: none;
     }
     .icon_search {
@@ -64,10 +64,14 @@
       gap: 10px;
       flex-grow: 0;
       position: relative;
-      .icon_bell {
+      .icon_user {
         cursor: pointer;
         display: block;
         font-size: 25px;
+        &:hover{
+       color: $primary-color;
+       scale:104%;
+        }
       }
       .icon_search {
         left: 42px;

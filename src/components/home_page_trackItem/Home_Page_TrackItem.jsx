@@ -91,7 +91,7 @@ const Home_Page_TrackItem = ({
         <div className={styles.reactionsIcons}>
           {isHeartFilled ? (
             <AiFillHeart
-              className={`${styles.heart} ${styles.active}`}
+              className={`${styles.heart} ${styles.heart_fill}`}
               onClick={(e) => {
                 e.stopPropagation();
                 handleToggleFavorites(data);

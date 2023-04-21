@@ -9,7 +9,9 @@ const Navbar = ({ title }) => {
   const [inputSearch, setInputSearch] = useState("");
   const [tendina, setTendina] = useState(false);
   const router = useRouter();
-
+  const refreshPage = () => {
+    window.location.reload();
+  };
   const toggleTendina = () => {
     setTendina((prev) => !prev);
   };
@@ -21,6 +23,11 @@ const Navbar = ({ title }) => {
       setInputSearch("");
     }
   };
+
+  const onHandleLogout = () => { if (typeof window !== "undefined") {
+      localStorage.removeItem("logged");
+    } ;refreshPage();}
+
   return (
     <div className={styles.Navbar}>
       <h1 className={styles.title_home}>{title}</h1>
@@ -29,7 +36,7 @@ const Navbar = ({ title }) => {
       </div>
       <Tendina_Menu tendina={tendina} />
       <div className={styles.content_icon_input}>
-        <BiUserX className={styles.icon_bell} />
+        <BiUserX onClick={onHandleLogout} className={styles.icon_user} />
         <BiSearchAlt className={styles.icon_search} />
         <form onSubmit={onSubmit}>
           <input
