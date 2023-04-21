@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { BsFolderFill, BsFolder } from "react-icons/bs";
+import { BsFolder, BsFolderFill } from "react-icons/bs";
 import { BiUser, BiFolder, BiPlay } from "react-icons/bi";
 
 const Home_Page_AlbumItem = ({ data, isHome, onRemoveFavorite }) => {
