@@ -111,7 +111,6 @@ export default function TrackPage({ trackData, youtubeId }) {
                 allow="encrypted-media; clipboard-write"
               ></iframe>
             </div>
-            <h4 onClick={openModalYoutube}>Go to the video</h4>
           </div>
           {youtubeModal && (
             <YoutubeModal
