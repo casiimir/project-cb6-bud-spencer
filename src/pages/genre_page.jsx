@@ -1,6 +1,6 @@
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Artist_Page_TrackItem from "@/components/artist_page_trackItem";
-import styles from "../pages/Genre_page/styles.module.scss";
+import styles from "../pages/genre_page/styles.module.scss";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Navbar from "@/components/navbar";
@@ -62,9 +62,9 @@ export default function GenrePage({ dataGenreList, dataGenreTracks }) {
 }
 
 export async function getStaticProps() {
-  const resGenreList = await fetch("https://api.deezer.com/genre/0/radios");
+  const resGenreList = await fetch("https://api.deezer.com/radio/genress");
   const resGenreTracks = await fetch(
-    "https://api.deezer.com/radio/42122/tracks"
+    "https://api.deezer.com/radio/37151/tracks"
   );
 
   const dataGenreList = await resGenreList.json();

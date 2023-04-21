@@ -155,17 +155,25 @@
       gap: 20px;
       .info1 {
       }
-      .logo {
-        scale: 70%;
+      .container_logo{
+        transform: translate(-8px, 4px);
         background-color: #ffffff;
-        padding:8px;
+        width:60px;
+        height:60px;
         border-radius: 50%;
-        translate:(-17px 0)
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      .logo {
+        scale: 45%;
+        padding:4px;
+        translate:(0px -3px)
       }
+    }
       .deezer_container {
         .logo_title {
           transform: translate(12px, 4px);
-          color: rgb(212, 212, 212);
+          color: white;
           font-size: 0.7rem;
         }
         .deezer {
@@ -182,6 +190,7 @@
       justify-content: center;
       gap: 20px;
       width: 70%;
+      color: white;
       .container_form {
         display: flex;
         form {
@@ -228,6 +237,7 @@
       }
     }
     .footer_login {
+      color:white;
       .deezer {
       }
       .info2 {
@@ -269,7 +279,7 @@
       z-index: 17;
       font-size: 12px;;
       color: $primary-color;
-      border-radius: 3px;
+      border-radius: 4px;
       padding:10px;
       .close_error {
         display: flex;
@@ -425,16 +435,12 @@
         .info1 {
         }
         .logo {
-          scale: 70%;
-          background-color: #ffffff;
-          padding:8px;
-          border-radius: 50%;
-          translate:(-17px 0)
+        
         }
         .deezer_container {
           .logo_title {
             transform: translate(12px, 4px);
-            color: rgb(212, 212, 212);
+            color: white;
             font-size: 0.7rem;
           }
           .deezer {
@@ -466,8 +472,8 @@
             }
           }
           input {
-            width: 150px;
-            height: 25px;
+            width: 200px;
+            height: 35px;
             background: rgba(0, 0, 0, 0.42);
             color: #ffffff;
             border: none;
@@ -482,8 +488,8 @@
             display: flex;
             justify-content:center;
             background: none;
-            width: 150px;
-            height: 25px;
+            width: 200px;
+            height: 35px;
             padding:3px;
             color: $primary-color;
             background-color: $off-white;
@@ -529,23 +535,23 @@
         position: absolute;
         top:calc(50% - 40px);
         left:calc(50% - 100px);
-        width:200px;
-        height:80px;
+        width:300px;
+        height:120px;
         background-color: #ffffff;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         z-index: 17;
-        font-size: 12px;;
+        font-size: 16px;;
         color: $primary-color;
-        border-radius: 3px;
+        border-radius: 5px;
         padding:10px;
         .close_error {
           display: flex;
           justify-content: center;
           align-items: center;
-          translate: (-83px -10px);
+          translate: (-130px -20px);
           width: 15px;
           height: 15px;
           top: 8px;
