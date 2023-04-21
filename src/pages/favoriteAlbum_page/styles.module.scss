@@ -3,9 +3,10 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  margin-left: 40px;
 
-
+  .Navbar {
+    width: 100vw;
+  }
   .albums {
     display: flex;
     flex-direction: column;
@@ -13,12 +14,18 @@
     width: 100%;
     padding: 40px;
     margin-left: -40px;
-
   }
+}
+.noFavorites {
+  font-size: 2rem;
+  color: #555;
+  text-align: center;
+  padding: 40px;
+}
+@media screen and (min-width: 1000px) {
+  .FavoriteAlbumPage {
+    .Navbar {
+      padding: 0px 40px;
     }
-    .noFavorites {
-    font-size: 2rem;
-    color: #555;
-    text-align: center;
-    padding: 40px;
   }
+}

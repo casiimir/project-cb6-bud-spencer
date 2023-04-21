@@ -4,15 +4,15 @@ import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Navbar from "@/components/navbar";
 import Home_Page_TrackItem from "@/components/home_page_trackItem";
 
- const FavoriteTrackPage = ({data }) => {
-
+const FavoriteTrackPage = ({ data }) => {
   const [favorites, setFavorites] = useState([]);
 
-  const [isHome, setIsHome] = useState(false)
+  const [isHome, setIsHome] = useState(false);
 
   useEffect(() => {
     try {
-      const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      const storedFavorites =
+        JSON.parse(localStorage.getItem("favorites")) || [];
       setFavorites(storedFavorites);
     } catch (error) {
       console.error(error);
@@ -31,39 +31,40 @@ import Home_Page_TrackItem from "@/components/home_page_trackItem";
       console.error(error);
     }
   };
-  
+
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     if (JSON.stringify(favorites) !== JSON.stringify(storedFavorites)) {
       setFavorites(storedFavorites);
     }
   }, [favorites]);
-  
-
 
   return (
     <MainLayout>
-    <div className={styles.FavoriteTrackPage}>
-    <Navbar title={"Your favourite tracks"} />
-      {favorites.length > 0 ? ( 
-      <div className={styles.tracks}>
-        {favorites.map((favTrack) => ( <Home_Page_TrackItem key={favTrack.id} 
-        data={favTrack} 
-        trackIndex={data?.position} 
-        isHome={isHome}
-        onRemoveFavorite={() => removeFavorite(favTrack.id)}
-         />)
-      )}
+      <div className={styles.FavoriteTrackPage}>
+        <div className={styles.Navbar}>
+          <Navbar title={"Your favourite tracks"} />
+        </div>
+        {favorites.length > 0 ? (
+          <div className={styles.tracks}>
+            {favorites.map((favTrack) => (
+              <Home_Page_TrackItem
+                key={favTrack.id}
+                data={favTrack}
+                trackIndex={data?.position}
+                isHome={isHome}
+                onRemoveFavorite={() => removeFavorite(favTrack.id)}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className={styles.noFavorites}>
+            You do not have any favourites yet!
+          </p>
+        )}
       </div>
-    ) : (
-        <p className={styles.noFavorites}>You do not have any favourites yet!</p>
-      )
-      }
-    
-    </div>
     </MainLayout>
   );
 };
 
 export default FavoriteTrackPage;
-
