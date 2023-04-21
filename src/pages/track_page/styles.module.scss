@@ -41,7 +41,7 @@
       .like {
         position: absolute;
         right: 10px;
-        top: 10px;
+        bottom: 20px;
         font-size: 30px;
         cursor: pointer;
       }
@@ -94,16 +94,17 @@
       justify-content: center;
       align-items: center;
       .img_icon {
-        width: 500px;
-        height: 500px;
+        width: 450px;
+        height: 450px;
         .img {
-          margin-bottom: 20px;
+          margin-bottom: 90px;
           border-radius: 20px;
           box-shadow: 2px 6px 6px rgba(144, 143, 143, 0.605);
-          scale: 100%;
+          scale: 80%;
         }
         .like {
-          right: 20px;
+          right: 30px;
+          bottom: 80px;
         }
       }
 
