@@ -26,6 +26,7 @@ const Navbar = ({ title }) => {
   };
 
 
+
   const goHome = () => {
     router.push(`/#`);
    
@@ -39,13 +40,14 @@ const Navbar = ({ title }) => {
     
     // ;goHome(); refreshPage(); ;}
 
+
   return (
     <div className={styles.Navbar}>
       <h1 className={styles.title_home}>{title}</h1>
       <div className={styles.content_icon_navbar}>
         <HiMenuAlt1 onClick={toggleTendina} className={styles.icon_menu} />
       </div>
-      <Tendina_Menu tendina={tendina} />
+      <Tendina_Menu onHandleLogout={onHandleLogout} tendina={tendina} />
       <div className={styles.content_icon_input}>
         <BiUserX onClick={onHandleLogout} className={styles.icon_user} />
         <BiSearchAlt className={styles.icon_search} />

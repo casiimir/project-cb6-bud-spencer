@@ -1,20 +1,63 @@
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import YoutubeModal from "@/components/youtubeModal";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
-import { BiHeart } from "react-icons/bi";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import Navbar from "@/components/navbar";
+import { useRouter } from "next/router";
 
 export default function TrackPage({ trackData, youtubeId }) {
+  const router = useRouter();
   const [youtubeModal, setYoutubeModal] = useState(false);
 
+  const [favorites, setFavorites] = useState([]);
+
+  const [isHeartFilled, setIsHeartFilled] = useState(false);
+
+  const album = () => {
+    router.push(`/album_page/${trackData.album.id}`);
+  };
+  const artist = () => {
+    router.push(`/artist_page/${trackData.artist.id}`);
+  };
   const openModalYoutube = () => {
     setYoutubeModal(true);
   };
   const closeModalYoutube = () => {
     setYoutubeModal(false);
   };
+
+  const handleToggleFavorites = (item) => {
+    const currentFavorites =
+      JSON.parse(localStorage.getItem("favorites")) || [];
+    const index = currentFavorites.findIndex(
+      (fav) => JSON.stringify(fav.id) === JSON.stringify(item.id)
+    );
+
+    if (index !== -1) {
+      const updatedFavorites = [...currentFavorites];
+      updatedFavorites.splice(index, 1);
+      setIsHeartFilled(false);
+      setFavorites(updatedFavorites);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    } else {
+      const updatedFavorites = currentFavorites.concat(item);
+      setIsHeartFilled(true);
+      setFavorites(updatedFavorites);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    }
+    // }
+  };
+
+  useEffect(() => {
+    const currentFavorites =
+      JSON.parse(localStorage.getItem("favorites")) || [];
+    const index = currentFavorites.findIndex(
+      (fav) => JSON.stringify(fav.id) === JSON.stringify(trackData.id)
+    );
+    setIsHeartFilled(index !== -1);
+  }, []);
 
   return (
     <MainLayout>
@@ -34,8 +77,27 @@ export default function TrackPage({ trackData, youtubeId }) {
               height={500}
               alt={trackData.title}
             />
-
-            <BiHeart className={styles.like} />
+            {isHeartFilled ? (
+              <AiFillHeart
+                className={`${styles.heart} ${styles.active}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleToggleFavorites(trackData);
+                }}
+              />
+            ) : (
+              <AiOutlineHeart
+                className={styles.heart}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleToggleFavorites(trackData);
+                }}
+              />
+            )}
+          </div>
+          <div className={styles.links}>
+            <p onClick={artist}>{`Discover more of ${trackData.title}`}</p>
+            <h4 onClick={openModalYoutube}>Watch on Youtube</h4>
           </div>
           <div className={styles.player}>
             <div className={styles.deezerPlayer}>
@@ -49,7 +111,7 @@ export default function TrackPage({ trackData, youtubeId }) {
                 allow="encrypted-media; clipboard-write"
               ></iframe>
             </div>
-            <h4 onClick={openModalYoutube}>Go to video</h4>
+            <h4 onClick={openModalYoutube}>Go to the video</h4>
           </div>
           {youtubeModal && (
             <YoutubeModal

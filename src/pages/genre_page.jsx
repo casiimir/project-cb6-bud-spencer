@@ -53,8 +53,6 @@ export default function GenrePage({ dataGenreList, dataGenreTracks }) {
             </select>
             <input type="submit" value="Search" />
           </form>
-
-     
         </div>
       </div>
     </MainLayout>
