@@ -7,7 +7,7 @@ import Hero from "@/components/hero";
 import Home_Page_TrackItem from "../components/home_page_trackItem";
 import Home_Page_ArtistItem from "../components/home_page_artistItem";
 import Home_Page_AlbumItem from "../components/home_page_albumItem";
-import Home_Page_GenreItem from "../components/home_page_genreItem";
+import Home_Page_RadioItem from "../components/home_page_radioItem";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -17,7 +17,7 @@ import deezer from "../../public/logo/deezer.png"
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ artistData, trackData, albumData, genreData }) {
+export default function Home({ artistData, trackData, albumData, radioData }) {
   const [logged, setLogged] = useState(false);
   const [login, setLogin] = useState(false);
   const router = useRouter();
@@ -78,7 +78,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
             <Navbar title={"Budz"} />
             <div className={styles.container}>
               <div className={styles.leftSide}>
-                <Hero genreData={genreData} />
+                <Hero  />
                 <section className={styles.artistListMobile}>
                   <h3 className={styles.titleTopArtist}>Top Artist</h3>
                   <div className={styles.listTopArtist}>
@@ -95,14 +95,14 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                     ))}
                   </div>
                 </section>
-                {/* <section className={styles.mainListGenre}>
-            <Home_Page_GenreItem data={{name:"Choose your Category"}} />
-              <div className={styles.listGenre}>
-              {genreData?.data.map((data, i) => (
-                <Home_Page_GenreItem key={i} data={data} />
+                <section className={styles.mainListRadio}>
+            <Home_Page_RadioItem data={{title:"Listen now to our Radio!"}} />
+              <div className={styles.listRadio}>
+              {radioData?.data.map((data, i) => (
+                <Home_Page_RadioItem key={i} data={data} />
               ))}
             </div>
-            </section> */}
+            </section>
                 <section>
                   <div className={styles.title}>
                     <h3 className={styles.titleTrending}>Trending right now</h3>
@@ -244,12 +244,12 @@ export async function getStaticProps() {
   const resArtist = await fetch("https://api.deezer.com/chart/0/artists");
   const resTracks = await fetch("https://api.deezer.com/chart");
   const resAlbum = await fetch("https://api.deezer.com/chart/0/albums");
-  const resGenre = await fetch("https://api.deezer.com/genre/");
+  const resRadio = await fetch("https://api.deezer.com/radio/genres");
 
   const artistData = await resArtist.json();
   const trackData = await resTracks.json();
   const albumData = await resAlbum.json();
-  const genreData = await resGenre.json();
+  const radioData = await resRadio.json();
 
-  return { props: { artistData, trackData, albumData, genreData } };
+  return { props: { artistData, trackData, albumData, radioData } };
 }
