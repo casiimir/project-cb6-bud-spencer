@@ -45,7 +45,7 @@ const Sidebar = () => {
           <BiUser />
         </Link>
         <hr className={styles.hr} />
-        <Link className={styles.icon_desktop} href="/favorites_page">
+        <Link className={styles.icon_desktop} href="/favoriteTrack_page">
           <BiHeart />
         </Link>
 

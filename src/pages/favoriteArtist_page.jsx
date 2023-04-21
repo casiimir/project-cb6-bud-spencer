@@ -2,6 +2,7 @@ import styles from "../pages/favoriteArtist_page/styles.module.scss";
 import { useState, useEffect } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Home_Page_ArtistItem from "@/components/home_page_artistItem";
+import Navbar from "@/components/navbar";
 import { useRouter } from "next/router";
 
 
@@ -44,7 +45,7 @@ import { useRouter } from "next/router";
   return (
     <MainLayout>
     <div className={styles.FavoriteArtistPage}>
-      <h1 className={styles.title}>Your favourite Artists</h1>
+    <Navbar title={"Your favourite Artists"} />
       {favoriteArtists.length > 0 ? ( 
       <div className={styles.Artists}>
         {favoriteArtists.map((favArtist) => (

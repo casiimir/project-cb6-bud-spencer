@@ -18,7 +18,7 @@ const Tendina_Menu = ({ tendina }) => {
           <p>Album</p>
         </Link>
 
-        <Link className={styles.box} href="/favorites_page">
+        <Link className={styles.box} href="/favoriteTrack_page">
           <BiHeart className={styles.icon} />
           <p>Favorites</p>
         </Link>

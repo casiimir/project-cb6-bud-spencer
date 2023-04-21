@@ -2,6 +2,7 @@ import styles from "../pages/favoriteAlbum_page/styles.module.scss";
 import { useState, useEffect } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Home_Page_AlbumItem from "@/components/home_page_albumItem";
+import Navbar from "@/components/navbar";
 import { useRouter } from "next/router";
 
 
@@ -44,7 +45,7 @@ import { useRouter } from "next/router";
   return (
     <MainLayout>
     <div className={styles.FavoriteAlbumPage}>
-      <h1 className={styles.title}>Your favourite Albums</h1>
+    <Navbar title={"Your favourite Albums"} />
       {favoriteAlbums.length > 0 ? ( 
       <div className={styles.albums}>
         {favoriteAlbums.map((favAlbum) => (
