@@ -1,4 +1,4 @@
-import styles from "../pages/favoriteArtist_page/favoriteArtist_page.module.scss";
+import styles from "../pages/favoriteArtist_page/styles.module.scss";
 import { useState, useEffect } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
 import Home_Page_ArtistItem from "@/components/home_page_artistItem";
