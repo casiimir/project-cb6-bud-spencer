@@ -1,9 +1,10 @@
-import styles from "../pages/favorites_page/styles.module.scss";
+import styles from "../pages/favoriteTrack_page/styles.module.scss";
 import { useState, useEffect } from "react";
 import MainLayout from "@/components/layouts/mainLayout/MainLayout";
+import Navbar from "@/components/navbar";
 import Home_Page_TrackItem from "@/components/home_page_trackItem";
 
- const Favorites_Page = ({data }) => {
+ const FavoriteTrackPage = ({data }) => {
 
   const [favorites, setFavorites] = useState([]);
 
@@ -42,8 +43,8 @@ import Home_Page_TrackItem from "@/components/home_page_trackItem";
 
   return (
     <MainLayout>
-    <div className={styles.FavoritesPage}>
-      <h1 className={styles.title}>Your favourite tracks</h1>
+    <div className={styles.FavoriteTrackPage}>
+    <Navbar title={"Your favourite tracks"} />
       {favorites.length > 0 ? ( 
       <div className={styles.tracks}>
         {favorites.map((favTrack) => ( <Home_Page_TrackItem key={favTrack.id} 
@@ -64,5 +65,5 @@ import Home_Page_TrackItem from "@/components/home_page_trackItem";
   );
 };
 
-export default Favorites_Page;
+export default FavoriteTrackPage;
 
