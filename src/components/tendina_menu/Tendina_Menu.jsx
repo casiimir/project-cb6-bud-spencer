@@ -1,17 +1,17 @@
-import { BiFolder, BiHeart, BiShuffle, BiStar } from "react-icons/bi";
+import { BiFolder, BiHeart, BiShuffle, BiStar, BiUserX } from "react-icons/bi";
 import logo from "../../../public/logo/cuffie.png";
 import Image from "next/image";
 import styles from "./index.module.scss";
 import Link from "next/link";
 
-const Tendina_Menu = ({ tendina }) => {
+const Tendina_Menu = ({ tendina, onHandleLogout }) => {
   return (
     <div className={`${styles.Tendina_Menu} ${tendina && styles.show}`}>
-      <div className={styles.boxLogo}>
-        <div className={styles.logo2}>
-          <Image src={logo} height={40} width={45} alt={"logo"} />
-        </div>
+      <div className={styles.logo1}>
+        <Image src={logo} height={40} width={45} alt={"logo"} />
+        <BiUserX onClick={onHandleLogout} className={styles.icon} />
       </div>
+
       <div className={styles.content}>
         <Link className={styles.box} href="/favouriteAlbum_page">
           <BiFolder className={styles.icon} />
