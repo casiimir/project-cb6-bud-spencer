@@ -24,9 +24,12 @@ const Navbar = ({ title }) => {
     }
   };
 
-  const onHandleLogout = () => { if (typeof window !== "undefined") {
+  const onHandleLogout = () => {
+    if (typeof window !== "undefined") {
       localStorage.removeItem("logged");
-    } ;refreshPage();}
+    }
+    refreshPage();
+  };
 
   return (
     <div className={styles.Navbar}>
@@ -34,7 +37,7 @@ const Navbar = ({ title }) => {
       <div className={styles.content_icon_navbar}>
         <HiMenuAlt1 onClick={toggleTendina} className={styles.icon_menu} />
       </div>
-      <Tendina_Menu tendina={tendina} />
+      <Tendina_Menu onHandleLogout={onHandleLogout} tendina={tendina} />
       <div className={styles.content_icon_input}>
         <BiUserX onClick={onHandleLogout} className={styles.icon_user} />
         <BiSearchAlt className={styles.icon_search} />
