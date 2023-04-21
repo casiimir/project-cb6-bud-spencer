@@ -161,13 +161,15 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
           <div className={styles.login_overlay}></div>
           <div className={styles.login_box}>
             <div className={styles.header_login}>
+              <div className={styles.container_logo}>
               <Image
                 src={logo}
                 alt={"logo.png"}
-                width={80}
-                height={75}
+                width={120}
+                height={100}
                 className={styles.logo}
               />
+              </div>
               <div className={styles.deezer_container}>
                 <p className={styles.logo_title}>Powered by :</p>
                 <Image

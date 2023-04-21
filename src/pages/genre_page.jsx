@@ -60,9 +60,9 @@ export default function GenrePage({ dataGenreList, dataGenreTracks }) {
 }
 
 export async function getStaticProps() {
-  const resGenreList = await fetch("https://api.deezer.com/genre/0/radios");
+  const resGenreList = await fetch("https://api.deezer.com/radio/genress");
   const resGenreTracks = await fetch(
-    "https://api.deezer.com/radio/42122/tracks"
+    "https://api.deezer.com/radio/37151/tracks"
   );
 
   const dataGenreList = await resGenreList.json();

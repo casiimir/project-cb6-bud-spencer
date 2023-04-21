@@ -9,6 +9,7 @@ const Navbar = ({ title }) => {
   const [inputSearch, setInputSearch] = useState("");
   const [tendina, setTendina] = useState(false);
   const router = useRouter();
+
   const refreshPage = () => {
     window.location.reload();
   };
@@ -24,12 +25,21 @@ const Navbar = ({ title }) => {
     }
   };
 
-  const onHandleLogout = () => {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("logged");
-    }
-    refreshPage();
+
+
+  const goHome = () => {
+    router.push(`/#`);
+   
   };
+
+  const onHandleLogout = () => { if (typeof window !== "undefined") {
+      localStorage.removeItem("logged");
+    }; router.pathname ==='/' ? refreshPage():goHome()}
+    
+    
+    
+    // ;goHome(); refreshPage(); ;}
+
 
   return (
     <div className={styles.Navbar}>
