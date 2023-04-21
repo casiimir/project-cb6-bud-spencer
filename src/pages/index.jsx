@@ -83,7 +83,8 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                   <h3 className={styles.titleTopArtist}>Top Artist</h3>
                   <div className={styles.listTopArtist}>
                     {artistData?.data.map((data, i) => (
-                      <Home_Page_ArtistItem key={i} data={data} />
+                      <Home_Page_ArtistItem key={i} data={data} isHome={isHome}
+                      />
                     ))}
                   </div>
                 </section>
@@ -91,7 +92,8 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                   <h3 className={styles.titleTopAlbum}>Top Albums</h3>
                   <div className={styles.listTopArtist}>
                     {albumData?.data.map((data, i) => (
-                      <Home_Page_AlbumItem key={i} data={data} />
+                      <Home_Page_AlbumItem key={i} data={data} isHome={isHome}
+                      />
                     ))}
                   </div>
                 </section>
@@ -133,6 +135,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                         key={i}
                         data={data}
                         isHome={isHome}
+                       
                       />
                     ))}
                   </div>
@@ -147,6 +150,7 @@ export default function Home({ artistData, trackData, albumData, genreData }) {
                         key={i}
                         data={data}
                         isHome={isHome}
+                        
                       />
                     ))}
                   </div>
