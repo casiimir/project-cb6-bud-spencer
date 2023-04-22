@@ -69,15 +69,15 @@ const AboutPage = () => {
               <h2>{contributor.name}</h2>
               <h3>{contributor.role}</h3>
               <div className={styles.Links}>
-              <Link href={contributor.github}>
-    <span>Github</span>
-  </Link>
-  <Link href={contributor.linkedin}>
-    <span>LinkedIn</span>
-  </Link>
-  <Link href={contributor.email}>
-    <span>Email</span>
-  </Link>
+                <Link target="_blank" href={contributor.github}>
+                  <span>Github</span>
+                </Link>
+                <Link target="_blank" href={contributor.linkedin}>
+                  <span>LinkedIn</span>
+                </Link>
+                <Link href={`mailto: ${contributor.email}`}>
+                  <span>Email</span>
+                </Link>
               </div>
             </div>
           </div>
