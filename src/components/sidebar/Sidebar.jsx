@@ -39,7 +39,7 @@ const Sidebar = () => {
         </Link>
 
         <BiSearch onClick={searchClick} className={styles.icon_search} />
-        <Link className={styles.icon} href="/radio_page">
+        <Link className={styles.icon} href="/radio_page/37151">
           <BiMusic />
         </Link>
         <Link className={styles.icon} href="/about_page">
