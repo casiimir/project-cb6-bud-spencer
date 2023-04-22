@@ -7,22 +7,22 @@
 
 <div>
   <h3 align="left">Descrizione</h3>
-    <p  align="left"> <a style="color:#3a54ed" > Budz </a> rappresenta un'opportunità di ampliare i propri orizzonti musicali attraverso una vasta gamma di contenuti coinvolgenti e facilmente raggiungibili.</p>
-   <p align="left" > È una web App con focus sul front-end, basata su l'API di <a style='color: #3a54ed; text-decoration: none'href='https://developers.deezer.com/login?redirect=/api'     target='_blank' >DEEZER</a>, sviluppata utilizzando il framework Next.js e il preprocessore SASS. 
+    <p  align="left"> <a style="color:#3a54ed" > Budz </a> è una web app con focus sul front-end che offre agli utenti una vasta selezione di contenuti musicali di alta qualità e di facile accesso, con l'obiettivo di offrire una delle migliori esperienze di streaming audio sul mercato.</p>
+   <p align="left" > L'interfaccia user-friendly e la tecnologia all'avanguardia basata sull'API di <a style='color: #3a54ed; text-decoration: none'href='https://developers.deezer.com/login?redirect=/api'     target='_blank' >DEEZER</a>, e il framework Next.js garantiscono un'esperienza musicale coinvolgente e immersiva. 
    <br>
       Attraverso un'attenta analisi delle svariate piattaforme di streaming audio siamo giunti ad una sintesi di User Experience che potesse garantire agli utenti l'esperienza più immersiva possibile. 
     </p>
     <br>
     <p><b>Credenziali Login</b></p>
     <ul>
-    <li><b>user</b>: admin</li>
-     <li> <b>pass</b>: cb6</li>
+    <li><b> user</b>: admin</li>
+     <li><b>pass</b>: cb6</li>
     </ul>
 </div>          
 <hr>
 
 <div>
-    <h3 align="left">Home in versione mobile e desktop</h3>
+    <h3 align="center">Home in versione mobile e desktop</h3>
   <div style="display: flex; gap: 10px;  flex-direction: row;
         align-items: center; justify-content: center;">
     <img src='public/globalimages/foto1.png'  style="height: 300px; padding: 20px 0;" />
@@ -35,11 +35,12 @@
 <div>
     <h3 align="left">Routing</h3>
     
-  <p align="left">L'uso di <span style='color: #3a54ed;'> Next.js</span> fornisce un'esperienza di navigazione fluida e veloce. Per garantire un caricamento rapido delle pagine e una migliore indicizzazione sui motori di ricerca, è stato utilizzato il <span style='color: #3a54ed;'> server-side rendering</span>, che permette di generare le pagine HTML lato server prima di inviarle al client.  </p>
+  <p align="left">La navigazione nell'applicazione è fluida e veloce grazie all'utilizzo di <span style='color: #3a54ed;'> Next.js.</span> Il <span style='color: #3a54ed;'> server-side rendering</span> ottimizza il caricamento delle pagine e la loro indicizzazione sui motori di ricerca.  </p>
+  <h3 align="center">Track Page in versione mobile e desktop</h3>
   <div style="display: flex; gap: 10px; flex-direction: row;
         align-items: center; justify-content: center;">
-    <img src='public/globalimages/foto2.png'  style="height: 300px; padding: 20px 0;" />
-    <img src='public/globalimages/foto4.png'  style="height: 300px; padding: 20px 0;" /> 
+    <img src='public/globalimages/foto14.png'  style="height: 300px; padding: 20px 0;" />
+    <img src='public/globalimages/foto13.png'  style="height: 300px; padding: 20px 0;" /> 
 </div>
 </div>
 
@@ -59,17 +60,32 @@
 
 <div>
 <h3 align="left">Design</h3>
- <p align="left">Il design dell'applicazione è stato realizzato prendendo spunto da Dribble e modificata secondo i nostri gusti partendo dalla creazione di un mock up su Figma. L'utilizzo di <span style='color: rgb(255, 0, 230);'> SASS</span> ha semplificato la scrittura del codice CSS. Sono stati utilizzati i <span style='color: rgb(255, 0, 230);'> moduli SCSS</span>, tecnologia che consente di organizzare lo stile in file separati, semplificando la manutenzione e il debugging del codice.</p>  
- <div style="display: flex; flex-direction: row;
-        align-items: center; justify-content: center; ">
-<img src='public/globalimages/foto6.jpg'  style="height: 500px; padding: 20px 0;" />
+ <p align="left">Il design dell'applicazione è stato realizzato con ispirazione da Dribbble e adattato alle nostre esigenze partendo dalla realizzazione di un mockup su Figma.<span style='color: #3a54ed;'> SASS</span> è stato utilizzato per semplificare la scrittura del codice CSS e i  <span style='color: #3a54ed;'> moduli SCSS</span>, per organizzare lo stile in file separati, facilitando la manutenzione e il debugging del codice.</p> 
+ <h3 align="center">Versione desktop delle pagine:</h3> 
+ <p align="center"> Home, Track, Album, Artist, Radio, Shuffle, Favorite Track, Favorite Album, Favorite Artist, Login, 404</p> 
+ <div style="display: flex; flex-wrap: wrap;
+        align-items: center; justify-content: center; gap:40px; margin:20px; ">
+<img src='public/globalimages/foto1.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto14.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto3.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto18.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto12.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto8.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto17.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto15.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto16.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto19.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto10.png'  style="height: 100px; padding: 10px 0;" />
+<img src='public/globalimages/foto11.png'  style="height: 100px; padding: 10px 0;" />
+
 </div>  
         
 <hr>
 
 <div>
     <h3 align="left">Struttura</h3>
-  <p align="left">L'applicazione presenta una pagina di login per accedere all'account dell'utente e una homepage che mostra i migliori artisti, le migliori tracce e i migliori album del momento. Cliccando su ogni singolo elemento, si aprirà una pagina dinamica con le informazioni dettagliate e la possibilità di ascoltare la traccia audio. </p>
+  <p align="left">L'applicazione è strutturata per fornire all'utente un'esperienza musicale coinvolgente e completa. La homepage mostra i migliori artisti, le migliori tracce e i migliori album del momento, offrendo la possibilità di ascoltare in anteprima le tracce audio. Cliccando su ogni singolo elemento, è possibile accedere a una pagina dinamica con le informazioni dettagliate e la possibilità di ascoltare la traccia audio. </p>
+   <h3 align="center">Album Page in versione mobile e desktop</h3>
   <div style="display: flex; flex-direction: row;
         align-items: center; gap: 10px;  justify-content: center;">
    <img src='public/globalimages/foto3.png'  style="height: 300px; padding: 20px 0;" />
@@ -77,31 +93,35 @@
 </div> 
 </div>
 <div style='display: flex; flex-direction: column; align-items: flex-start;'>
-<p>Inoltre, il progetto include: </p>
+<p>Il progetto comprende anche: </p>
 <ul style="padding: 0px; text-align: left;">
-        <li> una pagina "Track", che consente agli utenti di azionare e interrompere la canzone, visionare il video Youtube relativo alla traccia.</li>
-        <li> tre pagine  dedicate alla gestione delle canzoni, album e artisti preferiti, in cui gli utenti cliccando sull' icona corrispondente, possono aggiungere e rimuovere il contenuto.</li>
-        <li> una pagina "shuffle" che mostra all'utente una selezione randomica di brani anch'esse riproducibili</li>
-        <li> una pagina adibita alla ricerca di album, artisti o canzoni specifici</li>
-        <li> una pagina dedicata ai generi musicali, in cui è possibile selezionare il genere scelto e ascoltarlo</li>
-       <li> una pagina "About", con i nomi e le informazioni relative ai partecipanti del progetto</li>
-        <li> una pagina "404", per gli errori</li>
-        <li> un pulsante di logout</li>
+        <li> Una pagina <span style='color: #3a54ed;'> "Track"</span> che consente agli utenti di azionare e interrompere la canzone, nonché di visualizzare il video Youtube relativo alla traccia.</li>
+        <li> Tre pagine sono dedicate alla gestione delle <span style='color: #3a54ed;'> canzoni</span>, degli <span style='color: #3a54ed;'> album</span> e degli <span style='color: #3a54ed;'> artisti preferiti</span>, in cui gli utenti possono aggiungere e rimuovere il contenuto.</li>
+        <li> Una pagina <span style='color: #3a54ed;'> "Shuffle"</span> che offre all'utente una selezione randomica di brani riproducibili.</li>
+        <li> Una pagina di <span style='color: #3a54ed;'>ricerca</span> per album, artisti o canzoni specifici.</li>
+        <li> La pagina dedicata ai <span style='color: #3a54ed;'> generi musicali</span> permette agli utenti di scegliere il proprio genere musicale preferito e di esplorare una selezione di brani della stessa categoria.</li>
+       <li> La pagina <span style='color: #3a54ed;'> "About"</span> presenta i nomi e le informazioni relative ai partecipanti al progetto.</li>
+        <li> Una pagina <span style='color: #3a54ed;'> "404"</span> per la gestione degli errori</li>
+        <li> Un pulsante di <span style='color: #3a54ed;'> Logout</span></li>
     </ul> 
   </div>
+  <h3 align="center">Figma</h3>
+  <div style="display: flex; flex-direction: row;
+        align-items: center; gap: 10px;  justify-content: center;">
+   <img src='public/globalimages/foto20.jpg'  style="height: 300px; padding: 20px 0;" />
 </div>
  
 
    <hr>
       
    <div style="display: flex; flex-direction: column;  align-items: center;">
-      <h3>Team Budz</h3>
+      <h3><span style='color: #3a54ed;'>Team Budz </span></h3>
      <p>
-       Questo progetto è stato realizzato in due settimane da un gruppo di studenti durante il coding bootcamp 6 di Edgemony, utilizzando una metodologia Agile Scrum. Il team ha lavorato insieme in modo collaborativo e altamente organizzato, tenendo incontri regolari per monitorare il progresso del lavoro e identificare eventuali ostacoli fino al completamento del progetto. Grazie a questa metodologia, il team ha lavorato in modo efficiente e concentrato sui compiti più importanti per il successo del progetto.
+       Il progetto è stato realizzato in sole due settimane da un team di cinque studenti altamente motivati, seguendo una metodologia Agile Scrum che ha permesso al team di lavorare in modo altamente organizzato e collaborativo. Durante gli sprint, il team ha tenuto incontri regolari per monitorare il progresso del lavoro e identificare eventuali problemi. Ogni membro del team ha contribuito con le proprie competenze e idee, permettendo di creare un'applicazione di alta qualità. In questo modo, il team è stato in grado di concentrarsi sui compiti più importanti per il successo del progetto, lavorando in modo efficiente e con un alto livello di attenzione ai dettagli.
      </p>
       <ul style="list-style-type: none; padding: 0px; text-align: center;">
         <li>Ilenia Ingrassia:  <a href="https://www.linkedin.com/in/ilenia-ingrassia-a43a7019a/"  target="_blank">LinkedIn</a>,  <a href="https://github.com/ileniai"  target="_blank">GitHub</a></li>
-        <li>Luisa Zizzo:  <a href="linkedin.com/in/luisa-zizzo"  target="_blank">LinkedIn</a>,  <a href="https://github.com/Luisazizzo"  target="_blank">GitHub</a></li>
+        <li>Luisa Zizzo: <a href="linkedin.com/in/luisa-zizzo"  target="_blank">LinkedIn</a>,  <a href="https://github.com/Luisazizzo"  target="_blank">GitHub</a></li>
         <li>Alessio Perez:  <a href="linkedin.com/in/alessio-perez"  target="_blank">LinkedIn</a>,  <a href="https://github.com/alekyari"  target="_blank">GitHub</a></li>
         <li>Adriana Origlio:  <a href="linkedin.com/in/adriana-origlio"  target="_blank">LinkedIn</a>,  <a href="https://github.com/chibiusagitsukino"  target="_blank">GitHub</a></li>
         <li>Fabio Massi:  <a href="linkedin.com/in/fabio-massi-7b755112a"  target="_blank">LinkedIn</a>, <a href="https://github.com/timcrocodile"  target="_blank">GitHub</a></li>
