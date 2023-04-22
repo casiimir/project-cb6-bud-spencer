@@ -47,11 +47,11 @@ const FavoriteTrackPage = ({ data }) => {
         </div>
         {favorites.length > 0 ? (
           <div className={styles.tracks}>
-            {favorites.map((favTrack) => (
+            {favorites.map((favTrack, index) => (
               <Home_Page_TrackItem
                 key={favTrack.id}
                 data={favTrack}
-                trackIndex={data?.position}
+                trackIndex={index}
                 isHome={isHome}
                 onRemoveFavorite={() => removeFavorite(favTrack.id)}
               />
