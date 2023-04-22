@@ -97,7 +97,15 @@ export default function TrackPage({ trackData, youtubeId }) {
           </div>
           <div className={styles.links}>
             <p onClick={artist}>{`Discover more of ${trackData.title}`}</p>
-            <h4 onClick={openModalYoutube}>Watch on Youtube</h4>
+            <div onClick={openModalYoutube} className={styles.youtube}>
+              <h4>Watch on</h4>
+              <Image
+                src="/globalimages/youtube.jpeg"
+                width={100}
+                height={35}
+                alt="youtube"
+              />
+            </div>
           </div>
           <div className={styles.player}>
             <div className={styles.deezerPlayer}>

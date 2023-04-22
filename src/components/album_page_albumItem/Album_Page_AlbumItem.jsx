@@ -7,37 +7,45 @@ import { useState, useEffect } from "react";
 import Home_Page_ArtistItem from "../home_page_artistItem/Home_Page_ArtistItem";
 
 const Album_Page_AlbumItem = ({ data, isAlbumPage }) => {
-
   const [favoriteAlbums, setFavoriteAlbums] = useState([]);
 
   const [isFolderFilled, setIsFolderFilled] = useState(false);
 
   const handleToggleFavorites = (item) => {
-    const currentFavoriteAlbum = JSON.parse(localStorage.getItem("favoriteAlbums")) || [];
-    const index = currentFavoriteAlbum.findIndex((fav) => JSON.stringify(fav.id) === JSON.stringify(item.id));
-  
-    if (index !== -1)  {
+    const currentFavoriteAlbum =
+      JSON.parse(localStorage.getItem("favoriteAlbums")) || [];
+    const index = currentFavoriteAlbum.findIndex(
+      (fav) => JSON.stringify(fav.id) === JSON.stringify(item.id)
+    );
+
+    if (index !== -1) {
       const updatedFavoriteAlbum = [...currentFavoriteAlbum];
       updatedFavoriteAlbum.splice(index, 1);
-      setIsFolderFilled(false)
+      setIsFolderFilled(false);
       setFavoriteAlbums(updatedFavoriteAlbum);
-      localStorage.setItem("favoriteAlbums", JSON.stringify(updatedFavoriteAlbum));
+      localStorage.setItem(
+        "favoriteAlbums",
+        JSON.stringify(updatedFavoriteAlbum)
+      );
     } else {
       const updatedFavoriteAlbum = currentFavoriteAlbum.concat(item);
-      setIsFolderFilled(true)
+      setIsFolderFilled(true);
       setFavoriteAlbums(updatedFavoriteAlbum);
-      localStorage.setItem("favoriteAlbums", JSON.stringify(updatedFavoriteAlbum));
+      localStorage.setItem(
+        "favoriteAlbums",
+        JSON.stringify(updatedFavoriteAlbum)
+      );
     }
-  
-}
+  };
 
-useEffect(() => {
-  const currentFavoriteAlbum = JSON.parse(localStorage.getItem("favoriteAlbums")) || [];
-  const index = currentFavoriteAlbum.findIndex((fav) => JSON.stringify(fav.id) === JSON.stringify(data.id));
-  setIsFolderFilled(index !== -1);
-}, []);
-
-
+  useEffect(() => {
+    const currentFavoriteAlbum =
+      JSON.parse(localStorage.getItem("favoriteAlbums")) || [];
+    const index = currentFavoriteAlbum.findIndex(
+      (fav) => JSON.stringify(fav.id) === JSON.stringify(data.id)
+    );
+    setIsFolderFilled(index !== -1);
+  }, []);
 
   const explicitLyrics = data?.explicit_content_lyrics !== 0;
   return (
@@ -50,28 +58,25 @@ useEffect(() => {
             fill
             alt={data?.title}
           />
-<div className={styles.folder}>
-
-{isFolderFilled ? (
-            <BsFolderFill
-              className={`${styles.folder} ${styles.active}`}
-              onClick={(e) => {
-                e.stopPropagation();
-                handleToggleFavorites(data);
-              }}
-            />
-          ) : (
-            <BsFolder
-              className={styles.folder}
-              onClick={(e) => {
-                e.stopPropagation();
-                handleToggleFavorites(data);
-              }}
-            />
-          )}
-</div>
-
-
+          <div className={styles.folder}>
+            {isFolderFilled ? (
+              <BsFolderFill
+                className={`${styles.folder} ${styles.active}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleToggleFavorites(data);
+                }}
+              />
+            ) : (
+              <BsFolder
+                className={styles.folder}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleToggleFavorites(data);
+                }}
+              />
+            )}
+          </div>
         </div>
         <div className={styles.name_album}>
           <h1>{data?.title}</h1>
@@ -80,12 +85,14 @@ useEffect(() => {
       <div className={styles.bottom_info}>
         <div className={styles.contributors_album}>
           {data?.contributors.map((data, i) => (
-            <Home_Page_ArtistItem key={i} data={data} isAlbumPage={isAlbumPage}/>
+            <Home_Page_ArtistItem
+              key={i}
+              data={data}
+              isAlbumPage={isAlbumPage}
+            />
           ))}
         </div>
-       <h3 className={styles.artistName_mobile}>
-       {data?.artist.name}
-       </h3>
+        <h3 className={styles.artistName_mobile}>{data?.artist.name}</h3>
         <div className={styles.info_album}>
           <p>{`Genre: ${data?.genres.data[0].name}`}</p>
           <p>{`Label: ${data?.label}`}</p>
