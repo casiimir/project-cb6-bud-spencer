@@ -7,7 +7,7 @@
   overflow-y: auto;
 
   .Navbar {
-    width: 100vw;
+    width: 90vw;
   }
   .tracks {
     display: flex;
@@ -25,9 +25,4 @@
   padding: 40px;
 }
 @media screen and (min-width: 1000px) {
-  .FavoriteTrackPage {
-    .Navbar {
-      padding: 0px 40px;
-    }
-  }
 }

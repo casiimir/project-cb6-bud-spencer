@@ -39,8 +39,8 @@ const Sidebar = () => {
         </Link>
 
         <BiSearch onClick={searchClick} className={styles.icon_search} />
-        <Link className={styles.icon_desktop} href="/radio_page">
-        <BiMusic className={styles.icon} />
+        <Link className={styles.icon} href="/radio_page">
+          <BiMusic />
         </Link>
         <Link className={styles.icon} href="/about_page">
           <BiUser />
@@ -51,14 +51,12 @@ const Sidebar = () => {
         </Link>
 
         <Link className={styles.icon_desktop} href="/favouriteAlbum_page">
-        <BiFolder className={styles.icon_desktop} />
+          <BiFolder className={styles.icon_desktop} />
         </Link>
-       
-       <Link className={styles.icon_desktop} href="/favoriteArtist_page">
-       <BiStar className={styles.icon_desktop} />
-       </Link>
 
-        
+        <Link className={styles.icon_desktop} href="/favoriteArtist_page">
+          <BiStar className={styles.icon_desktop} />
+        </Link>
       </div>
     </div>
   );
