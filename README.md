@@ -23,11 +23,10 @@
 
 <div>
     <h3 align="center">Home in versione mobile e desktop</h3>
-  <div style="display: flex; gap: 10px;  flex-direction: row;
-        align-items: center; justify-content: center;">
+  <p align="center">
     <img src='public/globalimages/foto1.png'  style="height: 300px; padding: 20px 0;" />
   <img src='public/globalimages/foto5.png'  style="height: 300px; padding: 20px 0;" />
-</div>
+</p>
 </div>      
       
 <hr>
@@ -37,25 +36,24 @@
     
   <p align="left">La navigazione nell'applicazione è fluida e veloce grazie all'utilizzo di <span style='color: #3a54ed;'> Next.js.</span> Il <span style='color: #3a54ed;'> server-side rendering</span> ottimizza il caricamento delle pagine e la loro indicizzazione sui motori di ricerca.  </p>
   <h3 align="center">Track Page in versione mobile e desktop</h3>
-  <div style="display: flex; gap: 10px; flex-direction: row;
-        align-items: center; justify-content: center;">
+  <p align="center">
     <img src='public/globalimages/foto14.png'  style="height: 300px; padding: 20px 0;" />
     <img src='public/globalimages/foto13.png'  style="height: 300px; padding: 20px 0;" /> 
-</div>
+</p>
 </div>
 
 <hr>
       
 <div style="display: flex; flex-direction: column;  align-items: center;">
 <h3>Tecnologie</span> :</h3>
-<ul style="display: flex; flex-direction: row; gap:20px; align-items: center; justify-content: flex-start;">
+<p align="center">
 <img  style='width: 40px;' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="">
 <img  style='width: 40px;' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" alt="">
 <img  style='width: 40px;' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="">
 <img  style='width: 40px;' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="">
 <img  style='width: 40px;' src="https://avatars.githubusercontent.com/u/6078720?s=200&v=4" alt="">
-</ul>
-</div>
+
+</p>
 <hr>
 
 <div>
@@ -63,8 +61,7 @@
  <p align="left">Il design dell'applicazione è stato realizzato con ispirazione da Dribbble e adattato alle nostre esigenze partendo dalla realizzazione di un mockup su Figma.<span style='color: #3a54ed;'> SASS</span> è stato utilizzato per semplificare la scrittura del codice CSS e i  <span style='color: #3a54ed;'> moduli SCSS</span>, per organizzare lo stile in file separati, facilitando la manutenzione e il debugging del codice.</p> 
  <h3 align="center">Versione desktop delle pagine:</h3> 
  <p align="center"> Home, Track, Album, Artist, Radio, Shuffle, Favorite Track, Favorite Album, Favorite Artist, Login, 404</p> 
- <div style="display: flex; flex-wrap: wrap;
-        align-items: center; justify-content: center; gap:40px; margin:20px; ">
+ <p align="center">
 <img src='public/globalimages/foto1.png'  style="height: 100px; padding: 10px 0;" />
 <img src='public/globalimages/foto14.png'  style="height: 100px; padding: 10px 0;" />
 <img src='public/globalimages/foto3.png'  style="height: 100px; padding: 10px 0;" />
@@ -78,7 +75,7 @@
 <img src='public/globalimages/foto10.png'  style="height: 100px; padding: 10px 0;" />
 <img src='public/globalimages/foto11.png'  style="height: 100px; padding: 10px 0;" />
 
-</div>  
+</p>  
         
 <hr>
 
@@ -86,11 +83,10 @@
     <h3 align="left">Struttura</h3>
   <p align="left">L'applicazione è strutturata per fornire all'utente un'esperienza musicale coinvolgente e completa. La homepage mostra i migliori artisti, le migliori tracce e i migliori album del momento, offrendo la possibilità di ascoltare in anteprima le tracce audio. Cliccando su ogni singolo elemento, è possibile accedere a una pagina dinamica con le informazioni dettagliate e la possibilità di ascoltare la traccia audio. </p>
    <h3 align="center">Album Page in versione mobile e desktop</h3>
-  <div style="display: flex; flex-direction: row;
-        align-items: center; gap: 10px;  justify-content: center;">
+  <p align="center">
    <img src='public/globalimages/foto3.png'  style="height: 300px; padding: 20px 0;" />
   <img src='public/globalimages/foto7.png'  style="height: 300px; padding: 20px 0;" />
-</div> 
+</p> 
 </div>
 <div style='display: flex; flex-direction: column; align-items: flex-start;'>
 <p>Il progetto comprende anche: </p>
@@ -106,10 +102,9 @@
     </ul> 
   </div>
   <h3 align="center">Figma</h3>
-  <div style="display: flex; flex-direction: row;
-        align-items: center; gap: 10px;  justify-content: center;">
+  <p align="center">
    <img src='public/globalimages/foto20.jpg'  style="height: 300px; padding: 20px 0;" />
-</div>
+</p>
  
 
    <hr>
