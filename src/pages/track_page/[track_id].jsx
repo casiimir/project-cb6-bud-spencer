@@ -57,7 +57,7 @@ export default function TrackPage({ trackData, youtubeId }) {
       (fav) => JSON.stringify(fav.id) === JSON.stringify(trackData.id)
     );
     setIsHeartFilled(index !== -1);
-  }, []);
+  }, [trackData.id]);
 
   return (
     <MainLayout>
@@ -79,7 +79,7 @@ export default function TrackPage({ trackData, youtubeId }) {
             />
             {isHeartFilled ? (
               <AiFillHeart
-                className={`${styles.heart} ${styles.active}`}
+                className={`${styles.heart_filled} ${styles.active}`}
                 onClick={(e) => {
                   e.stopPropagation();
                   handleToggleFavorites(trackData);
@@ -96,7 +96,7 @@ export default function TrackPage({ trackData, youtubeId }) {
             )}
           </div>
           <div className={styles.links}>
-            <p onClick={artist}>{`Discover more of ${trackData.title}`}</p>
+            <p onClick={artist}>{`Discover more of ${trackData.artist.name}`}</p>
             <div onClick={openModalYoutube} className={styles.youtube}>
               <h4>Watch on</h4>
               <Image

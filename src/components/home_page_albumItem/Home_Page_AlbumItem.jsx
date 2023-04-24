@@ -61,10 +61,11 @@ const Home_Page_AlbumItem = ({ data, isHome, onRemoveFavorite }) => {
       <div className={styles.AlbumItem} onClick={single_album}>
         <Image
           className={styles.img}
-          src={data?.cover_medium}
+          src={data?.cover}
           width={80}
           height={80}
           alt={data?.title}
+         
         />
         <div className={styles.text}>
           <h4>{data?.title}</h4>
@@ -75,8 +76,8 @@ const Home_Page_AlbumItem = ({ data, isHome, onRemoveFavorite }) => {
           </div>
         </div>
       </div>
-      <div className={styles.icons_play}>
-        <div className={styles.playIcon}>
+      <div className={styles.icons_play} >
+        <div className={styles.playIcon} onClick={single_album}>
           <BiPlay />
         </div>
         
@@ -84,7 +85,7 @@ const Home_Page_AlbumItem = ({ data, isHome, onRemoveFavorite }) => {
       <div className={styles.reactionIcons}>
           {isFolderFilled ? (
             <BsFolderFill
-              className={`${styles.folder_fill} ${styles.active}`}
+              className={styles.folder_fill}
               onClick={(e) => {
                 e.stopPropagation();
                 handleToggleFavorites(data);

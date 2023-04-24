@@ -26,8 +26,7 @@
       width: 80vw;
       gap: 30px;
       border-radius: 10px;
-      .genre_item {
-      }
+   
     }
     .track_list {
       background-color: rgba(162, 195, 223, 0.167);
@@ -37,7 +36,7 @@
       width: 80vw;
       gap: 30px;
       border-radius: 10px;
-      padding: 25px;
+      padding: 25px 25px 100px 25px;
       .track_item {
         width: 400px;
       }
@@ -53,14 +52,28 @@
       width: 100%;
     }
     .container {
-      padding: 20px;
+      padding: 20px 0px 50px 20px;
       height: 100vh;
       width: 100%;
       overflow: scroll;
       display: flex;
       flex-direction: column;
-
       gap: 20px;
+      overflow: scroll;
+      &::-webkit-scrollbar {
+        height: 8px;
+        width: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color:transparent;
+      }
+
+      
       h2 {
         font-size: 1.6rem;
       }
@@ -75,8 +88,7 @@
         flex-direction: row;
         gap: 30px;
         border-radius: 10px;
-        .genre_item {
-        }
+       
       }
       .track_list {
         background-color: rgba(162, 195, 223, 0.167);
@@ -86,6 +98,7 @@
 
         gap: 30px;
         border-radius: 10px;
+        margin-bottom:100px;
         .track_item {
           width: 400px;
         }

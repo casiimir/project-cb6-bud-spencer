@@ -32,7 +32,7 @@ const Artist_Page_ArtistItem = ({ artistData }) => {
     const currentFavoriteArtist = JSON.parse(localStorage.getItem("favoriteArtists")) || [];
     const index = currentFavoriteArtist.findIndex((fav) => JSON.stringify(fav.id) === JSON.stringify(artistData.id));
     setIsStarFilled(index !== -1);
-  }, []);
+  }, [artistData.id]);
 
 
   return (
@@ -51,7 +51,7 @@ const Artist_Page_ArtistItem = ({ artistData }) => {
         <p>{`Follower: ${artistData.nb_fan}`}</p>
         {isStarFilled ? (
             <BsStarFill
-              className={`${styles.star} ${styles.active}`}
+              className={styles.star_filled}
               onClick={(e) => {
                 e.stopPropagation();
                 handleToggleFavorites(artistData);
