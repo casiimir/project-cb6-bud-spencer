@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 10px;
+  padding-bottom: 2px;
 
   .info_artist {
     display: flex;
@@ -13,6 +13,12 @@
     font-weight: bold;
     img {
       border-radius: 50%;
+    }
+  
+    .star_filled {
+      font-size: 25px;
+      cursor: pointer;
+      color: rgba(226, 189, 5, 0.77);
     }
     .star {
       font-size: 25px;

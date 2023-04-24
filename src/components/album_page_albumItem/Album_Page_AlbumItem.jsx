@@ -45,7 +45,7 @@ const Album_Page_AlbumItem = ({ data, isAlbumPage }) => {
       (fav) => JSON.stringify(fav.id) === JSON.stringify(data.id)
     );
     setIsFolderFilled(index !== -1);
-  }, []);
+  }, [data.id]);
 
   const explicitLyrics = data?.explicit_content_lyrics !== 0;
   return (
@@ -61,7 +61,7 @@ const Album_Page_AlbumItem = ({ data, isAlbumPage }) => {
           <div className={styles.folder}>
             {isFolderFilled ? (
               <BsFolderFill
-                className={`${styles.folder} ${styles.active}`}
+                className={styles.folder_filled }
                 onClick={(e) => {
                   e.stopPropagation();
                   handleToggleFavorites(data);

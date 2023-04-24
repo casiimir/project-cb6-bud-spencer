@@ -11,22 +11,30 @@
   transition: all 0.5s;
   z-index: 2;
 
-  .logo1 {
+  .header_logo {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    padding:0 15px ;
 
-    img {
+    .containerLogo {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background: rgba(251, 251, 251, 0.896);
+ 
       border-radius: 100%;
       width: 60px;
       height: 60px;
-      padding: 5px;
-      padding-top: 5px;
+     
+     
     }
     .icon {
+     
+      margin-top:20px;
       font-size: 25px;
       cursor: pointer;
     }

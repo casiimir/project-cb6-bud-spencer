@@ -38,6 +38,15 @@
         box-shadow: 2px 6px 6px rgba(144, 143, 143, 0.605);
         scale: 50%;
       }
+       .heart_filled {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 30px;
+        cursor: pointer;
+        color: rgba(189, 63, 63, 0.85);
+      }
+
       .heart {
         position: absolute;
         right: 10px;

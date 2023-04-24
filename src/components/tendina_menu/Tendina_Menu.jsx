@@ -7,8 +7,12 @@ import Link from "next/link";
 const Tendina_Menu = ({ tendina, onHandleLogout }) => {
   return (
     <div className={`${styles.Tendina_Menu} ${tendina && styles.show}`}>
-      <div className={styles.logo1}>
+      <div className={styles.header_logo}>
+        <div className={styles.containerLogo} >
+        <div className={styles.logo}>
         <Image src={logo} height={40} width={45} alt={"logo"} />
+        </div>
+        </div>
         <BiUserX onClick={onHandleLogout} className={styles.icon} />
       </div>
 
