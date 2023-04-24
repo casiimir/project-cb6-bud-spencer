@@ -121,10 +121,10 @@
      </p>
       <ul style="list-style-type: none; padding: 0px; text-align: center;">
         <li>Ilenia Ingrassia:  <a href="https://www.linkedin.com/in/ilenia-ingrassia-a43a7019a/"  target="_blank">LinkedIn</a>,  <a href="https://github.com/ileniai"  target="_blank">GitHub</a></li>
-        <li>Luisa Zizzo: <a href="linkedin.com/in/luisa-zizzo"  target="_blank">LinkedIn</a>,  <a href="https://github.com/Luisazizzo"  target="_blank">GitHub</a></li>
-        <li>Alessio Perez:  <a href="linkedin.com/in/alessio-perez"  target="_blank">LinkedIn</a>,  <a href="https://github.com/alekyari"  target="_blank">GitHub</a></li>
-        <li>Adriana Origlio:  <a href="linkedin.com/in/adriana-origlio"  target="_blank">LinkedIn</a>,  <a href="https://github.com/chibiusagitsukino"  target="_blank">GitHub</a></li>
-        <li>Fabio Massi:  <a href="linkedin.com/in/fabio-massi-7b755112a"  target="_blank">LinkedIn</a>, <a href="https://github.com/timcrocodile"  target="_blank">GitHub</a></li>
+        <li>Luisa Zizzo: <a href="https://www.linkedin.com/in/luisa-zizzo"  target="_blank">LinkedIn</a>,  <a href="https://github.com/Luisazizzo"  target="_blank">GitHub</a></li>
+        <li>Alessio Perez:  <a href="https://www.linkedin.com/in/alessio-perez"  target="_blank">LinkedIn</a>,  <a href="https://github.com/alekyari"  target="_blank">GitHub</a></li>
+        <li>Adriana Origlio:  <a href="https://www.linkedin.com/in/adriana-origlio"  target="_blank">LinkedIn</a>,  <a href="https://github.com/chibiusagitsukino"  target="_blank">GitHub</a></li>
+        <li>Fabio Massi:  <a href="https://www.linkedin.com/in/fabio-massi-7b755112a"  target="_blank">LinkedIn</a>, <a href="https://github.com/timcrocodile"  target="_blank">GitHub</a></li>
       </ul>
     </div>
   </body>
